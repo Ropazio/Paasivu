@@ -1,0 +1,82 @@
+html, body {
+    height: 100vh;
+    width: 100vw;
+    font-family: Palatino, Helvetica, Serif;
+    color: #CCC;
+    margin: 0;
+}
+
+/*
+HEADER
+*/
+
+.header {
+    background-image: radial-gradient(#2E8B57, #306754);
+    justify-content: center;
+    height: 220px;
+    padding: 10px;
+}
+        
+h1, p, .headline {
+    text-align: center;
+}
+
+
+
+/*
+CONTENT
+*/
+
+.bottom {
+    display: flex;
+    height: 100vh;
+}
+
+
+
+/*
+Text part
+*/
+
+.desc {
+    background-color: #CCC;
+    width: 80%;
+}
+
+.text {
+    color: black;
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+
+/*
+Navigator
+*/
+
+.navi {
+    background-color: #AAA;
+    width: 20%;
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+.headlines {
+    color: black;
+}
+
+.headlines:hover {
+    transform: scale(1.02);
+    transition: ease-out 0.1s;
+    color: grey;
+}
+
+.content {
+    display: none;
+}
+
+.links, .projects {
+    margin-left: 20px;
+}
+        
