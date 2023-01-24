@@ -1,5 +1,9 @@
 <div class="navi">
 
+    <h1>
+        <a class="main_headline function" href="http://localhost:8080/Paasivu">Etusivu</a>
+    </h1>
+
     <h2>
         <a class="headlines function" href="http://localhost:8080/Paasivu/net_projects.php">Verkkoprojektit</a>
     </h2>
@@ -28,5 +32,9 @@
             <a class="headlines">deips</a>
         </li>
     </div>
+
+    <h2>
+        <a class="headlines function" href="http://localhost:8080/Paasivu/calendar.php">Runtulista</a>
+    </h2>
 
 </div>

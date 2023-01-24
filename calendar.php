@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main_page_styles.css" />
-    <title>Ropaz – Projektit</title>
+    <title>Ropaz – Joku roti</title>
 </head>
 <body>
 
@@ -14,12 +14,8 @@
 
     <div class="bottom">
         <div class="desc">
-            <h2 class="main_text_headline">Askarteluja</h2>
-            <p class="text">Tänne lisäilen kuvia askarteluistani, joihin lukeutuu paljon virkkaustöitä ja jonkin verran puutöitä sekä satunnaisia muita projekteja.</p>
-
-            <h3 class="text_headline" id="heips">Heips</h3>
-            <p class="text">Jeppis.
-            <br>&emsp;
+            <h2 class="main_text_headline">Nyt joku roti siihen hommaan!</h2>
+            <p class="text">Järjestys on tämä!</p>
             </p>
         </div>
 

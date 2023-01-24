@@ -14,11 +14,12 @@
 
     <div class="bottom">
         <div class="desc">
-            <h1 class="text_headline">Tämä sivu valmistuu tuota pikaa, kunhan ☢ Olkiluoto 3 ☢ toimittaa sähköä jouhevasti verkkoon.</h1>
-            <h1>🔧🔩🪛🪚🔨</h1>
-            <p>"Vitsin" keksi Spacha</p>
             <h2 class="text_headline">Tervetuloa Ropaz.dev:in pääsivulle!</h2>
-            <p class="text">Täältä voit löytää muun muassa linkit joillekin muille verkkosivuilleni, kuvia ja peräti tekstiä joihinkin askarteluprojekteihini liittyen.</p>
+            <p class="text">Tämä sivusto toimii niin sanottuna telakkana harrastuksiini liittyen; täältä voit löytää muun muassa linkit kuvauksineen joillekin muille verkkosivuilleni sekä kuvia ja peräti tekstiä joihinkin askarteluprojekteihini liittyen.
+            <br>&emsp;
+            Tänne sivulle on tarkoitus lisätä myös listamuotoinen kalenteri, joka kattaa aina seuraavan viikon päivät. Kalenteriin voin sitten lisätä, mitä olen ajatellut tehdä kunakin päivänä. Tämä ominaisuus tulee kuitenkin vain minun käyttööni, ja se tulee vaatimaan kirjautumisen.
+            </p>
+
         </div>
 
         <?php
