@@ -14,7 +14,7 @@ for (i = 0; i < coll.length; i++) {
 			content.style.display = "block";
 		}
 		else {
-			content.style.display = "block";
+			content.style.display = "none";
 		}
 	});
 }

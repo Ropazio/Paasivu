@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main_page_styles.css" />
-    <title>Ropaz – Päänäkymä</title>
+    <title>Ropaz – Projektit</title>
 </head>
 <body>
 
@@ -14,8 +14,8 @@
 
     <div class="bottom">
         <div class="desc">
-            <h2 class="text_headline">Tervetuloa Ropaz.dev:in pääsivulle!</h2>
-            <p class="text">Täältä voit löytää muun muassa linkit joillekin muille verkkosivuilleni, kuvia ja peräti tekstiä joihinkin askarteluprojekteihini liittyen.</p>
+            <h2 class="text_headline pekkaspaivat">Pekkaspäivät</h2>
+            <p class="text"><a class="links" href="http://localhost:8080/pekkaspaivat/kirjautumissivu.php" target="_blank">Tästä linkistä pääset tutustumaan Pekkaspäiviin!</a></p>
         </div>
 
         <?php
