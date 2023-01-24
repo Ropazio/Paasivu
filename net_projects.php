@@ -14,8 +14,17 @@
 
     <div class="bottom">
         <div class="desc">
-            <h2 class="text_headline pekkaspaivat">Pekkaspäivät</h2>
-            <p class="text"><a class="links" href="http://localhost:8080/pekkaspaivat/kirjautumissivu.php" target="_blank">Tästä linkistä pääset tutustumaan Pekkaspäiviin!</a></p>
+
+            <div>
+                <h2 class="text_headline">Heipä hei ja tervetuloa katsomaan verkkoprojektejani!</h2>
+                <p class="text">Projektini on listattu pienen kuvauksen kera alle. Linkit sivulle löytyvät projektin yhteydestä!</p>
+            </div>
+
+            <h3 class="text_headline" id="pekkaspaivat">Pekkaspäivät</h3>
+            <p class="text"><a class="links" href="https://ropaz.dev/Pekkaspaivat/index.php" target="_blank">Tästä linkistä pääset tutustumaan Pekkaspäiviin!</a></p>
+
+            <h3 class="text_headline" id="nettikasvio">Nettikasvio</h3>
+            <p class="text"><a class="links" href="https://ropaz.dev/Nettikasvio/index.php" target="_blank">Tästä linkistä pääset tutustumaan Nettikasvioon!</a></p>
         </div>
 
         <?php

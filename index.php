@@ -14,6 +14,9 @@
 
     <div class="bottom">
         <div class="desc">
+            <h1 class="text_headline">Tämä sivu valmistuu tuota pikaa, kunhan ☢ Olkiluoto 3 ☢ toimittaa sähköä jouhevasti verkkoon.</h1>
+            <h1>🔧🔩🪛🪚🔨</h1>
+            <p>"Vitsin" keksi Spacha</p>
             <h2 class="text_headline">Tervetuloa Ropaz.dev:in pääsivulle!</h2>
             <p class="text">Täältä voit löytää muun muassa linkit joillekin muille verkkosivuilleni, kuvia ja peräti tekstiä joihinkin askarteluprojekteihini liittyen.</p>
         </div>
