@@ -37,6 +37,7 @@ CONTENT
 .bottom {
     display: flex;
     min-height: 100%;
+    flex-direction: row-reverse;
 }
 
 
@@ -121,6 +122,7 @@ Navigator
 .navi {
     background-color: #b5b0ab;
     width: 20%;
+    min-width: 270px;
 }
 
 .headline_container {
@@ -170,7 +172,7 @@ Navigator
 MOBILE
 */
 
-@media(max-width: 576px) {
+@media(max-width: 768px) {
 
     html, body {
         width: 100%;
