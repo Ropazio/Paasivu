@@ -13,6 +13,11 @@
     ?>
 
     <div class="bottom">
+
+        <?php
+            require_once "navi.php";
+        ?>
+        
         <div class="desc">
             <h2 class="main_text_headline">Askarteluja</h2>
             <p class="text">Tänne lisäilen kuvia askarteluistani, joihin lukeutuu paljon virkkaustöitä ja jonkin verran puutöitä sekä satunnaisia muita projekteja. Pahoittelut, että joistain puuttuu vielä kuvat!
@@ -224,10 +229,6 @@
             </div>
             </p>
         </div>
-
-        <?php
-            require_once "navi.php";
-        ?>
 
     </div>
 <script type="text/javascript" src="scripts.js"></script>

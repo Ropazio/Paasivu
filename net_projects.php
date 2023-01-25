@@ -13,6 +13,11 @@
     ?>
 
     <div class="bottom">
+
+        <?php
+            require_once "navi.php";
+        ?>
+        
         <div class="desc">
 
             <div>
@@ -34,10 +39,6 @@
             </p>
             <p class="text"><a class="links" href="https://ropaz.dev/Nettikasvio/index.php" target="_blank">Tästä linkistä pääset tutustumaan Nettikasvioon!</a></p>
         </div>
-
-        <?php
-            require_once "navi.php";
-        ?>
 
     </div>
 <script type="text/javascript" src="scripts.js"></script>
