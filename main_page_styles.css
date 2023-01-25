@@ -1,6 +1,7 @@
 html, body {
     height: 100vh;
-    width: 96vw;
+    width: 90vw;
+    max-width: 2000px;
     margin: auto;
     background-color: #222;
     font-family: Palatino, Helvetica, Serif;
@@ -120,6 +121,9 @@ Navigator
 .navi {
     background-color: #b5b0ab;
     width: 20%;
+}
+
+.headline_container {
     padding-left: 40px;
     padding-top: 20px;
 }
@@ -146,10 +150,6 @@ Navigator
     font-size: 110%;
 }
 
-.content {
-    display: block;
-}
-
 .pages, .projects {
     margin-left: 20px;
 }
@@ -173,13 +173,13 @@ MOBILE
 @media(max-width: 576px) {
 
     html, body {
-        width: 100vw;
+        width: 100%;
+        margin: 0;
     }
 
     .header {
         background-image: url("img/supper_mobile.png");
         background-size: cover;
-        width: 100%;
     }
 
     .bottom {
@@ -187,8 +187,23 @@ MOBILE
         width: 100%;
     }
 
+    .desc {
+        padding-top: 30px;
+    }
     .desc, .navi {
         width: 100%;
+        padding-bottom: 20px;
     }
 
+    .proj_img, .image_container {
+        display: block;
+    }
+
+    .text_headline {
+        margin-top: 0;
+    }
+
+    .text {
+        margin-bottom: 0;
+    }
 }

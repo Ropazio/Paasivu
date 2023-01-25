@@ -21,7 +21,6 @@
             <br>&emsp;
             Tänne sivulle on tarkoitus lisätä myös listamuotoinen kalenteri, joka kattaa aina seuraavan viikon päivät. Kalenteriin voin sitten lisätä, mitä olen ajatellut tehdä kunakin päivänä. Tämä ominaisuus tulee kuitenkin vain minun käyttööni, ja se tulee vaatimaan kirjautumisen.
             </p>
-
         </div>
 
         <?php
