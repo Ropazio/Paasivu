@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
     <link rel="stylesheet" href="main_page_styles.css" />
     <title>Ropaz – Päänäkymä</title>
 </head>

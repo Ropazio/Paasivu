@@ -54,17 +54,58 @@
             </ol>
             <br>&emsp;
             </p>
-            <img src="projects/Geralt1.jpg" alt="1" class="proj_img">
-            <img src="projects/Geralt2.jpg" alt="2" class="proj_img">
-            <img src="projects/Geralts.jpg" alt="1 ja 2" class="proj_img">
-            <img src="projects/Morrigan.jpg" alt="3" class="proj_img">
-            <img src="projects/Doctor2.jpg" alt="4" class="proj_img"><img src="projects/Doctor1.jpg" alt="4" class="proj_img">
-            <img src="projects/Caveira.jpg" alt="7" class="proj_img">
-            <img src="projects/" alt="8" class="proj_img">
-            <img src="projects/Yoda.jpg" alt="9" class="proj_img"><img src="projects/Yoda2.jpg" alt="9" class="proj_img">
-            <img src="projects/Eyes.jpg" alt="10" class="proj_img">
-            <img src="projects/Totoro.jpg" alt="6" class="proj_img">
-            <img src="projects/Haku.jpg" alt="5" class="proj_img" style="max-width: 600px;">
+            <div class="image_container">
+                <img src="projects/Geralt1.jpg" alt="1" class="proj_img">
+                <div class="overlay">Geralt of Rivia (#1)</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Geralt2.jpg" alt="2" class="proj_img">
+                <div class="overlay">Geralt of Rivia (#2)</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Geralts.jpg" alt="1 ja 2" class="proj_img">
+                <div class="overlay">Geralttien yhteiskuva</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Morrigan.jpg" alt="3" class="proj_img">
+                <div class="overlay">Morrigan</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Doctor2.jpg" alt="4" class="proj_img">
+                <div class="overlay">Ruttotohtori</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Doctor1.jpg" alt="4" class="proj_img">
+                <div class="overlay">Ruttotohtori</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Caveira.jpg" alt="7" class="proj_img">
+                <div class="overlay">Caveira</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/" alt="8" class="proj_img">
+                <div class="overlay">Hawke</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Yoda.jpg" alt="9" class="proj_img">
+                <div class="overlay">Baby Yoda</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Yoda2.jpg" alt="9" class="proj_img">
+                <div class="overlay">Baby Yoda ilman viittaa</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Eyes.jpg" alt="10" class="proj_img">
+                <div class="overlay">Silmämunat</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Totoro.jpg" alt="6" class="proj_img">
+                <div class="overlay">Totoro</div>
+            </div>
+            <div class="image_container" style="max-width: 600px">
+                <img src="projects/Haku.jpg" alt="5" class="proj_img" style="max-width: 600px;">
+                <div class="overlay">Haku</div>
+            </div>
 
 
             <h3 class="text_headline" id="textile">Tekstiilityöt</h3>
@@ -90,12 +131,30 @@
                 </li>
             </ol>
 
-            <img src="projects/Alma.jpeg" alt="11" class="proj_img">
-            <img src="projects/Shoes.jpeg" alt="12" class="proj_img">
-            <img src="projects/Fox.jpg" alt="13" class="proj_img">
-            <img src="projects/Kerttu.jpg" alt="14" class="proj_img">
-            <img src="projects/Makrame.jpg" alt="16" class="proj_img">
-            <img src="projects/Clothes.jpg" alt="15" class="proj_img" style="max-width: 600px;">
+            <div class="image_container">
+                <img src="projects/Alma.jpeg" alt="11" class="proj_img">
+                <div class="overlay">Alma</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Shoes.jpeg" alt="12" class="proj_img">
+                <div class="overlay">Vauvan joulutossut</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Fox.jpg" alt="13" class="proj_img">
+                <div class="overlay">Huovutettu kettu</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Kerttu.jpg" alt="14" class="proj_img">
+                <div class="overlay">Kerttu</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Makrame.jpg" alt="16" class="proj_img">
+                <div class="overlay">Makramee</div>
+            </div>
+            <div class="image_container" style="max-width: 600px">
+                <img src="projects/Clothes.jpg" alt="15" class="proj_img" style="max-width: 600px;">
+                <div class="overlay">T-paita ja yöhousut</div>
+            </div>
             </p>
 
 
@@ -109,10 +168,18 @@
                     Jouluporo
                 </li>
             </ol>
-
-            <img src="projects/Puukko1.jpg" alt="17" class="proj_img">
-            <img src="projects/Puukko2.jpg" alt="17" class="proj_img">
-            <img src="projects/Reindeer.jpg" alt="18" class="proj_img">
+            <div class="image_container">
+                <img src="projects/Puukko1.jpg" alt="17" class="proj_img">
+                <div class="overlay">Puukko</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Puukko2.jpg" alt="17" class="proj_img">
+                <div class="overlay">Puukko</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Reindeer.jpg" alt="18" class="proj_img">
+                <div class="overlay">Jouluporo</div>
+            </div>
             </p>
 
 
@@ -129,14 +196,32 @@
                     Lasinpuhallusta: pingviini, lintu, koristepallo, maljakko x 2
                 </li>
                 <li>
+                    Nuka-Cola Quantum, Fallout-pelissarjasta (Etiketti netistä.)
+                </li>
+                <li>
                     Normandy SR2, Mass Effect 2 -pelistä
                 </li>
             </ol>
-
-            <img src="projects/Enderman.jpg" alt="19" class="proj_img">
-            <img src="projects/Minecraft.jpg" alt="19 ja 20" class="proj_img">
-            <img src="projects/Glassware.jpg" alt="21" class="proj_img">
-            <img src="projects/Normandy.jpg" alt="22" class="proj_img">
+            <div class="image_container">
+                <img src="projects/Enderman.jpg" alt="19" class="proj_img">
+                <div class="overlay">Enderman</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Minecraft.jpg" alt="19 ja 20" class="proj_img">
+                <div class="overlay">Enderman ja pörriäinen</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Glassware.jpg" alt="21" class="proj_img">
+                <div class="overlay">Lasinpuhallustöitä</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Bottle.jpg" alt="22" class="proj_img">
+                <div class="overlay">Nuka-Cola Quantum</div>
+            </div>
+            <div class="image_container">
+                <img src="projects/Normandy.jpg" alt="23" class="proj_img">
+                <div class="overlay">Normandy SR2</div>
+            </div>
             </p>
         </div>
 
