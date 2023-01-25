@@ -35,7 +35,6 @@ CONTENT
 
 .bottom {
     display: flex;
-    height: 100vh;
 }
 
 
@@ -56,11 +55,12 @@ Text part
     text-align: left;
     padding-top: 20px;
     margin-left: 50px;
+    margin-right: 20px;
 }
 
 .text_headline {
     margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 80px;
     color: #D68910;
 }
 
@@ -68,6 +68,18 @@ Text part
     margin-left: 50px;
     margin-top: 50px;
     color: #333;
+}
+
+.items {
+    margin-left: 40px;
+    color: #D68910;
+    margin-bottom: 40px;
+}
+
+.proj_img {
+    max-width: 300px;
+    margin-left: 30px;
+    padding: 10px;
 }
 
 
@@ -116,7 +128,7 @@ Navigator
     color: #D68910;
 }
 
-li {
+.bullet {
     list-style: inside;
     padding-bottom: 6px;
     color: #D68910;
