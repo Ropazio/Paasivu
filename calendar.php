@@ -13,15 +13,33 @@
     ?>
 
     <div class="bottom">
-        <div class="desc">
-            <h2 class="main_text_headline">Nyt joku roti siihen hommaan!</h2>
-            <p class="text">Järjestys on tämä!</p>
-            </p>
-        </div>
 
         <?php
             require_once "navi.php";
         ?>
+
+        <div class="desc">
+            <h2 class="main_text_headline">Nyt joku roti siihen hommaan!</h2>
+            
+            <h2 class="day" id="weekday_error"></h2>
+
+            <h3 class="day" id="weekday1"></h3>
+                <textarea class="text_box"></textarea>
+            <h3 class="day" id="weekday2"></h3>
+                <textarea class="text_box"></textarea>
+            <h3 class="day" id="weekday3"></h3>
+                <textarea class="text_box"></textarea>
+            <h3 class="day" id="weekday4"></h3>
+                <textarea class="text_box"></textarea>
+            <h3 class="day" id="weekday5"></h3>
+                <textarea class="text_box"></textarea>
+            <h3 class="day" id="weekday6"></h3>
+                <textarea class="text_box"></textarea>
+            <h3 class="day" id="weekday7"></h3>
+                <textarea class="text_box"></textarea>
+
+            </p>
+        </div>
 
     </div>
 <script type="text/javascript" src="scripts.js"></script>

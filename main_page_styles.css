@@ -1,3 +1,4 @@
+/* The whole page in general */
 html, body {
     height: 100vh;
     width: 90vw;
@@ -10,10 +11,13 @@ html, body {
     box-shadow: 5px 0 5px -5px rgba(0,0,0,0.7), -5px 0 5px -5px rgba(0,0,0,0.7);
 }
 
+
+
 /*
 HEADER
 */
 
+/* Header with a background image */
 .header {
     background-image: url("img/supper.png");
     background-size: 100% 140%;
@@ -23,6 +27,7 @@ HEADER
     border-bottom: 1px solid #AAA;
 }
 
+/* The page name in the header (if there will be one) */
 .headline {
     text-align: center;
     color: black;
@@ -31,9 +36,10 @@ HEADER
 
 
 /*
-CONTENT
+BOTTOM PART
 */
 
+/* Area under the header */
 .bottom {
     display: flex;
     min-height: 100%;
@@ -43,9 +49,10 @@ CONTENT
 
 
 /*
-Text part
+TEXT PART / DESCRIPTION AREA
 */
 
+/* Description area; Whole white text area on the right bottom corner */
 .desc {
     background-color: #EEE;
     width: 80%;
@@ -53,6 +60,12 @@ Text part
     box-shadow: inset -5px 5px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
+
+/*
+Text related stuff
+*/
+
+/* Text area (paragraphs) in the description area */
 .text {
     color: #222;
     text-align: left;
@@ -61,24 +74,51 @@ Text part
     margin-right: 20px;
 }
 
+/* Links in the text */
+.links {
+    color: #D68910;
+}
+
+
+/* Headlines for the paragraphs aka subheadlines */
 .text_headline {
     margin-left: 50px;
     margin-top: 80px;
     color: #D68910;
 }
 
+/* Main headline in the description area */
 .main_text_headline {
     margin-left: 50px;
     margin-top: 50px;
+    margin-bottom: 50px;
     color: #333;
 }
 
+/* Ordered list styling (ordinal) */
 .items {
     margin-left: 40px;
     color: #D68910;
     margin-bottom: 40px;
 }
 
+.day {
+    margin-left: 50px;
+    color: #D68910;
+    margin-bottom: 20px;
+}
+
+.text_box {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+
+/*
+Image related stuff
+*/
+
+/* The images */
 .proj_img {
     max-width: 300px;
     margin-left: 30px;
@@ -86,6 +126,7 @@ Text part
     display: inline block;
 }
 
+/* Container for the image */
 .image_container {
     position: relative;
     max-width: 300px;
@@ -93,10 +134,12 @@ Text part
     margin-right: 20px;
 }
 
+/* Image hover effect */
 .image_container:hover .overlay {
     opacity: 1;
 }
 
+/* Image overlay shown when hovered */
 .overlay {
     margin-left: 40px;
     position: absolute;
@@ -116,50 +159,54 @@ Text part
 
 
 /*
-Navigator
+NAVIGATOR
 */
 
+/* Navigator; The whole area shown in gray */
 .navi {
     background-color: #b5b0ab;
     width: 20%;
     min-width: 270px;
 }
 
+/* Container for the headlines */
 .headline_container {
     padding-left: 30px;
     padding-top: 20px;
 }
 
+/* The main headline "Etusivu" */
 .main_headline {
     text-decoration: none;
     color: #D68910;
 }
 
+/* Hover effect for the main headline */
 .main_headline:hover {
     transition: all ease-out 0.2s;
     font-size: 110%;
     color: #b9680c;
 }
 
+/* Rest of the headlines */
 .headlines {
     color: #222;
     text-decoration: none;
 }
 
+/* Hover effects for the rest of the headlines */
 .headlines:hover {
     transition: all ease-out 0.1s;
     color: #D68910;
     font-size: 110%;
 }
 
+/* Topics under the headlines */
 .pages, .projects {
     margin-left: 20px;
 }
 
-.links {
-    color: #D68910;
-}
-
+/* Unordered list styling (bullets) */
 .bullet {
     list-style: inside;
     padding-bottom: 6px;
