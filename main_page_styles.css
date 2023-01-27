@@ -113,6 +113,27 @@ Text related stuff
     margin-bottom: 20px;
 }
 
+/*
+Login
+*/
+
+.input, .input_headline {
+    margin-left: 20px;
+}
+
+.input_headline {
+    color: #D68910;
+}
+
+.button_box {
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+.button {
+    border: 1px solid #D68910;
+    padding: 10px;
+}
 
 /*
 Image related stuff

@@ -1,3 +1,14 @@
+<?php
+    require_once "database.php";
+    require_once "sessions.php";
+
+    if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] != '')) {
+        header ("Location: login_page.php");
+    }
+
+    $notes = get_notes($_SESSION['user_id']);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +31,23 @@
 
         <div class="desc">
             <h2 class="main_text_headline">Nyt joku roti siihen hommaan!</h2>
-            
+
             <h2 class="day" id="weekday_error"></h2>
 
             <h3 class="day" id="weekday1"></h3>
+                <?php
+
+                    if (empty($notes)) {
+                        echo "<p class='text'>Ei merkintöjä.</p>";
+                    }
+                    else {
+
+                        foreach ($notes as $note) {
+                            echo "<p class='text'>" . $note['note'] . "</p>";
+                        }
+                    }
+
+                ?>
                 <textarea class="text_box"></textarea>
             <h3 class="day" id="weekday2"></h3>
                 <textarea class="text_box"></textarea>
