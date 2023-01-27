@@ -18,7 +18,12 @@
             $no_notes = True;
             foreach ($notes as $note) {
                 if ($note['day'] == $day) {
-                    echo "<p class='text'>" . $note['note'] . "</p>";
+                    echo "<div class='bullet_container'>";
+                    echo "<ul class='bullet'>";
+                    echo "<li>" . $note['note'] . "</li>";
+                    echo "</ul>";
+                    echo "</div>";
+
                     $no_notes = False;
                 }
                 else {
@@ -62,49 +67,91 @@
                     $day1 = date("o-m-d");
                     print_daily_notes($day1);
                 ?>
-                <textarea class="text_box"></textarea>
+                <div class='bullet_container'>
+                    <ul class='bullet'>
+                        <li>
+                            <textarea class="text_box"></textarea>
+                        </li>
+                    </ul>
+                </div>
 
             <h3 class="day" id="weekday2"></h3>
                 <?php
                     $day2 = date("o-m-d", strtotime("+1 day"));
                     print_daily_notes($day2);
                 ?>
-                <textarea class="text_box"></textarea>
+                <div class='bullet_container'>
+                    <ul class='bullet'>
+                        <li>
+                            <textarea class="text_box"></textarea>
+                        </li>
+                    </ul>
+                </div>
 
             <h3 class="day" id="weekday3"></h3>
                 <?php
                     $day3 = date("o-m-d", strtotime("+2 day"));
                     print_daily_notes($day3);
                 ?>
-                <textarea class="text_box"></textarea>
+                <div class='bullet_container'>
+                    <ul class='bullet'>
+                        <li>
+                            <textarea class="text_box"></textarea>
+                        </li>
+                    </ul>
+                </div>
 
             <h3 class="day" id="weekday4"></h3>
                 <?php
                     $day4 = date("o-m-d", strtotime("+3 day"));
                     print_daily_notes($day4);
                 ?>
-                <textarea class="text_box"></textarea>
+                <div class='bullet_container'>
+                    <ul class='bullet'>
+                        <li>
+                            <textarea class="text_box"></textarea>
+                        </li>
+                    </ul>
+                </div>
 
             <h3 class="day" id="weekday5"></h3>
                 <?php
                     $day5 = date("o-m-d", strtotime("+4 day"));
                     print_daily_notes($day5);
                 ?>
-                <textarea class="text_box"></textarea>
+                <div class='bullet_container'>
+                    <ul class='bullet'>
+                        <li>
+                            <textarea class="text_box"></textarea>
+                        </li>
+                    </ul>
+                </div>
 
             <h3 class="day" id="weekday6"></h3>
                 <?php
                     $day6 = date("o-m-d", strtotime("+5 day"));
                     print_daily_notes($day6);
                 ?>
-                <textarea class="text_box"></textarea>
+                <div class='bullet_container'>
+                    <ul class='bullet'>
+                        <li>
+                            <textarea class="text_box"></textarea>
+                        </li>
+                    </ul>
+                </div>
 
             <h3 class="day" id="weekday7"></h3>
                 <?php
                     $day7 = date("o-m-d", strtotime("+6 day"));
                     print_daily_notes($day7);
                 ?>
-                <textarea class="text_box"></textarea>
+                <div class='bullet_container'>
+                    <ul class='bullet'>
+                        <li>
+                            <textarea class="text_box"></textarea>
+                        </li>
+                    </ul>
+                </div>
 
             </p>
         </div>
