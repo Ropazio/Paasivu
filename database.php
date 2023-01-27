@@ -73,6 +73,7 @@ function get_notes($user_ID) {
     return $notes;
 }
 
+
 function add_note($day, $note) {
     global $pdo;
 
@@ -81,11 +82,24 @@ function add_note($day, $note) {
     $pdo->prepare($query)->execute([$day, $note, $_SESSION['user_ID']]);
 }
 
+
 function delete_note($note_ID) {
     global $pdo;
 
     // Fetch all notes and delete selected note
     $pdo->prepare("DELETE FROM notes WHERE note_ID = ?")->execute([$note_ID]);
+}
+
+
+function delete_old_notes_from_database($date) {
+    if ($date < date("o-m-d")) {
+
+        // Fetch all notes and delete old notes (yesterday or before)
+        $pdo->prepare("DELETE FROM notes WHERE day = ?")->execute([$date]);
+    }
+    else {
+        echo "No old notes.";
+    }
 }
 
 ?>
