@@ -25,30 +25,6 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 ///////////////////////////////////////////////////////////////////////////////
 
-function get_notes($user_ID) {
-    global $pdo;
-
-    // Get all notes
-    $query = "SELECT * FROM notes WHERE user_ID = ?";
-    $sth = $pdo->prepare($query);
-    $sth->execute([$user_ID]);
-
-    $notes = $sth->fetchAll();
-
-    foreach ($notes as &$note) {
-
-        $note = [
-            'note_ID'       => $note['note_ID'],
-            'note'          => $note['note'],
-            'day'           => $note['day']
-        ];
-    }
-
-    return $notes;
-}
-
-///////////////////////////////////////////////////////////////////////////////
-
 function check_login($username, $password) {
     global $pdo;
 
@@ -72,6 +48,44 @@ function check_login($username, $password) {
     return null;
 }
 
-//////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+function get_notes($user_ID) {
+    global $pdo;
+
+    // Get all notes
+    $query = "SELECT * FROM notes WHERE user_ID = ?";
+    $sth = $pdo->prepare($query);
+    $sth->execute([$user_ID]);
+
+    $notes = $sth->fetchAll();
+
+    foreach ($notes as &$note) {
+
+        $note = [
+            'note_ID'       => $note['note_ID'],
+            'note'          => $note['note'],
+            'day'           => $note['day']
+        ];
+    }
+
+    return $notes;
+}
+
+function add_note($day, $note) {
+    global $pdo;
+
+    // Add note
+    $query = "INSERT INTO notes (day, note, user_ID) VALUES (?, ?, ?)";
+    $pdo->prepare($query)->execute([$day, $note, $_SESSION['user_ID']]);
+}
+
+function delete_note($note_ID) {
+    global $pdo;
+
+    // Fetch all notes and delete selected note
+    $pdo->prepare("DELETE FROM notes WHERE note_ID = ?")->execute([$note_ID]);
+}
 
 ?>
