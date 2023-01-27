@@ -135,6 +135,11 @@ Login
     padding: 10px;
 }
 
+.error {
+    color: red;
+    margin-top: 20px;
+}
+
 /*
 Image related stuff
 */

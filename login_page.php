@@ -47,6 +47,12 @@
                     <div class="button_box">
                         <button type="submit" class="button">Kirjaudu!</button>
                     </div>
+
+                    <?php if(isset($_GET['error'])): ?> 
+                    <div class="error">
+                        <h3>Kirjautuminen epäonnistui :(</h3>
+                    </div>
+                    <?php endif ?> 
             </form>
         </div>   
     </div>
