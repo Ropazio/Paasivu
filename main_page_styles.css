@@ -123,6 +123,25 @@ Text related stuff
 }
 
 .send_button {
+    margin-left: 5px;
+    border: none;
+    padding-bottom: 3px;
+}
+
+
+
+.button_image_container {
+    top: 3px;
+    right: 0;
+    position: relative;
+    font-size: 20px;
+    transition: ease-in 0.2s;
+}
+
+.send_button:hover .button_image_container {
+    top: -12px;
+    right: -18px;
+    transform: scale(1.5);
 }
 
 

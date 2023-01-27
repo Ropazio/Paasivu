@@ -19,9 +19,9 @@
             foreach ($notes as $note) {
                 if ($note['day'] == $day) {
                     echo "<div class='bullet_container'>";
-                    echo "<ul class='bullet'>";
-                    echo "<li>" . $note['note'] . "</li>";
-                    echo "</ul>";
+                    echo    "<ul class='bullet'>";
+                    echo        "<li>" . $note['note'] . "</li>";
+                    echo    "</ul>";
                     echo "</div>";
 
                     $no_notes = False;
@@ -34,6 +34,17 @@
                 echo "<p class='text'>Ei merkintöjä.</p>";
             }
         }
+    }
+
+    function print_send_notes($day_number) {
+        echo "<form method='POST' action='add_note.php' class='bullet_container'>";
+        echo    "<ul class='bullet'>";
+        echo        "<li>";
+        echo            sprintf("<textarea name='day%u_text' class='text_box'></textarea>", $day_number);
+        echo            sprintf("<button type='submit' name='day%u_button' class='send_button'><div class='button_image_container'>🚀</div></button>", $day_number);
+        echo        "</li>";
+        echo    "</ul>";
+        echo "</form>";
     }
 ?>
 
@@ -63,102 +74,68 @@
             <h2 class="day" id="weekday_error"></h2>
 
             <h3 class="day" id="weekday1"></h3>
+                
                 <?php
                     $day1 = date("o-m-d");
                     print_daily_notes($day1);
                 ?>
-                <form method="POST" action="add_note.php" class='bullet_container'>
-                    <ul class='bullet'>
-                        <li>
-                            <textarea name="day1_text" class="text_box"></textarea>
-                            <button type="submit" name="day1_button" class="send_button">0</button>
-                        </li>
-                    </ul>
-                </form>
+                <?php
+                    print_send_notes(1);
+                ?>
 
             <h3 class="day" id="weekday2"></h3>
                 <?php
                     $day2 = date("o-m-d", strtotime("+1 day"));
                     print_daily_notes($day2);
                 ?>
-                <form method="POST" action="add_note.php" class='bullet_container'>
-                    <ul class='bullet'>
-                        <li>
-                            <textarea name="day2_text" class="text_box"></textarea>
-                            <button type="submit" name="day2_button" class="send_button">0</button>
-                        </li>
-                    </ul>
-                </form>
+                <?php
+                    print_send_notes(2);
+                ?>
 
             <h3 class="day" id="weekday3"></h3>
                 <?php
                     $day3 = date("o-m-d", strtotime("+2 day"));
                     print_daily_notes($day3);
                 ?>
-                <form method="POST" action="add_note.php" class='bullet_container'>
-                    <ul class='bullet'>
-                        <li>
-                            <textarea  name="day3_text" class="text_box"></textarea>
-                            <button type="submit" name="day3_button" class="send_button">0</button>
-                        </li>
-                    </ul>
-                </form>
+                <?php
+                    print_send_notes(3);
+                ?>
 
             <h3 class="day" id="weekday4"></h3>
                 <?php
                     $day4 = date("o-m-d", strtotime("+3 day"));
                     print_daily_notes($day4);
                 ?>
-                <form method="POST" action="add_note.php" class='bullet_container'>
-                    <ul class='bullet'>
-                        <li>
-                            <textarea name="day4_text" class="text_box"></textarea>
-                            <button type="submit" name="day4_button" class="send_button">0</button>
-                        </li>
-                    </ul>
-                </form>
+                <?php
+                    print_send_notes(4);
+                ?>
 
             <h3 class="day" id="weekday5"></h3>
                 <?php
                     $day5 = date("o-m-d", strtotime("+4 day"));
                     print_daily_notes($day5);
                 ?>
-                <form method="POST" action="add_note.php" class='bullet_container'>
-                    <ul class='bullet'>
-                        <li>
-                            <textarea name="day5_text" class="text_box"></textarea>
-                            <button type="submit" name="day5_button" class="send_button">0</button>
-                        </li>
-                    </ul>
-                </form>
+                <?php
+                    print_send_notes(5);
+                ?>
 
             <h3 class="day" id="weekday6"></h3>
                 <?php
                     $day6 = date("o-m-d", strtotime("+5 day"));
                     print_daily_notes($day6);
                 ?>
-                <form method="POST" action="add_note.php" class='bullet_container'>
-                    <ul class='bullet'>
-                        <li>
-                            <textarea name="day6_text" class="text_box"></textarea>
-                            <button type="submit" name="day6_button" class="send_button">0</button>
-                        </li>
-                    </ul>
-                </form>
+                <?php
+                    print_send_notes(6);
+                ?>
 
             <h3 class="day" id="weekday7"></h3>
                 <?php
                     $day7 = date("o-m-d", strtotime("+6 day"));
                     print_daily_notes($day7);
                 ?>
-                <form method="POST" action="add_note.php" class='bullet_container'>
-                    <ul class='bullet'>
-                        <li>
-                            <textarea name="day7_text" class="text_box"></textarea>
-                            <button type="submit" name="day7_button" class="send_button">0</button>
-                        </li>
-                    </ul>
-                </form>
+                <?php
+                    print_send_notes(7);
+                ?>
 
             </p>
         </div>
