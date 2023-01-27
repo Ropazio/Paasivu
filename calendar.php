@@ -20,7 +20,7 @@
                 if ($note['day'] == $day) {
                     echo "<div class='bullet_container'>";
                     echo    "<ul class='bullet'>";
-                    echo        "<li>" . $note['note'] . "</li>";
+                    echo        "<li>" . $note['note'] . "<button class='delete_button'><a class='button_link' href='delete_note.php?note_ID=" . $note['note_ID'] . "'><div class='button_image_container'>☠️</div></a></button>" . "</li>";
                     echo    "</ul>";
                     echo "</div>";
 

@@ -128,8 +128,6 @@ Text related stuff
     padding-bottom: 3px;
 }
 
-
-
 .button_image_container {
     top: 3px;
     right: 0;
@@ -142,6 +140,20 @@ Text related stuff
     top: -12px;
     right: -18px;
     transform: scale(1.5);
+}
+
+.delete_button {
+    transition: ease-in 0.2s;
+    margin-left: 10px;
+    border: none;
+}
+
+.delete_button:hover {
+    transform: scale(1.5);
+}
+
+.button_link {
+    text-decoration: none;
 }
 
 
