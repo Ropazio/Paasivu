@@ -25,13 +25,13 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 ///////////////////////////////////////////////////////////////////////////////
 
-function get_notes($user_notes) {
+function get_notes($user_ID) {
     global $pdo;
 
     // Get all notes
-    $query = "SELECT * FROM notes WHERE user_notes = ?";
+    $query = "SELECT * FROM notes WHERE user_ID = ?";
     $sth = $pdo->prepare($query);
-    $sth->execute([$user_notes]);
+    $sth->execute([$user_ID]);
 
     $notes = $sth->fetchAll();
 

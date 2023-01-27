@@ -6,7 +6,7 @@
         header ("Location: login_page.php");
     }
 
-    $notes = get_notes($_SESSION['user_id']);
+    $notes = get_notes($_SESSION['user_ID']);
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,13 @@
                     else {
 
                         foreach ($notes as $note) {
-                            echo "<p class='text'>" . $note['note'] . "</p>";
+                            if ($note['day'] == date("o-m-d")) {
+                                echo "<p class='text'>" . $note['note'] . "</p>";
+                            }
+                            else {
+                                echo "<p class='text'>Ei merkintöjä.</p>";
+                            }
+
                         }
                     }
 

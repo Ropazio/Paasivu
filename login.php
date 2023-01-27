@@ -14,7 +14,7 @@ function login($username, $password) : bool {
 
     // If everything is ok, continue to the calendar.
     $_SESSION['logged_in'] = true;
-    $_SESSION['logged_in'] = $ID;
+    $_SESSION['user_ID'] = $ID;
     header ("Location: calendar.php");
     return true;
 }
