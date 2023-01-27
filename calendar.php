@@ -7,6 +7,29 @@
     }
 
     $notes = get_notes($_SESSION['user_ID']);
+
+    function print_daily_notes($day) {
+        global $notes;
+
+        if (empty($notes)) {
+            echo "<p class='text'>Ei merkintöjä.</p>";
+        }
+        else {
+            $no_notes = True;
+            foreach ($notes as $note) {
+                if ($note['day'] == $day) {
+                    echo "<p class='text'>" . $note['note'] . "</p>";
+                    $no_notes = False;
+                }
+                else {
+                    continue;
+                }
+            }
+            if ($no_notes) {
+                echo "<p class='text'>Ei merkintöjä.</p>";
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -36,36 +59,51 @@
 
             <h3 class="day" id="weekday1"></h3>
                 <?php
-
-                    if (empty($notes)) {
-                        echo "<p class='text'>Ei merkintöjä.</p>";
-                    }
-                    else {
-
-                        foreach ($notes as $note) {
-                            if ($note['day'] == date("o-m-d")) {
-                                echo "<p class='text'>" . $note['note'] . "</p>";
-                            }
-                            else {
-                                echo "<p class='text'>Ei merkintöjä.</p>";
-                            }
-
-                        }
-                    }
-
+                    $day1 = date("o-m-d");
+                    print_daily_notes($day1);
                 ?>
                 <textarea class="text_box"></textarea>
+
             <h3 class="day" id="weekday2"></h3>
+                <?php
+                    $day2 = date("o-m-d", strtotime("+1 day"));
+                    print_daily_notes($day2);
+                ?>
                 <textarea class="text_box"></textarea>
+
             <h3 class="day" id="weekday3"></h3>
+                <?php
+                    $day3 = date("o-m-d", strtotime("+2 day"));
+                    print_daily_notes($day3);
+                ?>
                 <textarea class="text_box"></textarea>
+
             <h3 class="day" id="weekday4"></h3>
+                <?php
+                    $day4 = date("o-m-d", strtotime("+3 day"));
+                    print_daily_notes($day4);
+                ?>
                 <textarea class="text_box"></textarea>
+
             <h3 class="day" id="weekday5"></h3>
+                <?php
+                    $day5 = date("o-m-d", strtotime("+4 day"));
+                    print_daily_notes($day5);
+                ?>
                 <textarea class="text_box"></textarea>
+
             <h3 class="day" id="weekday6"></h3>
+                <?php
+                    $day6 = date("o-m-d", strtotime("+5 day"));
+                    print_daily_notes($day6);
+                ?>
                 <textarea class="text_box"></textarea>
+
             <h3 class="day" id="weekday7"></h3>
+                <?php
+                    $day7 = date("o-m-d", strtotime("+6 day"));
+                    print_daily_notes($day7);
+                ?>
                 <textarea class="text_box"></textarea>
 
             </p>
