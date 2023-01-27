@@ -105,29 +105,34 @@ Text related stuff
     margin-right: 10px;
 }
 
+/* Day name in the calendar page */
 .day {
     margin-left: 50px;
     color: #D68910;
     margin-bottom: 20px;
 }
 
+/* Text box in the calendar page */
 .text_box {
     margin-bottom: -8px;
     width: 500px;
     height: 20px;
 }
 
+/* Container for the notes (bullet points) in the calendar page */
 .bullet_container {
     margin-left: 20px;
     margin-right: 20px;
 }
 
+/* Rocket send button in the calendar page */
 .send_button {
     margin-left: 5px;
     border: none;
     padding-bottom: 3px;
 }
 
+/* Container for the buttons in the calendar page */
 .button_image_container {
     top: 3px;
     right: 0;
@@ -136,22 +141,26 @@ Text related stuff
     transition: ease-in 0.2s;
 }
 
+/* Hover effects for the rocket send button */
 .send_button:hover .button_image_container {
     top: -12px;
     right: -18px;
     transform: scale(1.5);
 }
 
+/* Skeleton delete button in the calendar page */
 .delete_button {
     transition: ease-in 0.2s;
     margin-left: 10px;
     border: none;
 }
 
+/* Hover effects for the skeleton delete button */
 .delete_button:hover {
     transform: scale(1.5);
 }
 
+/* Button link (skeleton delete button) */
 .button_link {
     text-decoration: none;
 }
@@ -161,24 +170,29 @@ Text related stuff
 Login
 */
 
+/* Input and input headline in the login page */
 .input, .input_headline {
     margin-left: 20px;
 }
 
+/* Input headline in the login page */
 .input_headline {
     color: #D68910;
 }
 
+/* Box fot the button in the login page */
 .button_box {
     margin-left: 80px;
     margin-top: 30px;
 }
 
+/* Button in the login page */
 .button {
     border: 1px solid #D68910;
     padding: 10px;
 }
 
+/* Login error message */
 .error {
     color: red;
     margin-top: 40px;
@@ -190,9 +204,17 @@ Login
 Image related stuff
 */
 
-/* The images */
+/* Standard ratio images (taken with phone vertically) */
 .proj_img {
     max-width: 300px;
+    margin-left: 30px;
+    padding: 10px;
+    display: inline block;
+}
+
+/* Wider images */
+.wide_img {
+    max-width: 600px;
     margin-left: 30px;
     padding: 10px;
     display: inline block;
@@ -206,8 +228,15 @@ Image related stuff
     margin-right: 20px;
 }
 
+.wide_image_container {
+    position: relative;
+    max-width: 600px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
 /* Image hover effect */
-.image_container:hover .overlay {
+.image_container:hover .overlay, .wide_image_container:hover .overlay {
     opacity: 1;
 }
 
@@ -298,7 +327,7 @@ MOBILE
         margin: 0;
     }
 
-    img {
+    .wide_img, .wide_image_container {
         max-width: 300px;
     }
 

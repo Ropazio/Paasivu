@@ -107,8 +107,8 @@
                 <img src="projects/Totoro.jpg" alt="6" class="proj_img">
                 <div class="overlay">Totoro</div>
             </div>
-            <div class="image_container" style="max-width: 600px">
-                <img src="projects/Haku.jpg" alt="5" class="proj_img" style="max-width: 600px;">
+            <div class="wide_image_container">
+                <img src="projects/Haku.jpg" alt="5" class="wide_img">
                 <div class="overlay">Haku</div>
             </div>
 
@@ -156,8 +156,8 @@
                 <img src="projects/Makrame.jpg" alt="16" class="proj_img">
                 <div class="overlay">Makramee</div>
             </div>
-            <div class="image_container" style="max-width: 600px">
-                <img src="projects/Clothes.jpg" alt="15" class="proj_img" style="max-width: 600px;">
+            <div class="wide_image_container">
+                <img src="projects/Clothes.jpg" alt="15" class="wide_img">
                 <div class="overlay">T-paita ja yöhousut</div>
             </div>
             </p>
