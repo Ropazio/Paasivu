@@ -16,7 +16,9 @@
         }
         else {
             $no_notes = True;
+
             foreach ($notes as $note) {
+
                 if ($note['day'] == $day) {
                     echo "<div class='bullet_container'>";
                     echo    "<ul class='bullet'>";
@@ -26,6 +28,7 @@
 
                     $no_notes = False;
                 }
+
                 else {
                     continue;
                 }
@@ -72,6 +75,16 @@
             <h2 class="main_text_headline">Nyt joku roti siihen hommaan!</h2>
 
             <h2 class="day" id="weekday_error"></h2>
+
+            <h3 class="day" id="sticky_note"></h3>
+                
+                <?php
+                    $day0 = null;
+                    print_daily_notes($day0);
+                ?>
+                <?php
+                    print_send_notes(0);
+                ?>
 
             <h3 class="day" id="weekday1"></h3>
                 

@@ -10,9 +10,10 @@ for (let i = 0; i < 7; i++) {
 
 if (!weekday.length) {
 	let day = document.getElementById('weekday_error');
-	day.innerHTML = "Virhe viikonpäivien latauksessa."
+	day.innerHTML = "Virhe viikonpäivien ja ajatuksenvirran latauksessa.";
 }
 else {
+	let day0 = document.getElementById('sticky_note');
 	let day1 = document.getElementById('weekday1');
 	let day2 = document.getElementById('weekday2');
 	let day3 = document.getElementById('weekday3');
@@ -20,6 +21,7 @@ else {
 	let day5 = document.getElementById('weekday5');
 	let day6 = document.getElementById('weekday6');
 	let day7 = document.getElementById('weekday7');
+	day0.innerHTML = "Ajatuksenvirta";
 	day1.innerHTML = (weekday[0] + " (Tämä päivä)");
 	day2.innerHTML = (weekday[1] + " (Huominen)");
 	day3.innerHTML = weekday[2];

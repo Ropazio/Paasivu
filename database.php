@@ -4,7 +4,7 @@ require_once "sessions.php";
 // Database
 
 $dbConfig = [
-    'name'          => 'calendar',
+    'name'          => 'paasivu',
     'user'          => 'root',
     'password'      => '',
     'options'       => []
@@ -77,7 +77,7 @@ function get_notes($user_ID) {
 function add_note($day, $note) {
     global $pdo;
 
-    // Add note
+    // Add day specific note
     $query = "INSERT INTO notes (day, note, user_ID) VALUES (?, ?, ?)";
     $pdo->prepare($query)->execute([$day, $note, $_SESSION['user_ID']]);
 }
