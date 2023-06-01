@@ -43,7 +43,7 @@
         </div>
 
         <h2>
-            <a class="headlines function" href="https://ropaz.dev/Paasivu/calendar.php">Runtulista</a>
+            <a class="headlines function" href="https://ropaz.dev/Paasivu/calendar.php">Elämänhallinta</a>
         </h2>
 
     </div>

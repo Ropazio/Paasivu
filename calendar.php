@@ -76,17 +76,19 @@
 
             <h2 class="day" id="weekday_error"></h2>
 
-            <h3 class="day" id="sticky_note"></h3>
+            <div class="sticky_box">
+                <h3 class="day" id="sticky_note"></h3>
                 
-                <?php
-                    $day0 = null;
-                    print_daily_notes($day0);
-                ?>
-                <?php
-                    print_send_notes(0);
-                ?>
+                    <?php
+                        $day0 = null;
+                        print_daily_notes($day0);
+                    ?>
+                    <?php
+                        print_send_notes(0);
+                    ?>
+            </div>
 
-            <h3 class="day" id="weekday1"></h3>
+            <h4 class="day" id="weekday1"></h4>
                 
                 <?php
                     $day1 = date("o-m-d");
@@ -96,7 +98,7 @@
                     print_send_notes(1);
                 ?>
 
-            <h3 class="day" id="weekday2"></h3>
+            <h4 class="day" id="weekday2"></h4>
                 <?php
                     $day2 = date("o-m-d", strtotime("+1 day"));
                     print_daily_notes($day2);
@@ -105,7 +107,7 @@
                     print_send_notes(2);
                 ?>
 
-            <h3 class="day" id="weekday3"></h3>
+            <h4 class="day" id="weekday3"></h4>
                 <?php
                     $day3 = date("o-m-d", strtotime("+2 day"));
                     print_daily_notes($day3);
@@ -114,7 +116,7 @@
                     print_send_notes(3);
                 ?>
 
-            <h3 class="day" id="weekday4"></h3>
+            <h4 class="day" id="weekday4"></h4>
                 <?php
                     $day4 = date("o-m-d", strtotime("+3 day"));
                     print_daily_notes($day4);
@@ -123,7 +125,7 @@
                     print_send_notes(4);
                 ?>
 
-            <h3 class="day" id="weekday5"></h3>
+            <h4 class="day" id="weekday5"></h4>
                 <?php
                     $day5 = date("o-m-d", strtotime("+4 day"));
                     print_daily_notes($day5);
@@ -132,7 +134,7 @@
                     print_send_notes(5);
                 ?>
 
-            <h3 class="day" id="weekday6"></h3>
+            <h4 class="day" id="weekday6"></h4>
                 <?php
                     $day6 = date("o-m-d", strtotime("+5 day"));
                     print_daily_notes($day6);
@@ -141,7 +143,7 @@
                     print_send_notes(6);
                 ?>
 
-            <h3 class="day" id="weekday7"></h3>
+            <h4 class="day" id="weekday7"></h4>
                 <?php
                     $day7 = date("o-m-d", strtotime("+6 day"));
                     print_daily_notes($day7);
