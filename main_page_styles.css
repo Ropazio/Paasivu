@@ -78,6 +78,7 @@ Text related stuff
     padding-top: 10px;
     margin-left: var(--general_margin);
     margin-right: var(--general_margin);
+    line-height: 1.6;
 }
 
 /* Links in the text */
@@ -109,6 +110,11 @@ Text related stuff
     color: var(--orange_colour);
     margin-bottom: 40px;
     margin-right: 80px;
+}
+
+/* Single list item in the ordered list styling */
+.ordered_list_item {
+    padding: 4px;
 }
 
 /* Sticky note box in the calendar page */

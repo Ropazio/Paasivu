@@ -26,34 +26,34 @@
             <h3 class="text_headline" id="crochet">Virkatut hahmot</h3>
             <p class="text">Hahmojen virkkaaminen on ollut varsin antoisaa hommaa yksityskohtiensa vuoksi. Tässäpä lista hahmoista kuvineen, mitä olen saanut tuherrettua:
             <ol class="items">
-                <li>
+                <li class="ordered_list_item">
                     Geralt of Rivia, The Witcher 1 -pelin mukaan
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Geralt of Rivia, The Witcher -sarjan mukaan (En tosin pidä henkilökohtaisesti sarjasta.)
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Morrigan, Dragon Age Origins -pelin mukaan
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Ruttotohtori
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Haku-lohikäärme, Studio Ghiblin Henkien kätkemä -elokuvasta
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Totoro, Studio Ghiblin Naapurini Totoro -elokuvasta
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     "Caveira", Rainbow six siege -pelistä
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Hawke, Dragon Age 2 -pelin mukaan (Hahmon vaatteet eivät ole minun tekemiäni tällä kertaa.)
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Baby Yoda, The Mandalorian -sarjasta
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Extra: Silmät hammasmallin pariksi goottisarjojen innoittamana!
                 </li>
             </ol>
@@ -119,22 +119,22 @@
             <h3 class="text_headline" id="textile">Tekstiilityöt</h3>
             <p class="text">Joitain tekstiilitöitä:
             <ol class="items" start="11">
-                <li>
+                <li class="ordered_list_item">
                     Alma
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Vauvan joulutossut
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Huovutettu kettu
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Kerttu
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     T-paita ja yöhousut
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Makramee
                 </li>
             </ol>
@@ -171,10 +171,10 @@
             <h3 class="text_headline" id="tech">Tekniset työt</h3>
             <p class="text">Joitain teknisiä töitä:
             <ol class="items" start="17">
-                <li>
+                <li class="ordered_list_item">
                     Puukko (Teränä vanhan Moran terä.)
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Jouluporo
                 </li>
             </ol>
@@ -199,19 +199,19 @@
             <h3 class="text_headline" id="other">Muut käsityöt</h3>
             <p class="text">Muita paskarteluja:
             <ol class="items" start="19">
-                <li>
+                <li class="ordered_list_item">
                     Enderman, Minecraft-pelistä
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Pörriäinen, Minecraft-pelistä
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Lasinpuhallusta: pingviini, lintu, koristepallo, maljakko x 2
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Nuka-Cola Quantum, Fallout-pelissarjasta (Etiketti netistä.)
                 </li>
-                <li>
+                <li class="ordered_list_item">
                     Normandy SR2, Mass Effect 2 -pelistä
                 </li>
             </ol>
