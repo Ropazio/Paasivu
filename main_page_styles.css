@@ -13,8 +13,8 @@ html, body {
 
 /* Creating variables for the styles */
 :root {
-    --orange_colour: #D68910;
-    --dark_orange_colour: #b9680c;
+    --orange_colour: #ed7d00;
+    --dark_orange_colour: #db5500;
     --general_margin: 100px;
 }
 
@@ -63,7 +63,7 @@ TEXT PART / DESCRIPTION AREA
     background-color: #EEE;
     width: 80%;
     position: relative;
-    box-shadow: inset -5px 5px 8px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: inset -5px 5px 8px 0 rgba(0, 0, 0, 0.05);
 }
 
 
@@ -97,7 +97,7 @@ Text related stuff
 /* Main headline in the description area */
 .main_text_headline {
     margin-left: var(--general_margin);
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 50px;
     color: #333;
     margin-right: var(--general_margin);
@@ -113,7 +113,7 @@ Text related stuff
 
 /* Sticky note box in the calendar page */
 .sticky_box {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 /* Day name in the calendar page */
@@ -168,7 +168,7 @@ Text related stuff
 
 /* Hover effects for the skeleton delete button */
 .delete_button:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 /* Button link (skeleton delete button) */
@@ -280,7 +280,7 @@ NAVIGATOR
 
 /* Navigator; The whole area shown in gray */
 .navi {
-    background-color: #b5b0ab;
+    background-color: #d1cdc5;
     width: 20%;
     min-width: 270px;
 }

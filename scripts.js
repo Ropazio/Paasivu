@@ -21,7 +21,7 @@ else {
 	let day5 = document.getElementById('weekday5');
 	let day6 = document.getElementById('weekday6');
 	let day7 = document.getElementById('weekday7');
-	day0.innerHTML = "Ajatuksenvirta";
+	day0.innerHTML = "";
 	day1.innerHTML = (weekday[0] + " (Tämä päivä)");
 	day2.innerHTML = (weekday[1] + " (Huominen)");
 	day3.innerHTML = weekday[2];
