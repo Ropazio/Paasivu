@@ -56,5 +56,10 @@
             </form>
         </div>   
     </div>
+
+<script type="text/javascript" src="scripts.js"></script>
+<script>
+    summer_theme()
+</script>
 </body>
 </html>
