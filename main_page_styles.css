@@ -1,7 +1,7 @@
 /* The whole page in general */
 html, body {
     height: 100vh;
-    width: 90vw;
+    width: 80vw;
     max-width: 2000px;
     margin: auto;
     background-color: #222;
@@ -11,6 +11,12 @@ html, body {
     box-shadow: 5px 0 5px -5px rgba(0,0,0,0.7), -5px 0 5px -5px rgba(0,0,0,0.7);
 }
 
+/* Creating variables for the styles */
+:root {
+    --orange_colour: #D68910;
+    --dark_orange_colour: #b9680c;
+    --general_margin: 100px;
+}
 
 
 /*
@@ -70,39 +76,39 @@ Text related stuff
     color: #222;
     text-align: left;
     padding-top: 10px;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: var(--general_margin);
+    margin-right: var(--general_margin);
 }
 
 /* Links in the text */
 .links {
-    color: #D68910;
+    color: var(--orange_colour);
 }
 
 
 /* Headlines for the paragraphs aka subheadlines */
 .text_headline {
-    margin-left: 90px;
+    margin-left: var(--general_margin);
     margin-top: 80px;
-    color: #D68910;
-    margin-right: 80px;
+    color: var(--orange_colour);
+    margin-right: var(--general_margin);
 }
 
 /* Main headline in the description area */
 .main_text_headline {
-    margin-left: 80px;
+    margin-left: var(--general_margin);
     margin-top: 50px;
     margin-bottom: 50px;
     color: #333;
-    margin-right: 80px;
+    margin-right: var(--general_margin);
 }
 
 /* Ordered list styling (ordinal) */
 .items {
-    margin-left: 40px;
-    color: #D68910;
+    margin-left: 80px;
+    color: var(--orange_colour);
     margin-bottom: 40px;
-    margin-right: 10px;
+    margin-right: 80px;
 }
 
 /* Sticky note box in the calendar page */
@@ -112,8 +118,8 @@ Text related stuff
 
 /* Day name in the calendar page */
 .day {
-    margin-left: 50px;
-    color: #D68910;
+    margin-left: var(--general_margin);
+    color: var(--orange_colour);
     margin-bottom: -15px;
 }
 
@@ -126,8 +132,8 @@ Text related stuff
 
 /* Container for the notes (bullet points) in the calendar page */
 .bullet_container {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 /* Rocket send button in the calendar page */
@@ -182,7 +188,7 @@ Login
 
 /* Input headline in the login page */
 .input_headline {
-    color: #D68910;
+    color: var(--orange_colour);
 }
 
 /* Box fot the button in the login page */
@@ -193,7 +199,7 @@ Login
 
 /* Button in the login page */
 .button {
-    border: 1px solid #D68910;
+    border: 1px solid var(--orange_colour);
     padding: 10px;
 }
 
@@ -209,26 +215,16 @@ Login
 Image related stuff
 */
 
-/* Standard ratio images (taken with phone vertically) */
-.proj_img {
-    max-width: 300px;
-    margin-left: 30px;
-    padding: 10px;
-    display: inline block;
+/* Container for all images */
+.image_area{
+    margin-right: var(--general_margin);
+    margin-left: var(--general_margin);
 }
 
-/* Wider images */
-.wide_img {
-    max-width: 600px;
-    margin-left: 30px;
-    padding: 10px;
-    display: inline block;
-}
-
-/* Container for the image */
+/* Container for single image */
 .image_container {
     position: relative;
-    max-width: 300px;
+    max-width: 200px;
     display: inline-block;
     margin-right: 20px;
 }
@@ -240,6 +236,20 @@ Image related stuff
     margin-right: 20px;
 }
 
+/* Standard ratio images (taken with phone vertically) */
+.proj_img {
+    max-width: 200px;
+    padding: 10px;
+    display: inline block;
+}
+
+/* Wider images */
+.wide_img {
+    max-width: 600px;
+    padding: 10px;
+    display: inline block;
+}
+
 /* Image hover effect */
 .image_container:hover .overlay, .wide_image_container:hover .overlay {
     opacity: 1;
@@ -247,7 +257,7 @@ Image related stuff
 
 /* Image overlay shown when hovered */
 .overlay {
-    margin-left: 40px;
+    margin-left: 10px;
     position: absolute;
     bottom: 15px;
     padding-bottom: 20px;
@@ -284,14 +294,14 @@ NAVIGATOR
 /* The main headline "Etusivu" */
 .main_headline {
     text-decoration: none;
-    color: #D68910;
+    color: var(--orange_colour);
 }
 
 /* Hover effect for the main headline */
 .main_headline:hover {
     transition: all ease-out 0.2s;
     font-size: 110%;
-    color: #b9680c;
+    color: var(--dark_orange_colour);
 }
 
 /* Rest of the headlines */
@@ -303,7 +313,7 @@ NAVIGATOR
 /* Hover effects for the rest of the headlines */
 .headlines:hover {
     transition: all ease-out 0.1s;
-    color: #D68910;
+    color: var(--orange_colour);
     font-size: 110%;
 }
 
@@ -316,7 +326,7 @@ NAVIGATOR
 .bullet {
     list-style: inside;
     padding-bottom: 6px;
-    color: #D68910;
+    color: var(--orange_colour);
 }
 
 
