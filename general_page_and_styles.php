@@ -1,0 +1,33 @@
+<?php
+
+function load_head_and_page_theme($page_title) {
+    $theme = load_theme();
+
+    echo "<head>";
+    echo "<meta charset='utf-8'>";
+    echo "<meta name='viewport' content='width=device-width, initial-scale=1'>";
+    echo "<link rel='stylesheet' href='main_page_styles.css' />";
+    echo "<link rel='stylesheet' href=$theme />";
+    echo "<title>$page_title</title>";
+    echo "</head>";
+}
+
+function load_theme() {
+    $date = date("m");
+    $summer_months = array(4, 5, 6, 7);
+
+    if (in_array($date, $summer_months)) {
+        return 'summer_theme.css';
+    }
+
+    return 'supper_theme.css';
+}
+
+function load_header() {
+
+    echo "<div class='header'>";
+    echo "<h1 class='headline'></h1>";
+    echo "</div>";
+}
+
+?>

@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex">
-    <meta name="googlebot" content="noindex">
-    <link rel="stylesheet" href="main_page_styles.css" />
-    <title>Ropaz – Päänäkymä</title>
-</head>
+<html>
+<?php
+    require_once "general_page_and_styles.php";
+    load_head_and_page_theme("Ropaz – Päänäkymä"); 
+?>
 <body>
 
     <?php
-        require_once "header.php";
+        load_header();
     ?>
-
     <div class="bottom">
 
         <?php

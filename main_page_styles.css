@@ -13,9 +13,8 @@ html, body {
 
 /* Creating variables for the styles */
 :root {
-    --orange_colour: #ed7d00;
-    --dark_orange_colour: #db5500;
     --general_margin: 100px;
+    --mobile_general_margin: 40px;
 }
 
 
@@ -23,10 +22,7 @@ html, body {
 HEADER
 */
 
-/* Header with a background image */
 .header {
-    background-image: url("img/supper.png");
-    background-size: 100% 140%;
     justify-content: center;
     height: 240px;
     padding: 10px;
@@ -81,17 +77,10 @@ Text related stuff
     line-height: 1.6;
 }
 
-/* Links in the text */
-.links {
-    color: var(--orange_colour);
-}
-
-
 /* Headlines for the paragraphs aka subheadlines */
 .text_headline {
     margin-left: var(--general_margin);
     margin-top: 80px;
-    color: var(--orange_colour);
     margin-right: var(--general_margin);
 }
 
@@ -107,7 +96,6 @@ Text related stuff
 /* Ordered list styling (ordinal) */
 .items {
     margin-left: 80px;
-    color: var(--orange_colour);
     margin-bottom: 40px;
     margin-right: 80px;
 }
@@ -125,7 +113,6 @@ Text related stuff
 /* Day name in the calendar page */
 .day {
     margin-left: var(--general_margin);
-    color: var(--orange_colour);
     margin-bottom: -15px;
 }
 
@@ -192,11 +179,6 @@ Login
     margin-left: 20px;
 }
 
-/* Input headline in the login page */
-.input_headline {
-    color: var(--orange_colour);
-}
-
 /* Box fot the button in the login page */
 .button_box {
     margin-left: 80px;
@@ -205,7 +187,6 @@ Login
 
 /* Button in the login page */
 .button {
-    border: 1px solid var(--orange_colour);
     padding: 10px;
 }
 
@@ -300,14 +281,12 @@ NAVIGATOR
 /* The main headline "Etusivu" */
 .main_headline {
     text-decoration: none;
-    color: var(--orange_colour);
 }
 
 /* Hover effect for the main headline */
 .main_headline:hover {
     transition: all ease-out 0.2s;
     font-size: 110%;
-    color: var(--dark_orange_colour);
 }
 
 /* Rest of the headlines */
@@ -319,7 +298,6 @@ NAVIGATOR
 /* Hover effects for the rest of the headlines */
 .headlines:hover {
     transition: all ease-out 0.1s;
-    color: var(--orange_colour);
     font-size: 110%;
 }
 
@@ -332,7 +310,6 @@ NAVIGATOR
 .bullet {
     list-style: inside;
     padding-bottom: 6px;
-    color: var(--orange_colour);
 }
 
 
@@ -350,11 +327,6 @@ MOBILE
 
     .wide_img, .wide_image_container {
         max-width: 300px;
-    }
-
-    .header {
-        background-image: url("img/supper_mobile.png");
-        background-size: cover;
     }
 
     .bottom {
@@ -375,12 +347,22 @@ MOBILE
         display: block;
     }
 
-    .text_headline {
-        margin-top: 0;
+    .headline_container {
+        margin-left: 10px;
     }
 
-    .text {
-        margin-bottom: 0;
+    .text, .text_headline, .main_text_headline, .image_area {
+        margin-left: var(--mobile_general_margin);
+        margin-right: var(--mobile_general_margin);
+        margin-bottom: 10px;
+    }
+
+    .items {
+        margin-left: 20px;
+    }
+
+    .text_headline {
+        margin-top: 0;
     }
 
     .text_box {

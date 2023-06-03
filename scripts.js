@@ -34,21 +34,3 @@ function load_weekdays() {
 		day7.innerHTML = weekday[6];
 	}
 }
-
-
-function summer_theme() {
-	// Summer theme; text colour and header background change.
-	var summer_months = [4, 5, 6, 7];
-	var root = document.querySelector(':root');
-	
-	if (summer_months.includes(date.getMonth())) {
-		let header = document.querySelector('.header');
-	
-		header.style.background = "url(img/summer.jpg)";
-		header.style.backgroundAttachment = "fixed";
-		header.style.backgroundSize = "100% auto";
-	
-		root.style.setProperty('--orange_colour', '#03ac13');
-		root.style.setProperty('--dark_orange_colour', '#028a0f');
-	}
-}

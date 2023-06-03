@@ -4,16 +4,15 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="main_page_styles.css" />
-    <title>Ropaz – Kirjautuminen</title>
-</head>
+<html>
+<?php
+    require_once "general_page_and_styles.php";
+    load_head_and_page_theme("Ropaz – Kirjautuminen"); 
+?>
 <body>
 
     <?php
-        require_once "header.php";
+        load_header();
     ?>
 
     <div class="bottom">

@@ -1,0 +1,38 @@
+:root {
+    --green_colour: #03ac13;
+    --dark_green_colour: #028a0f;
+}
+
+/* Colored themed */
+.links, .day, .text_headline, .items, .input_headline, .main_headline, .bullet {
+    color: var(--green_colour);
+}
+
+.button {
+    border: 1px solid var(--green_colour);
+}
+
+.main_headline:hover {
+    color: var(--dark_green_colour);
+}
+
+.headlines:hover {
+    color: var(--green_colour);
+}
+
+
+/* Images */
+.header {
+	background-image: url(img/summer.jpg);
+	background-attachment: fixed;
+	background-size: 100% auto;
+}
+
+
+@media(max-width: 768px) {
+
+    .header {
+        background-image: url("img/supper_mobile.png");
+        background-size: cover;
+    }
+}
