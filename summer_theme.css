@@ -24,7 +24,6 @@
 /* Images */
 .header {
 	background-image: url(img/summer.jpg);
-	background-attachment: fixed;
 	background-size: 100% auto;
 }
 
@@ -32,7 +31,7 @@
 @media(max-width: 768px) {
 
     .header {
-        background-image: url("img/supper_mobile.png");
+        background-image: url("img/summer_mobile.jpg");
         background-size: cover;
     }
 }
