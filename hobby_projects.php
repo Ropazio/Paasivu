@@ -88,8 +88,8 @@
                     <div class="overlay">Caveira</div>
                 </div>
                 <div class="image_container">
-                    <img src="projects/" alt="8" class="proj_img">
-                    <div class="overlay">Hawke</div>
+                    <img src="projects/Hawke.jpg" alt="8" class="proj_img">
+                    <div class="overlay">Hawke (kesken)</div>
                 </div>
                 <div class="image_container">
                     <img src="projects/Yoda.jpg" alt="9" class="proj_img">
@@ -232,9 +232,9 @@
                     <img src="projects/Bottle.jpg" alt="22" class="proj_img">
                     <div class="overlay">Nuka-Cola Quantum</div>
                 </div>
-                <div class="image_container">
-                    <img src="projects/Normandy.jpg" alt="23" class="proj_img">
-                    <div class="overlay">Normandy SR2</div>
+                <div class="wide_image_container">
+                    <img src="projects/Normandy.jpeg" alt="23" class="wide_img">
+                    <div class="overlay">Normandy SR2 (kesken)</div>
                 </div>
             </div>
         </div>
