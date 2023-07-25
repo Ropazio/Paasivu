@@ -14,7 +14,7 @@ html, body {
 /* Creating variables for the styles */
 :root {
     --general_margin: 100px;
-    --mobile_general_margin: 40px;
+    --mobile_general_margin: 30px;
 }
 
 
@@ -326,7 +326,7 @@ MOBILE
     }
 
     .wide_img, .wide_image_container {
-        max-width: 300px;
+        max-width: 200px;
     }
 
     .bottom {
@@ -358,11 +358,11 @@ MOBILE
     }
 
     .items {
-        margin-left: 20px;
+        margin-left: 10px;
     }
 
     .bullet_container {
-        margin-left: 0px;
+        margin-left: -20px;
         margin-right: 10px;
     }
 
@@ -371,6 +371,6 @@ MOBILE
     }
 
     .text_box {
-        width: 250px;
+        width: 240px;
     }
 }
