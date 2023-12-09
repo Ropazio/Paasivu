@@ -14,10 +14,14 @@ function load_head_and_page_theme($page_title) {
 
 function load_theme() {
     $date = date("m");
-    $summer_months = array(4, 5, 6, 7);
+    $summer_months = array(4, 5, 6, 7, 8);
+    $christmas_months = array(12);
 
     if (in_array($date, $summer_months)) {
         return 'summer_theme.css';
+    }
+    elseif (in_array($date, $christmas_months)) {
+        return 'christmas_theme.css';
     }
 
     return 'supper_theme.css';

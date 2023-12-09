@@ -130,10 +130,13 @@
                     Kerttu
                 </li>
                 <li class="ordered_list_item">
+                    Makramee
+                </li>
+                <li class="ordered_list_item">
                     T-paita ja yöhousut
                 </li>
                 <li class="ordered_list_item">
-                    Makramee
+                    Paita
                 </li>
             </ol>
             </p>
@@ -162,6 +165,10 @@
                 <div class="wide_image_container">
                     <img src="projects/Clothes.jpg" alt="15" class="wide_img">
                     <div class="overlay">T-paita ja yöhousut</div>
+                </div>
+                <div class="wide_image_container">
+                    <img src="projects/Shirt.jpg" alt="15" class="wide_img">
+                    <div class="overlay">Paita</div>
                 </div>
             </div>
 
