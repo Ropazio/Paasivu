@@ -39,7 +39,7 @@
             </p>
             <p class="text"><a class="links" href="https://ropaz.dev/Nettikasvio/index.php" target="_blank">Tästä linkistä pääset tutustumaan Nettikasvioon!</a></p>
 
-            <h3 class="text_headline" id="toivelista">Joulutoivelista</h3>
+            <h3 class="text_headline" id="joulutoivelista">Joulutoivelista</h3>
             <p class="text">Joulutoivelistasta tulee sivusto, jonne voi luoda ryhmiä, joiden jäsenet näkevät toistensa joulutoivelistan. Kunkin aulan jäsenet voivat yliviivata toistensa listoista ilmoittaakseen muille, että on tietyn lahjatoiveen jo varannut eli, jos joku aikoo toteuttaa tietyn lahjatoiveen. Tämä tapahtuu kuitenkin siten ettei lahjan saaja tätä saa selville. Ajattelin, että ryhmään voisi liittyä esimerkiksi uniikin ryhmäkoodin avulla - joku esimerkiksi jakaisi ryhmän kooodinimen ja vain nimen tietävät voivat liittyä (vrt. Kahoot).
             <br>&emsp;
             Sivuston tarkoitus on helpottaa joulutoivelistojen jakamista esimerkiksi perheen kesken, mutta sivu on kuitenkin vielä työn alla. Tämän sivun aion tehdä React-frameworkia käyttäen.
