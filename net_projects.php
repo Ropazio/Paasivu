@@ -28,7 +28,7 @@
             <br>&emsp;
             Pekkaspäiviä voi käydä testaamassa testitunnuksilla (tunnus: Testi, ss: Testi). Kullekin "oikealle" käyttäjälle on kuitenkin luotu omat tunnukset, jotta kirjatuminen näyttää vain omat havainnot!
             </p>
-            <p class="text"><a class="links" href="https://ropaz.dev/Pekkaspaivat/index.php" target="_blank">Tästä linkistä pääset tutustumaan Pekkaspäiviin!</a></p>
+            <p class="text"><a class="links" href="/Pekkaspaivat/index.php" target="_blank">Tästä linkistä pääset tutustumaan Pekkaspäiviin!</a></p>
 
             <h3 class="text_headline" id="nettikasvio">Nettikasvio</h3>
             <p class="text">Nettikasvio on nimensä mukaisesti kasvio, joka tulee sisältämään kuvat ja nimet Suomen kauniista luonnosta löytyvistä yleisimmistä kasveista. Sivuston tarkoituksena on autaa luonnossa kulkijaa lajintunnistuksessa, mutta tällä hetkellä sivusto on kuitenkin vasta materiaalinkeruuvaiheessa.
@@ -37,14 +37,14 @@
             <br>&emsp;
             Sivusto on kuitenkin vielä työn alla ja vain pääsivu toimii, mutta olen aloittanut kuitenkin alasivujen tekemisen.
             </p>
-            <p class="text"><a class="links" href="https://ropaz.dev/Nettikasvio/index.php" target="_blank">Tästä linkistä pääset tutustumaan Nettikasvioon!</a></p>
+            <p class="text"><a class="links" href="/Nettikasvio/index.php" target="_blank">Tästä linkistä pääset tutustumaan Nettikasvioon!</a></p>
 
             <h3 class="text_headline" id="joulutoivelista">Joulutoivelista</h3>
             <p class="text">Joulutoivelistasta tulee sivusto, jonne voi luoda ryhmiä, joiden jäsenet näkevät toistensa joulutoivelistan. Kunkin aulan jäsenet voivat yliviivata toistensa listoista ilmoittaakseen muille, että on tietyn lahjatoiveen jo varannut eli, jos joku aikoo toteuttaa tietyn lahjatoiveen. Tämä tapahtuu kuitenkin siten ettei lahjan saaja tätä saa selville. Ajattelin, että ryhmään voisi liittyä esimerkiksi uniikin ryhmäkoodin avulla - joku esimerkiksi jakaisi ryhmän kooodinimen ja vain nimen tietävät voivat liittyä (vrt. Kahoot).
             <br>&emsp;
             Sivuston tarkoitus on helpottaa joulutoivelistojen jakamista esimerkiksi perheen kesken, mutta sivu on kuitenkin vielä työn alla. Tämän sivun aion tehdä React-frameworkia käyttäen.
             </p>
-            <p class="text"><a class="links" href="https://ropaz.dev/Toivelista/index.php" target="_blank"></a></p>
+            <p class="text"><a class="links" href="/Toivelista/index.php" target="_blank"></a></p>
         </div>
 
     </div>
