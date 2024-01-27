@@ -280,12 +280,33 @@ NAVIGATOR
     background-color: #DFDFDD;
     width: 20%;
     min-width: 270px;
+    display: block;
+    min-height: 40px;
+}
+
+.navi_menu_icon {
+    display: none;
+    overflow: hidden;
+    width: 50px;
+    height: 40px;
+    background-color: orange;
+    text-align: center;
+}
+
+.icon {
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  margin-top: 7px;
+  margin-right: 6px;
+  margin-left: 6px;
 }
 
 /* Container for the headlines */
 .headline_container {
     padding-left: 30px;
     padding-top: 20px;
+    display: block;
 }
 
 /* The main headline "Etusivu" */
@@ -332,7 +353,7 @@ NAVIGATOR
 MOBILE
 */
 
-@media(max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     html, body {
         width: 100%;
@@ -350,11 +371,11 @@ MOBILE
 
     .desc {
         padding-top: 30px;
+        width: 100%;
     }
 
-    .desc, .navi {
+    .navi {
         width: 100%;
-        padding-bottom: 20px;
     }
 
     .proj_img, .image_container {
@@ -386,5 +407,18 @@ MOBILE
 
     .text_box {
         width: 240px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .headline_container {
+        display: none;
+    }
+    .headline_container.responsive {
+        display: block;
+    }
+    .navi_menu_icon {
+        display: block;
+        float: right;    }
     }
 }

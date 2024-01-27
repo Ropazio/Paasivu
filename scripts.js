@@ -34,3 +34,12 @@ function load_weekdays() {
 		day7.innerHTML = weekday[6];
 	}
 }
+
+function activate_mobile_navi() {
+  var navi = document.getElementById("navi_headlines");
+  if (navi.className === "headline_container") {
+    navi.className += " responsive";
+  } else {
+    navi.className = "headline_container";
+  }
+}

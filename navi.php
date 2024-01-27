@@ -16,7 +16,15 @@ function show_login_information() {
 ?>
 
 <div class="navi">
-    <div class="headline_container">
+    <div class="navi_menu_icon" onclick="activate_mobile_navi()">
+        <i>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+        </i>
+    </div>
+
+    <div class="headline_container" id="navi_headlines">
         <h1>
             <a class="main_headline" href="/Paasivu">Etusivu</a>
         </h1>
