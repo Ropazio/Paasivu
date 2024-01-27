@@ -20,6 +20,10 @@
     color: var(--green_colour);
 }
 
+#login_info, #login_info:visited {
+    color: var(--green_colour);
+}
+
 
 /* Images */
 .header {
