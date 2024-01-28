@@ -34,6 +34,14 @@
 
 @media(max-width: 768px) {
 
+    .navi_bar {
+        background-color: var(--green_colour);
+    }
+
+    .navi_menu_icon {
+        background-color: var(--green_colour);
+    }
+
     .header {
         background-image: url("img/summer_mobile.jpg");
         background-size: cover;

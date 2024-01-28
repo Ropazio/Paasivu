@@ -16,12 +16,14 @@ function show_login_information() {
 ?>
 
 <div class="navi">
-    <div class="navi_menu_icon" onclick="activate_mobile_navi()">
-        <i>
-            <div class="icon"></div>
-            <div class="icon"></div>
-            <div class="icon"></div>
-        </i>
+    <div class="navi_bar">
+        <div class="navi_menu_icon" onclick="activate_mobile_navi()">
+            <i>
+                <div class="icon"></div>
+                <div class="icon"></div>
+                <div class="icon"></div>
+            </i>
+        </div>
     </div>
 
     <div class="headline_container" id="navi_headlines">

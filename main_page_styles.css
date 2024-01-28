@@ -23,6 +23,7 @@ html, body {
     --general_margin: 100px;
     --mobile_general_margin: 30px;
     --white_colour: #FAFAFA;
+    --light_grey_colour: #E9E9E9;
 }
 
 
@@ -277,11 +278,10 @@ NAVIGATOR
 
 /* Navigator; The whole area shown in gray */
 .navi {
-    background-color: #DFDFDD;
+    background-color: var(--light_grey_colour);
     width: 20%;
     min-width: 270px;
     display: block;
-    min-height: 40px;
 }
 
 .navi_menu_icon {
@@ -289,7 +289,6 @@ NAVIGATOR
     overflow: hidden;
     width: 50px;
     height: 40px;
-    background-color: orange;
     text-align: center;
 }
 
@@ -370,8 +369,8 @@ MOBILE
     }
 
     .desc {
-        padding-top: 30px;
         width: 100%;
+        padding-top: 30px;
     }
 
     .navi {
@@ -413,12 +412,27 @@ MOBILE
 @media screen and (max-width: 768px) {
     .headline_container {
         display: none;
+        margin-left: 0px;
     }
     .headline_container.responsive {
         display: block;
+        background-color: var(--light_grey_colour);
     }
     .navi_menu_icon {
         display: block;
-        float: right;    }
+        float: right;
+    }
+
+    .navi_bar {
+        min-height: 40px;
+    }
+
+    .main_text_headline {
+        margin-top: 0px;
+    }
+
+    .headline_container h2 {
+        margin-bottom: 0px;
+        padding-bottom: 20px;
     }
 }

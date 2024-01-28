@@ -1,6 +1,7 @@
 :root {
-    --orange_colour: #ed7d00;
-    --dark_orange_colour: #db5500;
+    --orange_colour: #ED7D00;
+    --dark_orange_colour: #DB5500;
+    --light_orange_colour: #FFA500;
 }
 
 /* Colored themed */
@@ -30,7 +31,17 @@
     background-size: 100% 140%;
 }
 
+
+/* MEDIA */
 @media(max-width: 768px) {
+
+    .navi_bar {
+        background-color: var(--light_orange_colour);
+    }
+
+    .navi_menu_icon {
+        background-color: var(--light_orange_colour);
+    }
 
     .header {
         background-image: url("img/supper_mobile.png");
