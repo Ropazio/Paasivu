@@ -69,6 +69,7 @@ TEXT PART / DESCRIPTION AREA
     width: 80%;
     position: relative;
     box-shadow: inset -5px 5px 8px 0 rgba(0, 0, 0, 0.05);
+    padding-bottom: 50px;
 }
 
 
@@ -288,8 +289,8 @@ NAVIGATOR
     display: none;
     overflow: hidden;
     width: 50px;
-    height: 40px;
     text-align: center;
+    margin-top: 5px;
 }
 
 .icon {
@@ -364,13 +365,18 @@ MOBILE
     }
 
     .bottom {
-        display: block;
         width: 100%;
+        display: unset;
+    }
+
+    .main_text_headline {
+        margin-top: 0px;
     }
 
     .desc {
         width: 100%;
         padding-top: 30px;
+        padding-bottom: 100px;
     }
 
     .navi {
@@ -379,10 +385,6 @@ MOBILE
 
     .proj_img, .image_container {
         display: block;
-    }
-
-    .headline_container {
-        margin-left: 10px;
     }
 
     .text, .text_headline, .main_text_headline, .image_area, .day {
@@ -407,28 +409,24 @@ MOBILE
     .text_box {
         width: 240px;
     }
-}
 
-@media screen and (max-width: 768px) {
     .headline_container {
         display: none;
         margin-left: 0px;
     }
+
     .headline_container.responsive {
         display: block;
         background-color: var(--light_grey_colour);
     }
+
     .navi_menu_icon {
         display: block;
         float: right;
     }
 
     .navi_bar {
-        min-height: 40px;
-    }
-
-    .main_text_headline {
-        margin-top: 0px;
+        min-height: 50px;
     }
 
     .headline_container h2 {
