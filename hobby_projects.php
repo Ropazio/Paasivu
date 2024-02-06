@@ -182,6 +182,12 @@
                 <li class="ordered_list_item">
                     Jouluporo
                 </li>
+                <li class="ordered_list_item">
+                    Geraltin hopeamiekka
+                </li>
+                <li class="ordered_list_item">
+                    Kasvitaso
+                </li>
             </ol>
             </p>
 
@@ -198,12 +204,20 @@
                     <img src="projects/Reindeer.jpg" alt="18" class="proj_img">
                     <div class="overlay">Jouluporo</div>
                 </div>
+                <div class="image_container">
+                    <img src="projects/Silver_sword.jpg" alt="19" class="proj_img">
+                    <div class="overlay">Geraltin hopeamiekka</div>
+                </div>
+                <div class="image_container">
+                    <img src="projects/Plant_stand.jpg" alt="20" class="proj_img">
+                    <div class="overlay">Kasvitaso</div>
+                </div>
             </div>
             
 
             <h3 class="text_headline" id="other">Muut käsityöt</h3>
             <p class="text">Muita paskarteluja:
-            <ol class="items" start="19">
+            <ol class="items" start="21">
                 <li class="ordered_list_item">
                     Enderman, Minecraft-pelistä
                 </li>
@@ -217,31 +231,31 @@
                     Nuka-Cola Quantum, Fallout-pelissarjasta (Etiketti netistä.)
                 </li>
                 <li class="ordered_list_item">
-                    Normandy SR2, Mass Effect 2 -pelistä
+                    Normandy SR-2, Mass Effect 2 -pelistä (Nimi puuttuu aluksen kyljestä. Löysin aluksen ja sukkuloiden 3D-mallit täältä: https://www.thingiverse.com/thing:4921765. Tuki omasta päästä.)
                 </li>
             </ol>
             </p>
 
             <div class="image_area">
                 <div class="image_container">
-                    <img src="projects/Enderman.jpg" alt="19" class="proj_img">
+                    <img src="projects/Enderman.jpg" alt="21" class="proj_img">
                     <div class="overlay">Enderman</div>
                 </div>
                 <div class="image_container">
-                    <img src="projects/Minecraft.jpg" alt="19 ja 20" class="proj_img">
+                    <img src="projects/Minecraft.jpg" alt="21 ja 22" class="proj_img">
                     <div class="overlay">Enderman ja pörriäinen</div>
                 </div>
                 <div class="image_container">
-                    <img src="projects/Glassware.jpg" alt="21" class="proj_img">
+                    <img src="projects/Glassware.jpg" alt="23" class="proj_img">
                     <div class="overlay">Lasinpuhallustöitä</div>
                 </div>
                 <div class="image_container">
-                    <img src="projects/Bottle.jpg" alt="22" class="proj_img">
+                    <img src="projects/Bottle.jpg" alt="24" class="proj_img">
                     <div class="overlay">Nuka-Cola Quantum</div>
                 </div>
                 <div class="wide_image_container">
-                    <img src="projects/Normandy.jpeg" alt="23" class="wide_img">
-                    <div class="overlay">Normandy SR2 (kesken)</div>
+                    <img src="projects/Normandy.jpg" alt="25" class="wide_img">
+                    <div class="overlay">Normandy SR-2</div>
                 </div>
             </div>
         </div>

@@ -288,7 +288,7 @@ NAVIGATOR
 .navi_menu_icon {
     display: none;
     overflow: hidden;
-    width: 50px;
+    width: 80px;
     text-align: center;
     margin-top: 5px;
 }
@@ -298,8 +298,8 @@ NAVIGATOR
   height: 4px;
   background-color: white;
   margin-top: 7px;
-  margin-right: 6px;
-  margin-left: 6px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 /* Container for the headlines */
