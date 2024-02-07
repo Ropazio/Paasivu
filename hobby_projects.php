@@ -60,19 +60,19 @@
 
             <div class="image_area">
                 <div class="image_container">
-                    <img src="projects/Geralt1.jpg" alt="1" class="proj_img">
+                    <img src="projects/Geralt1.jpg" alt="1" class="proj_img" onclick="enlarge_image('projects/Geralt1.jpg')" id="1">
                     <div class="overlay">Geralt of Rivia (#1)</div>
                 </div>
                 <div class="image_container">
-                    <img src="projects/Geralt2.jpg" alt="2" class="proj_img">
+                    <img src="projects/Geralt2.jpg" alt="2" class="proj_img" id="2">
                     <div class="overlay">Geralt of Rivia (#2)</div>
                 </div>
                 <div class="image_container">
-                    <img src="projects/Geralts.jpg" alt="1 ja 2" class="proj_img">
+                    <img src="projects/Geralts.jpg" alt="1 ja 2" class="proj_img" id="3">
                     <div class="overlay">Geralttien yhteiskuva</div>
                 </div>
                 <div class="image_container">
-                    <img src="projects/Morrigan.jpg" alt="3" class="proj_img">
+                    <img src="projects/Morrigan.jpg" alt="3" class="proj_img" id="4">
                     <div class="overlay">Morrigan</div>
                 </div>
                 <div class="image_container">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="image_container">
                     <img src="projects/Hawke.jpg" alt="8" class="proj_img">
-                    <div class="overlay">Hawke (kesken)</div>
+                    <div class="overlay">Hawke</div>
                 </div>
                 <div class="image_container">
                     <img src="projects/Yoda.jpg" alt="9" class="proj_img">
@@ -108,7 +108,7 @@
                     <div class="overlay">Totoro</div>
                 </div>
                 <div class="wide_image_container">
-                    <img src="projects/Haku.jpg" alt="5" class="wide_img">
+                    <img src="projects/Haku.jpg" alt="5" class="wide_img" onclick="enlarge_image('projects/Haku.jpg')">
                     <div class="overlay">Haku</div>
                 </div>
             </div>
@@ -257,6 +257,14 @@
                     <img src="projects/Normandy.jpg" alt="25" class="wide_img">
                     <div class="overlay">Normandy SR-2</div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Background for the image enlargement  -->
+        <div id="enlarged_image_view">
+            <div id="image_background" onclick="close_image()"></div>
+            <div>
+                <img id="enlarged_image" src="" />
             </div>
         </div>
     </div>

@@ -43,3 +43,15 @@ function activate_mobile_navi() {
     navi.className = "headline_container";
   }
 }
+
+function close_image() {
+	var enlaged_image_view = document.getElementById("enlarged_image_view");
+	enlarged_image_view.style.display = "none";
+}
+
+function enlarge_image(image_src) {
+	var bg = document.getElementById("enlarged_image_view");
+	bg.style.display = "block";
+	let img = document.getElementById('enlarged_image');
+	img.src = image_src;
+}
