@@ -261,9 +261,9 @@
         </div>
 
         <!-- Background for the image enlargement  -->
-        <div id="enlarged_image_view">
-            <div id="image_background" onclick="close_image()"></div>
-            <div>
+        <div id="enlarged_image_view" onclick="close_image()">
+            <div id="image_background"></div>
+            <div id="enlarged_image_container">
                 <img id="enlarged_image" src="" />
             </div>
         </div>
