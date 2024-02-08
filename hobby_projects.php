@@ -64,7 +64,7 @@ function add_project_image($projects, $project_ordinal) {
         echo "<div class=" . $name_class_container . ">";
         echo    "<img src=" . $image_list[$i][0]
                 . " class=" . $name_class_image
-                . " onclick='enlarge_image(" . $image_list[$i][0] . ")'>";
+                . sprintf(" onclick='enlarge_image(\"%s\")'>", $image_list[$i][0]);
         echo    "<div class='overlay'>" . $image_list[$i][2] . "</div>";
         echo "</div>";
     }
@@ -83,7 +83,6 @@ function add_project_image($projects, $project_ordinal) {
     ?>
 
     <div class="bottom">
-
         <?php
             require_once "navi.php";
         ?>
