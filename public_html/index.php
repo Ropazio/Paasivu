@@ -2,7 +2,7 @@
 <html>
 <?php
     require_once "general_page_and_styles.php";
-    load_head_and_page_theme("Ropaz – Päänäkymä"); 
+    load_head_and_page_theme("Ropaz – Päänäkymä");
 ?>
 <body>
 
