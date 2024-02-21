@@ -27,7 +27,7 @@
 
 /* Images */
 .header {
-	background-image: url(img/christmas.jpg);
+	background-image: url("../img/christmas.jpg");
 	background-size: 100% 100%;
 }
 
@@ -43,7 +43,7 @@
     }
 
     .header {
-        background-image: url("img/christmas_mobile.jpg");
+        background-image: url("../img/christmas_mobile.jpg");
         background-size: cover;
     }
 }
