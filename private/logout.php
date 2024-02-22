@@ -19,6 +19,6 @@ function logout() {
 }
 
 logout();
-header ("Location: index.php");
+header ("Location: ../public_html/index.php");
 
 ?>

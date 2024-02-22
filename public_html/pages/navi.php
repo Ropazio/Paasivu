@@ -1,19 +1,7 @@
 <?php
-require_once "sessions.php";
+    require_once get_be("sessions.php");
+    require_once get_be("navi_be.php");
 
-
-function show_login_information() {
-    if (!(isset($_SESSION['logged_in']))) {
-        return;
-    } elseif ($_SESSION['logged_in'] = true) {
-        $name = $_SESSION['username'];
-        $greetings = sprintf("Kirjaudu ulos tililtä %s", $name);
-        echo "<div id='login_info_box'>";
-        echo    "<a id='login_info' href='logout.php'>" . $greetings . "</a>";
-        echo "</div>";
-    return;
-    }
-}
 ?>
 
 <div class="navi">
@@ -29,7 +17,7 @@ function show_login_information() {
 
     <div class="headline_container" id="navi_headlines">
         <h1>
-            <a class="main_headline" href="index.php">Etusivu</a>
+            <a class="main_headline" href="front_page.php">Etusivu</a>
         </h1>
 
         <h2>
@@ -78,7 +66,7 @@ function show_login_information() {
         </h2>
 
         <?php
-        show_login_information();
+            show_login_information();
         ?>
     </div>
 </div>

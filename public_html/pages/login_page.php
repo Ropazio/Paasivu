@@ -1,11 +1,12 @@
 <?php
-    require_once "database.php";
+    require_once __DIR__ . "/../constructor.php";
+    require_once get_be("database.php");
+    require_once get_be("general_functionalities.php");
 ?>
 
 <!DOCTYPE html>
 <html>
 <?php
-    require_once "general_page_and_styles.php";
     load_head_and_page_theme("Ropaz – Kirjautuminen"); 
 ?>
 <body>
@@ -23,7 +24,7 @@
         <div class="desc">
 
 
-            <form method="POST" action="login.php">
+            <form method="POST" action="../../private/login.php">
                 <div class="text">
                     <div>
 
@@ -55,6 +56,6 @@
         </div>   
     </div>
 
-<script type="text/javascript" src="scripts.js"></script>
+<script type="text/javascript" src="../js/scripts.js"></script>
 </body>
 </html>

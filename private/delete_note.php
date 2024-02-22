@@ -8,6 +8,6 @@ $ID = (int)$ID;
 delete_note($ID);
 
 // Back to the front page
-header("Location: calendar.php");
+header("Location: ../public_html/pages/calendar.php");
 
 ?>

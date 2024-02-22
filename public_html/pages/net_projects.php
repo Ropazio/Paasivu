@@ -1,7 +1,11 @@
+<?php
+    require_once __DIR__ . "/../constructor.php";
+    require_once get_be("general_functionalities.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <?php
-    require_once "general_page_and_styles.php";
     load_head_and_page_theme("Ropaz – Projektit"); 
 ?>
 <body>
@@ -48,9 +52,9 @@
         </div>
 
     </div>
-<script type="text/javascript" src="scripts.js"></script>
+<script type="text/javascript" src="../js/scripts.js"></script>
 <script>
-    load_weekdays()
+    load_weekdays();
 </script>
 </body>
 </html>

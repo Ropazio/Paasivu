@@ -1,7 +1,7 @@
 /* The whole page in general */
 @font-face {
     font-family: NotoSerif;
-    src: url(fonts/NotoSerif/NotoSerif-Light.ttf);
+    src: url(../fonts/NotoSerif/NotoSerif-Light.ttf);
 }
 
 html, body {

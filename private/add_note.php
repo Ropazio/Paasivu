@@ -55,6 +55,6 @@ else {
 
 
 // Back to the front page
-header("Location: calendar.php");
+header("Location: ../public_html/pages/calendar.php");
 
 ?>

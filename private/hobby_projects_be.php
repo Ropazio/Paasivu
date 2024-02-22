@@ -1,0 +1,76 @@
+<?php
+
+/* Projects is an array containing arrays with information on each project:
+array (ordinal number: int, project description: str, image source: str, projectwide image: bool )
+*/
+
+$character_projects = array (
+    array(1, 'Geralt of Rivia, The Witcher 1 -pelin mukaan', [[add_img_path('Geralt1.jpg'), false, 'Geralt of Rivia (#1)']]),
+    array(2, 'Geralt of Rivia, The Witcher -sarjan mukaan (En tosin pidä henkilökohtaisesti sarjasta.)', [[add_img_path('Geralt2.jpg'), false, 'Geralt of Rivia (#2)'], [add_img_path('Geralts.jpg'), false, 'Geralts']]),
+    array(3, 'Morrigan, Dragon Age Origins -pelin mukaan', [[add_img_path('Morrigan.jpg'), false, 'Morrigan']]),
+    array(4, 'Ruttotohtori', [[add_img_path('Doctor1.jpg'), false, 'Ruttotohtori'], [add_img_path('Doctor2.jpg'), false, 'Ruttotohtori']]),
+    array(5, 'Caveira, Rainbow six siege -pelistä', [[add_img_path('Caveira.jpg'), false, 'Caveira']]),
+    array(6, 'Totoro, Studio Ghiblin Naapurini Totoro -elokuvasta', [[add_img_path('Totoro.jpg'), false, 'Totoro']]),
+    array(7, 'Hawke, Dragon Age 2 -pelin mukaan (Hahmon vaatteet eivät ole minun tekemiäni tällä kertaa.)', [[add_img_path('Hawke.jpg'), false, 'Hawke']]),
+    array(8, 'Baby Yoda, The Mandalorian -sarjasta', [[add_img_path('Yoda1.jpg'), false, 'Baby Yoda'], [add_img_path('Yoda2.jpg'), false, 'Baby Yoda ilman viittaa']]),
+    array(9, 'Silmät hammasmallin pariksi goottisarjojen innoittamana!', [[add_img_path('Eyes.jpg'), false, 'Silmämunat']]),
+    array(10, 'Haku-lohikäärme, Studio Ghiblin Henkien kätkemä -elokuvasta', [[add_img_path('Haku.jpg'), true, 'Haku']])
+);
+
+$textile_projects = array (
+    array(1, 'Alma', [[add_img_path('Alma.jpeg'), false, 'Alma']]),
+    array(2, 'Vauvan joulutossut', [[add_img_path('Shoes.jpeg'), false, 'Vauvan joulutossut']]),
+    array(3, 'Huovutettu kettu', [[add_img_path('Fox.jpg'), false, 'Huovutettu kettu']]),
+    array(4, 'Kerttu', [[add_img_path('Kerttu.jpg'), false, 'Kerttu']]),
+    array(5, 'Makramee', [[add_img_path('Makrame.jpg'), false, 'Makramee']]),
+    array(6, 'T-paita ja yöhousut', [[add_img_path('Clothes.jpg'), true, 'T-paita ja yöhousut']]),
+    array(7, 'Paita', [[add_img_path('Shirt.jpg'), true, 'Paita']])
+);
+
+$technical_projects = array (
+    array(1, 'Puukko (Teränä vanhan Moran terä.)', [[add_img_path('Puukko1.jpg'), false, 'Puukko'], [add_img_path('Puukko2.jpg'), false, 'Puukko']]),
+    array(2, 'Jouluporo', [[add_img_path('Reindeer.jpg'), false, 'Jouluporo']]),
+    array(3, 'Geraltin hopeamiekka', [[add_img_path('Silver_sword.jpg'), false, 'Geraltin hopeamiekka']]),
+    array(4, 'Kasvitaso', [[add_img_path('Plant_stand.jpg'), false, 'Kasvitaso']])
+);
+
+$other_projects = array (
+    array(1, 'Enderman, Minecraft-pelistä', [[add_img_path('Enderman.jpg'), false, 'Enderman']]),
+    array(2, 'Pörriäinen, Minecraft-pelistä', [[add_img_path('Minecraft.jpg'), false, 'Pörriäinen']]),
+    array(3, 'Lasinpuhallusta: pingviini, lintu, koristepallo, maljakko x 2', [[add_img_path('Glassware.jpg'), false, 'Lasinpuhallustöitä']]),
+    array(4, 'Nuka-Cola Quantum, Fallout-pelissarjasta (Etiketti netistä.)', [[add_img_path('Bottle.jpg'), false, 'Nuka-Cola Quantum']]),
+    array(5, 'Normandy SR-2, Mass Effect 2 -pelistä (Nimi puuttuu aluksen kyljestä. Löysin aluksen ja sukkuloiden 3D-mallit täältä: https://www.thingiverse.com/thing:4921765. Tuki omasta päästä.)', [[add_img_path('Normandy1.jpg'), true, 'Normandy SR-2'], [add_img_path('Normandy2.jpg'), true, 'Normandy SR-2'] ])
+);
+
+function add_img_path($img) {
+    $path = "../projects/" . $img;
+    return $path;
+}
+
+function add_project_in_list($projects, $project_ordinal) {
+    echo "<li class='ordered_list_item'>";
+    echo    $projects[$project_ordinal][1];
+    echo "</li>";
+}
+
+function add_project_image($projects, $project_ordinal) {
+    $image_list = $projects[$project_ordinal][2];
+    for ($i = 0; $i < count($image_list); $i++) {
+        if ($image_list[$i][1] == false) {
+            $name_class_container = 'image_container';
+            $name_class_image = 'proj_img';
+        } else {
+            $name_class_container = 'wide_image_container';
+            $name_class_image = 'wide_img';
+        }
+
+        echo "<div class=" . $name_class_container . ">";
+        echo    "<img src=" . $image_list[$i][0]
+                . " class=" . $name_class_image
+                . sprintf(" onclick='enlarge_image(\"%s\")'>", $image_list[$i][0]);
+        echo    "<div class='overlay'>" . $image_list[$i][2] . "</div>";
+        echo "</div>";
+    }
+}
+
+?>
