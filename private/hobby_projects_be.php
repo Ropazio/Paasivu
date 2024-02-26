@@ -5,7 +5,7 @@ array (ordinal number: int, project description: str, image source: str, project
 */
 
 $character_projects = array (
-    array(1, 'Geralt of Rivia, The Witcher 1 -pelin mukaan', [[add_img_path('Geralt1.jpg'), false, 'Geralt of Rivia (#1)']]),
+    array(1, 'Geralt of Rivia, The Witcher 1 -pelin mukaan', [[add_img_path('Geralt1.jpg'), false, 'Geralt of Rivia (#1)'], [add_img_path('Geralt3.jpg'), false, 'Geralt of Rivia (#1)']]),
     array(2, 'Geralt of Rivia, The Witcher -sarjan mukaan (En tosin pidä henkilökohtaisesti sarjasta.)', [[add_img_path('Geralt2.jpg'), false, 'Geralt of Rivia (#2)'], [add_img_path('Geralts.jpg'), false, 'Geralts']]),
     array(3, 'Morrigan, Dragon Age Origins -pelin mukaan', [[add_img_path('Morrigan.jpg'), false, 'Morrigan']]),
     array(4, 'Ruttotohtori', [[add_img_path('Doctor1.jpg'), false, 'Ruttotohtori'], [add_img_path('Doctor2.jpg'), false, 'Ruttotohtori']]),
@@ -22,16 +22,18 @@ $textile_projects = array (
     array(2, 'Vauvan joulutossut', [[add_img_path('Shoes.jpeg'), false, 'Vauvan joulutossut']]),
     array(3, 'Huovutettu kettu', [[add_img_path('Fox.jpg'), false, 'Huovutettu kettu']]),
     array(4, 'Kerttu', [[add_img_path('Kerttu.jpg'), false, 'Kerttu']]),
-    array(5, 'Makramee', [[add_img_path('Makrame.jpg'), false, 'Makramee']]),
-    array(6, 'T-paita ja yöhousut', [[add_img_path('Clothes.jpg'), true, 'T-paita ja yöhousut']]),
-    array(7, 'Paita', [[add_img_path('Shirt.jpg'), true, 'Paita']])
+    array(5, 'Kisu-avaimenperä', [[add_img_path('Kitty1.jpg'), false, 'Kisu'], [add_img_path('Kitty2.jpg'), false, 'Kisu repussa kiinni']]),
+    array(6, 'Makramee', [[add_img_path('Makrame.jpg'), false, 'Makramee']]),
+    array(7, 'T-paita ja yöhousut', [[add_img_path('Clothes.jpg'), true, 'T-paita ja yöhousut']]),
+    array(8, 'Paita', [[add_img_path('Shirt.jpg'), true, 'Paita']])
 );
 
 $technical_projects = array (
     array(1, 'Puukko (Teränä vanhan Moran terä.)', [[add_img_path('Puukko1.jpg'), false, 'Puukko'], [add_img_path('Puukko2.jpg'), false, 'Puukko']]),
     array(2, 'Jouluporo', [[add_img_path('Reindeer.jpg'), false, 'Jouluporo']]),
-    array(3, 'Geraltin hopeamiekka', [[add_img_path('Silver_sword.jpg'), false, 'Geraltin hopeamiekka']]),
-    array(4, 'Kasvitaso', [[add_img_path('Plant_stand.jpg'), false, 'Kasvitaso']])
+    array(3, 'Geraltin miekat (2 x teräsmiekka, 1 x hopeamiekka)', [[add_img_path('Swords.jpg'), false, 'Geraltin miekat'], [add_img_path('Silver_sword.jpg'), false, 'Geraltin hopeamiekka']]),
+    array(4, 'Kasvitaso', [[add_img_path('Plant_stand.jpg'), false, 'Kasvitaso']]),
+    array(5, 'Työtaso', [[add_img_path('Workbench.jpg'), false, 'Työtaso']])
 );
 
 $other_projects = array (
