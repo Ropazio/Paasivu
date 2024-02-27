@@ -1,7 +1,6 @@
 <?php
-
-require_once "sessions.php";
-require_once "database.php";
+require_once dirname(__DIR__) . "/../constructor.php";
+require_once get_be("database.php");
 
 // Add note
 
@@ -55,6 +54,6 @@ else {
 
 
 // Back to the front page
-header("Location: ../public_html/pages/calendar.php");
+header("Location: ../calendar.php");
 
 ?>

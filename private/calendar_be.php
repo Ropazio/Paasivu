@@ -1,7 +1,7 @@
 <?php
 
 if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] != '')) {
-        header ("Location: ../pages/login_page.php");
+        header ("Location: login_page.php");
     }
 
     $notes = get_notes($_SESSION['user_ID']);
@@ -20,7 +20,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] != '')) {
                 if ($note['day'] == $day) {
                     echo "<div class='bullet_container'>";
                     echo    "<ul class='bullet'>";
-                    echo        "<li>" . $note['note'] . "<button class='delete_button'><a class='button_link' href='../../private/delete_note.php?note_ID=" . $note['note_ID'] . "'><div class='button_image_container'>☠️</div></a></button>" . "</li>";
+                    echo        "<li>" . $note['note'] . "<button class='delete_button'><a class='button_link' href='integration/delete_note.php?note_ID=" . $note['note_ID'] . "'><div class='button_image_container'>☠️</div></a></button>" . "</li>";
                     echo    "</ul>";
                     echo "</div>";
 
@@ -38,7 +38,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] != '')) {
     }
 
     function print_send_notes($day_number) {
-        echo "<form method='POST' action='../../private/add_note.php' class='bullet_container'>";
+        echo "<form method='POST' action='integration/add_note.php' class='bullet_container'>";
         echo    "<ul class='bullet'>";
         echo        "<li>";
         echo            sprintf("<textarea name='day%u_text' class='text_box'></textarea>", $day_number);

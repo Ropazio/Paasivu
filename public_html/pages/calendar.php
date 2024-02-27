@@ -1,7 +1,6 @@
 <?php
     require_once __DIR__ . "/../constructor.php";
     require_once get_be("database.php");
-    require_once get_be("sessions.php");
     require_once get_be("calendar_be.php");
     require_once get_be("general_functionalities.php");
 ?>

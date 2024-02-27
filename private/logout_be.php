@@ -18,7 +18,4 @@ function logout() {
     session_destroy();
 }
 
-logout();
-header ("Location: ../public_html/index.php");
-
 ?>
