@@ -209,6 +209,11 @@ Login
     margin-left: 20px;
 }
 
+/* Input fields */
+#password, #username {
+    width: 200px;
+}
+
 
 /*
 Image related stuff

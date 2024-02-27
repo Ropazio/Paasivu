@@ -16,7 +16,7 @@
     <div class="bottom">
 
         <?php
-            require_once "navi.php";
+            require_once "integration/navi.php";
         ?>
         
         <div class="desc">
