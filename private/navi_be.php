@@ -7,7 +7,7 @@ function show_login_information() {
         $name = $_SESSION['username'];
         $greetings = sprintf("Kirjaudu ulos tililtä %s", $name);
         echo "<div id='login_info_box'>";
-        echo    "<a id='login_info' href='../../private/logout.php'>" . $greetings . "</a>";
+        echo    "<a id='login_info' href='integration/logout.php'>" . $greetings . "</a>";
         echo "</div>";
     return;
     }
