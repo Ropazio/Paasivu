@@ -66,8 +66,6 @@ describe('Login form', () => {
     });
   });
 
-  afterEach(async () => {
-    driver.quit()
-  });
+  afterEach(async () => driver.quit());
 
 });
