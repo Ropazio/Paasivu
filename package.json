@@ -1,0 +1,16 @@
+{
+  "name": "paasivu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "testall": "npx mocha \"tests_paasivu/**/test_*.js\"",
+    "testone": "npx mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.3.0",
+    "selenium-webdriver": "^4.18.1"
+  }
+}

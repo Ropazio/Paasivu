@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__DIR__) . "/../constructor.php";
+require_once "../../constructor.php";
 require_once get_be("database.php");
 
 // Add note
@@ -43,12 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 }
-
 if (!$note) {
     echo "An error occurred in saving the note :(";
-}
-
-else {
+} else {
     add_note($day, $note);
 }
 

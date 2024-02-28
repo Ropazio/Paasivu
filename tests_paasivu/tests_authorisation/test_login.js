@@ -1,42 +1,40 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 const assert = require('assert');
+const CHROME_EXE_PATH = '/Users/riina/Documents/Ohjelmointi/Selenium_testing/webdrivers/chromedriver';
 
-@test
+
 describe('Login form', () => {
   let driver;
+  const expectedFailUrl = "http://localhost:8080/Paasivu/public_html/pages/login_page.php?error=login_failed";
 
   beforeEach(async () => {
     // use Chrome
-    const driver = await new Builder().forBrowser('chrome').build();
+    driver = await new Builder().forBrowser('chrome', executable_path=CHROME_EXE_PATH).build();
 
     // Go to login page and find the username and password elements
-    driver.get('https://ropaz.dev/pages/login_page.php');
-    const usernameField = await driver.findElement(By.name('username'));
-    const passwordField = await driver.findElement(By.name('password'));
+    driver.get('http://localhost:8080/Paasivu/public_html/pages/login_page.php');
   });
 
-  describe('Use username only', () => {
+  describe('Use correct username only', () => {
     it('login should fail', async () => {
       try {
-        usernameField.sendKeys('username only', Key.RETURN);
-        const actualUrl = await window.location.href;
-        const expectedUrl = 'https://ropaz.dev/pages/login_page.php?error=login_failed';
-        assert.equal(expectedUrl, actualUrl);
+        await driver.findElement(By.name('username')).sendKeys('test username', Key.RETURN);
+        let actualUrl = await driver.getCurrentUrl();
+        assert.equal(expectedFailUrl, actualUrl);
       } catch(error) {
-          console.log(error);
+        throw error;
       }
-      }
+    });
   });
 
-  describe('Use password only', () => {
+  describe('Use correct password only', () => {
     it('login should fail', async () => {
       try {
-        usernameField.sendKeys('password only', Key.RETURN);
-        const actualUrl = await window.location.href;
-        const expectedUrl = 'https://ropaz.dev/pages/login_page.php?error=login_failed';
-        assert.equal(expectedUrl, actualUrl);
+        await driver.findElement(By.name('password')).sendKeys('test password', Key.RETURN);
+        let actualUrl = await driver.getCurrentUrl();
+        assert.equal(expectedFailUrl, actualUrl);
       } catch(error) {
-          console.log(error);
+        throw error;
       }
     });
   });
@@ -44,13 +42,12 @@ describe('Login form', () => {
   describe('Use incorrect username and password', () => {
     it('login should fail', async () => {
       try {
-        usernameField.sendKeys('username only');
-        usernameField.sendKeys('password only', Key.RETURN);
-        const actualUrl = await window.location.href;
-        const expectedUrl = 'https://ropaz.dev/pages/login_page.php?error=login_failed';
-        assert.equal(expectedUrl, actualUrl);
+        await driver.findElement(By.name('username')).sendKeys('incorrect username');
+        await driver.findElement(By.name('password')).sendKeys('incorrect password', Key.RETURN);
+        let actualUrl = await driver.getCurrentUrl();
+        assert.equal(expectedFailUrl, actualUrl);
       } catch(error) {
-          console.log(error);
+        throw error;
       }
     });
   });
@@ -58,17 +55,19 @@ describe('Login form', () => {
   describe('Use correct username and password', () => {
     it('login should pass', async () => {
       try {
-        usernameField.sendKeys('');
-        usernameField.sendKeys('', Key.RETURN);
-        const actualUrl = await window.location.href;
-        const expectedUrl = 'https://ropaz.dev/pages/calendar.php';
+        await driver.findElement(By.name('username')).sendKeys('correct username');
+        await driver.findElement(By.name('password')).sendKeys('correct password', Key.RETURN);
+        let actualUrl = await driver.getCurrentUrl();
+        let expectedUrl = 'http://localhost:8080/Paasivu/public_html/pages/calendar.php';
         assert.equal(expectedUrl, actualUrl);
       } catch(error) {
-          console.log(error);
+        throw error;
       }
     });
   });
 
-  after(async () => driver.quit());
+  afterEach(async () => {
+    driver.quit()
+  });
 
 });

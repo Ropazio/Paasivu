@@ -1,5 +1,4 @@
 <?php
-    require_once get_be("sessions.php");
     require_once get_be("navi_be.php");
 
 ?>
