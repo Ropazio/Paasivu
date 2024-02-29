@@ -16,11 +16,11 @@ describe('Logout button', () => {
     await driver.findElement(By.name('password')).sendKeys('correct password', Key.RETURN);
     // Verify login
     try {
-        let actualUrl = await driver.getCurrentUrl();
-        let expectedUrl = 'http://localhost:8080/Paasivu/public_html/pages/calendar.php';
-        assert.equal(expectedUrl, actualUrl);
-      } catch(error) {
-        throw error;
+      let actualUrl = await driver.getCurrentUrl();
+      let expectedUrl = 'http://localhost:8080/Paasivu/public_html/pages/calendar.php';
+      assert.equal(expectedUrl, actualUrl);
+    } catch(error) {
+      throw error;
     }
   });
 
