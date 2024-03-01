@@ -3,6 +3,24 @@
 function load_head_and_page_theme($page_title) {
     $theme = load_theme();
 
+    echo "<!--------------------\n";
+    echo "                      \n";
+    echo "    Oh, Hi there!     \n";
+    echo "                      \n";
+    echo "    |\       /|       \n";
+    echo "    |,\_,,,_//\       \n";
+    echo "    /   ’;’     \     \n";
+    echo "   /  ^  ’  ^   \     \n";
+    echo "   |  0     0   /\    \n";
+    echo "   | =» T «=    //\   \n";
+    echo "    \,    o     //\   \n";
+    echo "      \,,,, \ \  //\  \n";
+    echo "    _    _ /\/\/\ //\ \n";
+    echo "___|||__|||__________ \n";
+    echo "--------------------- \n";
+    echo "                      \n";
+    echo "--------------------->\n";
+
     echo "<head>";
     echo "<meta charset='utf-8'>";
     echo "<meta name='viewport' content='width=device-width, initial-scale=1'>";
