@@ -66,7 +66,7 @@ TEXT PART / DESCRIPTION AREA
 /* Description area; Whole white text area on the right bottom corner */
 .desc {
     background-color: var(--white_colour);
-    width: 80%;
+    min-width: 300px;
     position: relative;
     box-shadow: inset -5px 5px 8px 0 rgba(0, 0, 0, 0.05);
     padding-bottom: 50px;
@@ -238,6 +238,8 @@ Image related stuff
     max-width: 600px;
     display: inline-block;
     margin-right: 20px;
+    width: 100%;
+    min-width: 300px;
 }
 
 /* Standard ratio images (taken with phone vertically) */
@@ -252,6 +254,8 @@ Image related stuff
     max-width: 600px;
     padding: 10px;
     display: inline block;
+    width: 100%;
+    min-width: 300px;
 }
 
 /* Image hover effect */
@@ -304,7 +308,7 @@ Image related stuff
 
 #enlarged_image {
     z-index: 100;
-    max-width: 80%;
+    max-width: 100%;
     max-height: 100%;
 }
 
@@ -315,8 +319,7 @@ NAVIGATOR
 /* Navigator; The whole area shown in gray */
 .navi {
     background-color: var(--light_grey_colour);
-    width: 20%;
-    min-width: 270px;
+    min-width: 260px;
     display: block;
 }
 
@@ -382,7 +385,20 @@ NAVIGATOR
     margin-top: 40px;
 }
 
+/*
+TABLET
+*/
 
+@media screen and (max-width: 992px) {
+
+    html, body {
+        width: 100%;
+        margin: 0;
+    }
+
+    .wide_img, .wide_image_container {
+        max-width: 300px;
+    }
 
 /*
 MOBILE
