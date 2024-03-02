@@ -27,9 +27,9 @@ html, body {
 }
 
 
-/*
-HEADER
-*/
+/*****************
+****  HEADER  ****
+*****************/
 
 .header {
     justify-content: center;
@@ -38,17 +38,11 @@ HEADER
     border-bottom: 1px solid #AAA;
 }
 
-/* The page name in the header (if there will be one) */
-.headline {
-    text-align: center;
-    color: black;
-}
 
 
-
-/*
-BOTTOM PART
-*/
+/**********************
+****  BOTTOM PART  ****
+**********************/
 
 /* Area under the header */
 .bottom {
@@ -59,9 +53,9 @@ BOTTOM PART
 
 
 
-/*
-TEXT PART / DESCRIPTION AREA
-*/
+/***************************************
+****  TEXT PART / DESCRIPTION AREA  ****
+***************************************/
 
 /* Description area; Whole white text area on the right bottom corner */
 .desc {
@@ -70,12 +64,14 @@ TEXT PART / DESCRIPTION AREA
     position: relative;
     box-shadow: inset -5px 5px 8px 0 rgba(0, 0, 0, 0.05);
     padding-bottom: 50px;
-    width: 80%;
+    width: 100%;
 }
 
 
 /*
+*
 Text related stuff
+*
 */
 
 /* Text area (paragraphs) in the description area */
@@ -184,7 +180,9 @@ Text related stuff
 
 
 /*
+*
 Login
+*
 */
 
 /* Input and input headline in the login page */
@@ -217,7 +215,9 @@ Login
 
 
 /*
+*
 Image related stuff
+*
 */
 
 /* Container for all images */
@@ -313,9 +313,9 @@ Image related stuff
     max-height: 100%;
 }
 
-/*
-NAVIGATOR
-*/
+/********************
+****  NAVIGATOR  ****
+********************/
 
 /* Navigator; The whole area shown in gray */
 .navi {
@@ -385,6 +385,43 @@ NAVIGATOR
 #login_info_box {
     margin-top: 40px;
 }
+
+/*****************
+****  FOOTER  ****
+*****************/
+
+.footer {
+    padding: 4px;
+}
+
+.github_area {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.footer_content_area {
+    color: #222;
+    display: flex;
+    margin-left: var(--general_margin);
+}
+
+.footer_text {
+    margin-left: 10px;
+}
+
+#cat_button {
+    background: url(../img/github.png);
+    background-size: 100%;
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+
+/*********************************************************/
+/******************** MOBILE & TABLET ********************/
+/*********************************************************/
 
 /*
 TABLET
@@ -484,5 +521,9 @@ MOBILE
     .headline_container h2 {
         margin-bottom: 0px;
         padding-bottom: 20px;
+    }
+
+    .footer_content_area {
+        margin-left: var(--mobile_general_margin);
     }
 }

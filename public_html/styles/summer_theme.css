@@ -24,6 +24,9 @@
     color: var(--green_colour);
 }
 
+.footer {
+    background-color: var(--green_colour);
+}
 
 /* Images */
 .header {

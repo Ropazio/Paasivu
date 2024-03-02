@@ -8,10 +8,10 @@
 <html>
 
 <?php
-    load_head_and_page_theme("Ropaz – Projektit");
+    load_head_and_page_theme("Ropaz – Askarteluprojektit");
 ?>
 <body>
-
+        
     <?php
         load_header();
     ?>
@@ -123,6 +123,9 @@
             </div>
         </div>
     </div>
+    <?php
+        load_footer();
+    ?>
 <script type="text/javascript" src="../js/scripts.js"></script>
 </body>
 </html>

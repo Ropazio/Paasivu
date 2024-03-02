@@ -9,10 +9,11 @@
     load_head_and_page_theme("Ropaz – Päänäkymä");
 ?>
 <body>
-
+    
     <?php
         load_header();
     ?>
+
     <div class="bottom">
 
         <?php
@@ -30,6 +31,9 @@
         </div>
 
     </div>
+    <?php
+        load_footer();
+    ?>
 <script type="text/javascript" src="../js/scripts.js"></script>
 </body>
 </html>

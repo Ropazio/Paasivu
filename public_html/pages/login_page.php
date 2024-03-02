@@ -10,7 +10,7 @@
     load_head_and_page_theme("Ropaz – Kirjautuminen"); 
 ?>
 <body>
-
+        
     <?php
         load_header();
     ?>
@@ -55,7 +55,9 @@
             </form>
         </div>   
     </div>
-
+    <?php
+        load_footer();
+    ?>
 <script type="text/javascript" src="../js/scripts.js"></script>
 </body>
 </html>

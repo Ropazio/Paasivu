@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 <html>
 <?php
-    load_head_and_page_theme("Ropaz – Projektit"); 
+    load_head_and_page_theme("Ropaz – Verkkoprojektit"); 
 ?>
 <body>
-
+        
     <?php
         load_header();
     ?>
@@ -50,8 +50,10 @@
             </p>
             <p class="text"><a class="links" href="/Toivelista/index.php" target="_blank"></a></p>
         </div>
-
     </div>
+    <?php
+        load_footer();
+    ?>
 <script type="text/javascript" src="../js/scripts.js"></script>
 <script>
     load_weekdays();

@@ -11,7 +11,7 @@
     load_head_and_page_theme("Ropaz – Joku roti"); 
 ?>
 <body>
-
+    
     <?php
         load_header();
     ?>
@@ -105,8 +105,10 @@
 
             </p>
         </div>
-
     </div>
+    <?php
+        load_footer();
+    ?>
 <script type="text/javascript" src="../js/scripts.js"></script>
 <script>
     load_weekdays();

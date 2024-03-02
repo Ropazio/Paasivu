@@ -25,6 +25,10 @@
     color: var(--orange_colour);
 }
 
+.footer {
+    background-color: var(--orange_colour);
+}
+
 /* Images */
 .header {
     background-image: url("../img/supper.png");

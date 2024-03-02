@@ -24,6 +24,9 @@
     color: var(--red_colour);
 }
 
+.footer {
+    background-color: var(--red_colour);
+}
 
 /* Images */
 .header {

@@ -45,10 +45,25 @@ function load_theme() {
     return '../styles/supper_theme.css';
 }
 
-function load_header() {
+function load_github_logo() {
+    echo "<div  class='github_area'>";
+    echo "  <a href='https://github.com/Ropazio' target='_blank'>";
+    echo "      <!-- image from https://www.pngegg.com/en/search?q=github+Logo -->";
+    echo "      <button id='cat_button' type='button' alt='github logo'></button>";
+    echo "  </a>";
+    echo "</div>";
+}
 
-    echo "<div class='header'>";
-    echo "<h1 class='headline'></h1>";
+function load_header() {
+    echo "<div class='header'></div>";
+}
+
+function load_footer() {
+    echo "<div class='footer'>";
+    echo "  <div class='footer_content_area'>";
+    load_github_logo();
+    echo "  <h4 class='footer_text'>Ropaz 2024</h4>";
+    echo    "</div>";
     echo "</div>";
 }
 
