@@ -391,6 +391,7 @@ Image related stuff
 *****************/
 
 .footer {
+    box-shadow: inset -5px 5px 8px 0 rgba(0, 0, 0, 0.05);
     padding: 4px;
 }
 

@@ -24,8 +24,9 @@ $textile_projects = array (
     array(4, 'Kerttu', [[add_img_path('Kerttu.jpg'), false, 'Kerttu']]),
     array(5, 'Kisu-avaimenperä', [[add_img_path('Kitty1.jpg'), false, 'Kisu'], [add_img_path('Kitty2.jpg'), false, 'Kisu repussa kiinni']]),
     array(6, 'Makramee', [[add_img_path('Makrame.jpg'), false, 'Makramee']]),
-    array(7, 'T-paita ja yöhousut', [[add_img_path('Clothes.jpg'), true, 'T-paita ja yöhousut']]),
-    array(8, 'Paita', [[add_img_path('Shirt.jpg'), true, 'Paita']])
+    array(7, 'Haalari', [[add_img_path('Dungarees.jpg'), false, 'Haalari']]),
+    array(8, 'T-paita ja yöhousut', [[add_img_path('Clothes.jpg'), true, 'T-paita ja yöhousut']]),
+    array(9, 'Paita', [[add_img_path('Shirt.jpg'), true, 'Paita']])
 );
 
 $technical_projects = array (
