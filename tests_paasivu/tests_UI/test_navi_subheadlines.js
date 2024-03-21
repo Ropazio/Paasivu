@@ -33,19 +33,19 @@ describe('Navi subheadline links', () => {
 
     describe('Try pressing "Pekkaspäivät"', () => {
       it('should go to "Pekkaspäivät" in "Verkkoprojektit"', async () => {
-        testLink('Pekkaspäivät', 'http://localhost:8080/Paasivu/public_html/pages/net_projects.php#pekkaspaivat');
+        await testLink('Pekkaspäivät', 'http://localhost:8080/Paasivu/public_html/pages/net_projects.php#pekkaspaivat');
       });
     });
   
     describe('Try pressing "Nettikasvio"', () => {
       it('should go to "Nettikasvio" in "Verkkoprojektit"', async () => {
-        testLink('Nettikasvio', 'http://localhost:8080/Paasivu/public_html/pages/net_projects#nettikasvio.php');
+        await testLink('Nettikasvio', 'http://localhost:8080/Paasivu/public_html/pages/net_projects.php#nettikasvio');
       });
     });
   
     describe('Try pressing "Joulutoivelista"', () => {
       it('should go to "Joulutoivelista" in "Verkkoprojektit"', async () => {
-        testLink('Joulutoivelista', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects#joulutoivelista.php');
+        await testLink('Joulutoivelista', 'http://localhost:8080/Paasivu/public_html/pages/net_projects.php#joulutoivelista');
       });
     });
   });
@@ -55,25 +55,25 @@ describe('Navi subheadline links', () => {
 
     describe('Try pressing "Virkatut hahmot"', () => {
       it('should go to "Virkatut hahmot" in "Askarteluprojektit"', async () => {
-        testLink('Elämänhallinta', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php#crochet');
+        await testLink('Virkatut hahmot', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php#crochet');
       });
     });
   
     describe('Try pressing "Tekstiilityöt"', () => {
       it('should go to "Tekstiilityöt" in "Askarteluprojektit"', async () => {
-        testLink('Tekstiilityöt', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php#textile');
+        await testLink('Tekstiilityöt', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php#textile');
       });
     });
   
     describe('Try pressing "Tekniset työt"', () => {
       it('should go to "Tekniset työt" in "Askarteluprojektit"', async () => {
-        testLink('Tekniset työt', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php#tech');
+        await testLink('Tekniset työt', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php#tech');
       });
     });
   
     describe('Try pressing "Muut käsityöt"', () => {
       it('should go to "TMuut käsityöt" in "Askarteluprojektit"', async () => {
-        testLink('Muut käsityöt', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php#other');
+        await testLink('Muut käsityöt', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php#other');
       });
     });
   });

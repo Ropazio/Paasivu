@@ -22,12 +22,9 @@
         ?>
 
         <div class="desc">
-
-
             <form method="POST" data-ajax="false" action="integration/login.php">
                 <div class="text">
                     <div>
-
                         <div>
                             <h3 class="input_headline">Käyttäjänimi:</h3>
                         </div>
@@ -52,12 +49,15 @@
                         <h3>Kirjautuminen epäonnistui :(</h3>
                     </div>
                     <?php endif ?> 
+                </div>
             </form>
         </div>   
     </div>
+
     <?php
         load_footer();
     ?>
+
 <script type="text/javascript" src="../js/scripts.js"></script>
 </body>
 </html>

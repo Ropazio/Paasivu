@@ -51,7 +51,6 @@ describe('Calendar daily notes', () => {
       try {
         let testText = await 'test day text box';
         for (let day = 0; day<7; day++) {
-          console.log(weekdays[0][day], weekdays[1][day]);
           await driver.findElement(By.name(weekdays[0][day])).sendKeys(testText);
           await driver.findElement(By.name(weekdays[1][day])).click();
           let exists = await doesNoteExist(testText);

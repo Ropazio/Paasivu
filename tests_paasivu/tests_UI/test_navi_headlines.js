@@ -30,25 +30,25 @@ describe('Navi headline links', () => {
 
   describe('Try pressing "Etusivu"', () => {
     it('should go to "Etusivu"', async () => {
-      testLink('Etusivu', 'http://localhost:8080/Paasivu/public_html/pages/front_page.php');
+      await testLink('Etusivu', 'http://localhost:8080/Paasivu/public_html/pages/front_page.php');
     });
   });
 
   describe('Try pressing "Verkkoprojektit"', () => {
     it('should go to "Verkkoprojektit"', async () => {
-      testLink('Verkkoprojektit', 'http://localhost:8080/Paasivu/public_html/pages/net_projects.php');
+      await testLink('Verkkoprojektit', 'http://localhost:8080/Paasivu/public_html/pages/net_projects.php');
     });
   });
 
   describe('Try pressing "Askarteluprojektit"', () => {
     it('should go to "Askarteluprojektit"', async () => {
-      testLink('Askarteluprojektit', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php');
+      await testLink('Askarteluprojektit', 'http://localhost:8080/Paasivu/public_html/pages/hobby_projects.php');
     });
   });
 
   describe('Try pressing "Elämänhallinta" without being signed in', () => {
     it('should go to login page', async () => {
-      testLink('Elämänhallinta', 'http://localhost:8080/Paasivu/public_html/pages/login_page.php');
+      await testLink('Elämänhallinta', 'http://localhost:8080/Paasivu/public_html/pages/login_page.php');
     });
   });
 
@@ -62,7 +62,7 @@ describe('Navi headline links', () => {
       } catch(error) {
         throw error;
       }
-      testLink('Elämänhallinta', 'http://localhost:8080/Paasivu/public_html/pages/calendar.php');
+      await testLink('Elämänhallinta', 'http://localhost:8080/Paasivu/public_html/pages/calendar.php');
     });
   });
 
