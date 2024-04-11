@@ -1,0 +1,155 @@
+<?php
+
+require_once '../app/helpers.php';
+require_once "hobby_projects.php";
+
+// HELPER FUNCTIONS FOR FORMATTING
+
+function add_img_path($img) {
+    $path = site_url("projects/") . $img;
+    return $path;
+}
+
+function add_project_in_list($projects_type, $project_ordinal) {
+    echo "<li class='ordered_list_item'>";
+    echo    $projects_type[$project_ordinal][1];
+    echo "</li>";
+}
+
+function add_project_image($projects_type, $project_ordinal) {
+    $image_list = $projects_type[$project_ordinal][2];
+    for ($i = 0; $i < count($image_list); $i++) {
+        if ($image_list[$i][1] == false) {
+            $name_class_container = 'image_container';
+            $name_class_image = 'proj_img';
+        } else {
+            $name_class_container = 'wide_image_container';
+            $name_class_image = 'wide_img';
+        }
+
+        echo "<div class=" . $name_class_container . ">";
+        echo    "<img src=" . $image_list[$i][0]
+                . " class=" . $name_class_image
+                . sprintf(" onclick='enlarge_image(\"%s\")'>", $image_list[$i][0]);
+        echo    "<div class='overlay'>" . $image_list[$i][2] . "</div>";
+        echo "</div>";
+    }
+}
+
+?>
+
+<!-------------------------------- THE ACTUAL PAGE -------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<?=$snippets["head_and_theme"]?>
+
+<body>
+        
+    <?=$snippets["header"]?>
+
+    <div class="bottom">
+
+        <?=$snippets["navi"]?>
+
+        <div class="desc">
+            <h2 class="main_text_headline">Askarteluja</h2>
+            <p class="text">Tänne lisäilen kuvia askarteluistani, joihin lukeutuu paljon virkkaustöitä ja jonkin verran puutöitä sekä satunnaisia muita projekteja. Valitettavasti en ole vielä optimoinut kuvien lataamista, joten ensimmäinen vierailukerta sivulla on suunnatonta tuskaa!
+            </p>
+
+            <h3 class="text_headline" id="crochet">Virkatut hahmot</h3>
+            <p class="text">Hahmojen virkkaaminen on ollut varsin antoisaa hommaa yksityskohtiensa vuoksi. Tässäpä lista hahmoista kuvineen, mitä olen saanut tuherrettua tähän mennessä (Suunnitteilla on tehdä seuraavaksi Kim Kitsuragi Disco Elysiumista!):
+            <ol class="items">
+                <?php
+                    for ($i = 0; $i < count($character_projects); $i++) {
+                        add_project_in_list($character_projects, $i);
+                    }
+                ?>
+            </ol>
+            <br>&emsp;
+            </p>
+
+            <div class="image_area">
+                <?php
+                    for ($i = 0; $i < count($character_projects); $i++) {
+                        add_project_image($character_projects, $i);
+                    }
+                ?>
+            </div>
+
+
+            <h3 class="text_headline" id="textile">Tekstiilityöt</h3>
+            <p class="text">Joitain tekstiilitöitä:
+            <ol class="items">
+                <?php
+                    for ($i = 0; $i < count($textile_projects); $i++) {
+                        add_project_in_list($textile_projects, $i);
+                    }
+                ?>
+            </ol>
+            </p>
+
+            <div class="image_area">
+                <?php
+                    for ($i = 0; $i < count($textile_projects); $i++) {
+                        add_project_image($textile_projects, $i);
+                    }
+                ?>
+            </div>
+
+
+            <h3 class="text_headline" id="tech">Tekniset työt</h3>
+            <p class="text">Joitain teknisiä töitä:
+            <ol class="items">
+                <?php
+                    for ($i = 0; $i < count($technical_projects); $i++) {
+                        add_project_in_list($technical_projects, $i);
+                    }
+                ?>
+            </ol>
+            </p>
+
+            <div class="image_area">
+                <?php
+                    for ($i = 0; $i < count($technical_projects); $i++) {
+                        add_project_image($technical_projects, $i);
+                    }
+                ?>
+            </div>
+            
+
+            <h3 class="text_headline" id="other">Muut käsityöt</h3>
+            <p class="text">Muita paskarteluja:
+            <ol class="items">
+                <?php
+                    for ($i = 0; $i < count($other_projects); $i++) {
+                        add_project_in_list($other_projects, $i);
+                    }
+                ?>
+            </ol>
+            </p>
+
+            <div class="image_area">
+                <?php
+                    for ($i = 0; $i < count($other_projects); $i++) {
+                        add_project_image($other_projects, $i);
+                    }
+                ?>
+            </div>
+        </div>
+
+        <!-- Background for the image enlargement  -->
+        <div id="enlarged_image_view" onclick="close_image()">
+            <div id="image_background"></div>
+            <div id="enlarged_image_container">
+                <img id="enlarged_image" src="" />
+            </div>
+        </div>
+    </div>
+
+    <?=$snippets["footer"]?>
+
+<script type="text/javascript" src=<?= site_url("/js/scripts.js") ?>></script>
+</body>
+</html>

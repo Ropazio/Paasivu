@@ -1,0 +1,52 @@
+:root {
+    --green_colour: #03ac13;
+    --dark_green_colour: #028a0f;
+}
+
+/* Colored themed */
+.links, .day, .text_headline, .items, .input_headline, .main_headline, .bullet {
+    color: var(--green_colour);
+}
+
+.button {
+    border: 1px solid var(--green_colour);
+}
+
+.main_headline:hover {
+    color: var(--dark_green_colour);
+}
+
+.headlines:hover {
+    color: var(--green_colour);
+}
+
+#login_info, #login_info:visited {
+    color: var(--green_colour);
+}
+
+.footer {
+    background-color: var(--green_colour);
+}
+
+/* Images */
+.header {
+	background-image: url("../img/summer.jpg");
+	background-size: 100% 100%;
+}
+
+
+@media(max-width: 768px) {
+
+    .navi_bar {
+        background-color: var(--green_colour);
+    }
+
+    .navi_menu_icon {
+        background-color: var(--green_colour);
+    }
+
+    .header {
+        background-image: url("../img/summer_mobile.jpg");
+        background-size: cover;
+    }
+}

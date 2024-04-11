@@ -1,0 +1,54 @@
+:root {
+    --orange_colour: #ED7D00;
+    --dark_orange_colour: #DB5500;
+    --light_orange_colour: #FFA500;
+}
+
+/* Colored themed */
+.links, .day, .text_headline, .items, .input_headline, .main_headline, .bullet {
+    color: var(--orange_colour);
+}
+
+.button {
+    border: 1px solid var(--orange_colour);
+}
+
+.main_headline:hover {
+    color: var(--dark_orange_colour);
+}
+
+.headlines:hover {
+    color: var(--orange_colour);
+}
+
+#login_info, #login_info:visited {
+    color: var(--orange_colour);
+}
+
+.footer {
+    background-color: var(--orange_colour);
+}
+
+/* Images */
+.header {
+    background-image: url("../img/supper.png");
+    background-size: 100% 140%;
+}
+
+
+/* MEDIA */
+@media(max-width: 768px) {
+
+    .navi_bar {
+        background-color: var(--light_orange_colour);
+    }
+
+    .navi_menu_icon {
+        background-color: var(--light_orange_colour);
+    }
+
+    .header {
+        background-image: url("../img/supper_mobile.png");
+        background-size: cover;
+    }
+}

@@ -1,0 +1,52 @@
+:root {
+    --red_colour: #EB4522;
+    --dark_red_colour: #b93417;
+}
+
+/* Colored themed */
+.links, .day, .text_headline, .items, .input_headline, .main_headline, .bullet {
+    color: var(--red_colour);
+}
+
+.button {
+    border: 1px solid var(--red_colour);
+}
+
+.main_headline:hover {
+    color: var(--dark_red_colour);
+}
+
+.headlines:hover {
+    color: var(--red_colour);
+}
+
+#login_info, #login_info:visited {
+    color: var(--red_colour);
+}
+
+.footer {
+    background-color: var(--red_colour);
+}
+
+/* Images */
+.header {
+	background-image: url("../img/christmas.jpg");
+	background-size: 100% 100%;
+}
+
+
+@media(max-width: 768px) {
+
+    .navi_bar {
+        background-color: var(--red_colour);
+    }
+
+    .navi_menu_icon {
+        background-color: var(--red_colour);
+    }
+
+    .header {
+        background-image: url("../img/christmas_mobile.jpg");
+        background-size: cover;
+    }
+}

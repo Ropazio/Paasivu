@@ -1,0 +1,70 @@
+
+<div class="navi">
+    <div class="navi_bar">
+        <div class="navi_menu_icon" onclick="activate_mobile_navi()">
+            <i>
+                <div class="icon"></div>
+                <div class="icon"></div>
+                <div class="icon"></div>
+            </i>
+        </div>
+    </div>
+
+    <div class="headline_container" id="navi_headlines">
+        <h1>
+            <a class="main_headline" href="<?= site_url('') ?>">Etusivu</a>
+        </h1>
+
+        <h2>
+            <a class="headlines" href="<?= site_url('net_projects') ?>">Verkkoprojektit</a>
+        </h2>
+
+        <div class="content pages">
+            <li class="bullet">
+                <a class="headlines" href="<?= site_url('net_projects#pekkaspaivat') ?>">Pekkaspäivät</a>
+            </li>
+
+            <li class="bullet">
+                <a class="headlines" href="<?= site_url('net_projects#nettikasvio') ?>">Nettikasvio</a>
+            </li>
+
+            <li class="bullet">
+                <a class="headlines" href="<?= site_url('net_projects#joulutoivelista') ?>">Joulutoivelista</a>
+            </li>
+        </div>
+
+
+        <h2>
+            <a class="headlines" href="<?= site_url('hobby_projects') ?>">Askarteluprojektit</a>
+        </h2>
+
+        <div class="content projects">
+            <li class="bullet">
+                <a class="headlines" href="<?= site_url('hobby_projects#crochet') ?>">Virkatut hahmot </a>
+            </li>
+
+            <li class="bullet">
+                <a class="headlines" href="<?= site_url('hobby_projects#textile') ?>">Tekstiilityöt</a>
+            </li>
+
+            <li class="bullet">
+                <a class="headlines" href="<?= site_url('hobby_projects#tech') ?>">Tekniset työt</a>
+            </li>
+
+            <li class="bullet">
+                <a class="headlines" href="<?= site_url('hobby_projects#other') ?>">Muut käsityöt</a>
+            </li>
+        </div>
+
+        <h2>
+            <a class="headlines function" href="<?= site_url('calendar') ?>">Elämänhallinta</a>
+        </h2>
+
+        <?php /* if ($params['logged_in']): ?> 
+        <div id="login_info_box">
+            <a id="login_info" href="<?= site_url("logout") ?>">Kirjaudu ulos tililtä <?= $params['username'] ?></a>
+        </div>
+        <?php endif */ ?>
+
+    </div>
+</div>

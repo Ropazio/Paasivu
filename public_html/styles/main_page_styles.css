@@ -1,0 +1,530 @@
+/* The whole page in general */
+@font-face {
+    font-family: NotoSerif;
+    src: url(../fonts/NotoSerif/NotoSerif-Light.ttf);
+}
+
+html, body {
+    height: 100vh;
+    width: 80vw;
+    max-width: 1400px;
+    margin: auto;
+    background-color: #222;
+    font-family: NotoSerif;
+    font-size: medium;
+    color: #CCC;
+    margin-top: 0;
+    box-shadow: 5px 0 5px -5px rgba(0,0,0,0.7), -5px 0 5px -5px rgba(0,0,0,0.7);
+}
+
+
+/* Creating variables for the styles */
+:root {
+    --general_margin: 100px;
+    --mobile_general_margin: 30px;
+    --white_colour: #FAFAFA;
+    --light_grey_colour: #E9E9E9;
+}
+
+
+/*****************
+****  HEADER  ****
+*****************/
+
+.header {
+    justify-content: center;
+    height: 240px;
+    padding: 10px;
+    border-bottom: 1px solid #AAA;
+}
+
+
+
+/**********************
+****  BOTTOM PART  ****
+**********************/
+
+/* Area under the header */
+.bottom {
+    display: flex;
+    min-height: 100%;
+    flex-direction: row-reverse;
+}
+
+
+
+/***************************************
+****  TEXT PART / DESCRIPTION AREA  ****
+***************************************/
+
+/* Description area; Whole white text area on the right bottom corner */
+.desc {
+    background-color: var(--white_colour);
+    min-width: 300px;
+    position: relative;
+    box-shadow: inset -5px 5px 8px 0 rgba(0, 0, 0, 0.05);
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+
+/*
+*
+Text related stuff
+*
+*/
+
+/* Text area (paragraphs) in the description area */
+.text {
+    color: #222;
+    text-align: left;
+    padding-top: 10px;
+    margin-left: var(--general_margin);
+    margin-right: var(--general_margin);
+    line-height: 1.6;
+}
+
+/* Headlines for the paragraphs aka subheadlines */
+.text_headline {
+    margin-left: var(--general_margin);
+    margin-top: 80px;
+    margin-right: var(--general_margin);
+}
+
+/* Main headline in the description area */
+.main_text_headline {
+    margin-left: var(--general_margin);
+    margin-top: 100px;
+    margin-bottom: 50px;
+    color: #333;
+    margin-right: var(--general_margin);
+}
+
+/* Ordered list styling (ordinal) */
+.items {
+    margin-left: 80px;
+    margin-bottom: 40px;
+    margin-right: 80px;
+}
+
+/* Single list item in the ordered list styling */
+.ordered_list_item {
+    padding: 4px;
+}
+
+/* Sticky note box in the calendar page */
+.sticky_box {
+    margin-bottom: 100px;
+}
+
+/* Day name in the calendar page */
+.day {
+    margin-left: var(--general_margin);
+    margin-bottom: -15px;
+}
+
+/* Text box in the calendar page */
+.text_box {
+    margin-bottom: -8px;
+    width: 500px;
+    height: 20px;
+}
+
+/* Container for the notes (bullet points) in the calendar page */
+.bullet_container {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+/* Rocket send button in the calendar page */
+.send_button {
+    margin-left: 5px;
+    border: none;
+    padding-bottom: 3px;
+    background-color: var(--white_colour);
+}
+
+/* Container for the buttons in the calendar page */
+.button_image_container {
+    top: 3px;
+    right: 0;
+    position: relative;
+    font-size: 20px;
+    transition: ease-in 0.2s;
+}
+
+/* Hover effects for the rocket send button */
+.send_button:hover .button_image_container {
+    top: -12px;
+    right: -18px;
+    transform: scale(1.5);
+}
+
+/* Skeleton delete button in the calendar page */
+.delete_button {
+    background-color: var(--white_colour);
+    transition: ease-in 0.2s;
+    margin-left: 10px;
+    border: none;
+}
+
+/* Hover effects for the skeleton delete button */
+.delete_button:hover {
+    transform: scale(1.2);
+}
+
+/* Button link (skeleton delete button) */
+.button_link {
+    text-decoration: none;
+}
+
+
+/*
+*
+Login
+*
+*/
+
+/* Input and input headline in the login page */
+.input, .input_headline {
+    margin-left: 20px;
+}
+
+/* Box fot the button in the login page */
+.button_box {
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+/* Button in the login page */
+.button {
+    padding: 10px;
+}
+
+/* Login error message */
+.error {
+    color: red;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+/* Input fields */
+#password, #username {
+    width: 200px;
+}
+
+
+/*
+*
+Image related stuff
+*
+*/
+
+/* Container for all images */
+.image_area{
+    margin-right: var(--general_margin);
+    margin-left: var(--general_margin);
+}
+
+/* Container for single image */
+.image_container {
+    position: relative;
+    max-width: 200px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.wide_image_container {
+    position: relative;
+    max-width: 600px;
+    display: inline-block;
+    margin-right: 20px;
+    width: 100%;
+    min-width: 300px;
+}
+
+/* Standard ratio images (taken with phone vertically) */
+.proj_img {
+    max-width: 200px;
+    padding: 10px;
+    display: inline block;
+}
+
+/* Wider images */
+.wide_img {
+    max-width: 600px;
+    padding: 10px;
+    display: inline block;
+    width: 100%;
+    min-width: 300px;
+}
+
+/* Image hover effect */
+.image_container:hover .overlay, .wide_image_container:hover .overlay {
+    opacity: 1;
+}
+
+/* Image overlay shown when hovered */
+.overlay {
+    margin-left: 10px;
+    position: absolute;
+    bottom: 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+#enlarged_image_view {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0; 
+}
+
+#image_background {
+    background-color: #222;
+    opacity: 80%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#enlarged_image_container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#enlarged_image {
+    z-index: 100;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/********************
+****  NAVIGATOR  ****
+********************/
+
+/* Navigator; The whole area shown in gray */
+.navi {
+    background-color: var(--light_grey_colour);
+    min-width: 260px;
+    display: block;
+}
+
+.navi_menu_icon {
+    display: none;
+    overflow: hidden;
+    width: 80px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.icon {
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  margin-top: 7px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/* Container for the headlines */
+.headline_container {
+    padding-left: 30px;
+    padding-top: 20px;
+    display: block;
+}
+
+/* The main headline "Etusivu" */
+.main_headline {
+    text-decoration: none;
+}
+
+/* Hover effect for the main headline */
+.main_headline:hover {
+    transition: all ease-out 0.2s;
+    font-size: 110%;
+}
+
+/* Rest of the headlines */
+.headlines {
+    color: #222;
+    text-decoration: none;
+}
+
+/* Hover effects for the rest of the headlines */
+.headlines:hover {
+    transition: all ease-out 0.1s;
+    font-size: 110%;
+}
+
+/* Topics under the headlines */
+.pages, .projects {
+    margin-left: 20px;
+}
+
+/* Unordered list styling (bullets) */
+.bullet {
+    list-style: inside;
+    padding-bottom: 6px;
+}
+
+#login_info_box {
+    margin-top: 40px;
+}
+
+/*****************
+****  FOOTER  ****
+*****************/
+
+.footer {
+    box-shadow: inset -5px 5px 8px 0 rgba(0, 0, 0, 0.05);
+    padding: 4px;
+}
+
+.github_area {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.footer_content_area {
+    color: #222;
+    display: flex;
+    margin-left: var(--general_margin);
+}
+
+.footer_text {
+    margin-left: 10px;
+}
+
+#cat_button {
+    background: url(../img/github.png);
+    background-size: 100%;
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+
+/*********************************************************/
+/******************** MOBILE & TABLET ********************/
+/*********************************************************/
+
+/*
+TABLET
+*/
+
+@media screen and (max-width: 992px) {
+
+    html, body {
+        width: 100%;
+        margin: 0;
+    }
+
+    .wide_img, .wide_image_container {
+        max-width: 300px;
+    }
+
+/*
+MOBILE
+*/
+
+@media screen and (max-width: 768px) {
+
+    html, body {
+        width: 100%;
+        margin: 0;
+    }
+
+    .wide_img, .wide_image_container {
+        max-width: 200px;
+    }
+
+    .bottom {
+        width: 100%;
+        display: unset;
+    }
+
+    .main_text_headline {
+        margin-top: 0px;
+    }
+
+    .desc {
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+
+    .navi {
+        width: 100%;
+    }
+
+    .proj_img, .image_container {
+        display: block;
+    }
+
+    .text, .text_headline, .main_text_headline, .image_area, .day {
+        margin-left: var(--mobile_general_margin);
+        margin-right: var(--mobile_general_margin);
+        margin-bottom: 10px;
+    }
+
+    .items {
+        margin-left: 10px;
+    }
+
+    .bullet_container {
+        margin-left: -20px;
+        margin-right: 10px;
+    }
+
+    .text_headline {
+        margin-top: 0;
+    }
+
+    .text_box {
+        width: 240px;
+    }
+
+    .headline_container {
+        display: none;
+        margin-left: 0px;
+    }
+
+    .headline_container.responsive {
+        display: block;
+        background-color: var(--light_grey_colour);
+    }
+
+    .navi_menu_icon {
+        display: block;
+        float: right;
+    }
+
+    .navi_bar {
+        min-height: 50px;
+    }
+
+    .headline_container h2 {
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+    }
+
+    .footer_content_area {
+        margin-left: var(--mobile_general_margin);
+    }
+}

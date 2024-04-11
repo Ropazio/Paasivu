@@ -1,0 +1,155 @@
+<?php
+
+$notes = $params["notes"];
+
+function print_daily_notes($day) {
+
+    if (empty($notes)) {
+        echo "<p class='text'>Ei merkintöjä.</p>";
+    }
+    else {
+        $no_notes = True;
+
+        foreach ($notes as $note) {
+
+            if ($note['day'] == $day) {
+                echo "<div class='bullet_container'>";
+                echo    "<ul class='bullet'>";
+                echo        "<li>" . $note['note'] . "<button class='delete_button'><a class='button_link' href='" . 
+                            site_url("delete_note/" . $note['note_ID'] ) . 
+                            "'><div class='button_image_container'>☠️</div></a></button>" . "</li>";
+                echo    "</ul>";
+                echo "</div>";
+
+                $no_notes = False;
+            }
+
+            else {
+                continue;
+            }
+        }
+        if ($no_notes) {
+            echo "<p class='text'>Ei merkintöjä.</p>";
+        }
+    }
+}
+
+function print_send_notes($day_number) {
+    echo "<form method='POST' action='" . site_url("add_note") . "' class='bullet_container'>";
+    echo    "<ul class='bullet'>";
+    echo        "<li>";
+    echo            sprintf("<textarea name='day%u_text' class='text_box'></textarea>", $day_number);
+    echo            sprintf("<button type='submit' name='day%u_button' class='send_button'><div class='button_image_container'>🚀</div></button>", $day_number);
+    echo        "</li>";
+    echo    "</ul>";
+    echo "</form>";
+}
+
+?>
+
+
+<!-------------------------------- THE ACTUAL PAGE -------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<?=$snippets["head_and_theme"]?>
+
+<body>
+    
+    <?=$snippets["header"]?>
+
+    <div class="bottom">
+
+        <?=$snippets["navi"]?>
+
+        <div class="desc">
+            <h2 class="main_text_headline">Nyt joku roti siihen hommaan!</h2>
+
+            <h2 class="day" id="weekday_error"></h2>
+
+            <div class="sticky_box">
+                <h3 class="day" id="sticky_note"></h3>
+                
+                    <?php
+                        $day0 = null;
+                        print_daily_notes($day0);
+                    ?>
+                    <?php
+                        print_send_notes(0);
+                    ?>
+            </div>
+
+            <h4 class="day" id="weekday1"></h4>
+                
+                <?php
+                    $day1 = date("o-m-d");
+                    print_daily_notes($day1);
+                ?>
+                <?php
+                    print_send_notes(1);
+                ?>
+
+            <h4 class="day" id="weekday2"></h4>
+                <?php
+                    $day2 = date("o-m-d", strtotime("+1 day"));
+                    print_daily_notes($day2);
+                ?>
+                <?php
+                    print_send_notes(2);
+                ?>
+
+            <h4 class="day" id="weekday3"></h4>
+                <?php
+                    $day3 = date("o-m-d", strtotime("+2 day"));
+                    print_daily_notes($day3);
+                ?>
+                <?php
+                    print_send_notes(3);
+                ?>
+
+            <h4 class="day" id="weekday4"></h4>
+                <?php
+                    $day4 = date("o-m-d", strtotime("+3 day"));
+                    print_daily_notes($day4);
+                ?>
+                <?php
+                    print_send_notes(4);
+                ?>
+
+            <h4 class="day" id="weekday5"></h4>
+                <?php
+                    $day5 = date("o-m-d", strtotime("+4 day"));
+                    print_daily_notes($day5);
+                ?>
+                <?php
+                    print_send_notes(5);
+                ?>
+
+            <h4 class="day" id="weekday6"></h4>
+                <?php
+                    $day6 = date("o-m-d", strtotime("+5 day"));
+                    print_daily_notes($day6);
+                ?>
+                <?php
+                    print_send_notes(6);
+                ?>
+
+            <h4 class="day" id="weekday7"></h4>
+                <?php
+                    $day7 = date("o-m-d", strtotime("+6 day"));
+                    print_daily_notes($day7);
+                ?>
+                <?php
+                    print_send_notes(7);
+                ?>
+
+            </p>
+        </div>
+    </div>
+
+    <?=$snippets["footer"]?>
+
+<script type="text/javascript" src=<?= site_url("/js/scripts.js") ?>></script>
+</body>
+</html>

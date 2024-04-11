@@ -1,0 +1,16 @@
+Options -Multiviews
+RewriteEngine On
+RewriteBase /Paasivu_new/
+
+# set public_html/ as a root directory
+
+RewriteCond %{THE_REQUEST} /public_html/([^\s?]*) [NC]
+RewriteRule ^ %1 [L,NE,R=302]
+
+RewriteRule ^((?!public_html/).*)$ public_html/$1 [L,NC]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule public_html/(.+)$ public_html/index.php?url=$1 [QSA,L]
