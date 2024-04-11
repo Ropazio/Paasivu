@@ -12,8 +12,11 @@ class Coding_project_controller extends Controller {
 	}
 
 	public function index() {
+		$user_params = $this->auth->get_user_session_params();
+
 		$this->view->view("coding_project/index", [
-			"title" => "Ropaz.dev - Verkkoprojektit"
+			"title" => "Ropaz.dev - Verkkoprojektit",
+			"user_params" => $user_params
 		]);
 	}
 }

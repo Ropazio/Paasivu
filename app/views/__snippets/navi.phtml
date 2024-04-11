@@ -60,11 +60,11 @@
             <a class="headlines function" href="<?= site_url('calendar') ?>">Elämänhallinta</a>
         </h2>
 
-        <?php /* if ($params['logged_in']): ?> 
+        <?php if ($params["user_params"]["logged_in"]): ?> 
         <div id="login_info_box">
-            <a id="login_info" href="<?= site_url("logout") ?>">Kirjaudu ulos tililtä <?= $params['username'] ?></a>
+            <a id="login_info" href="<?= site_url("logout") ?>">Kirjaudu ulos tililtä <?= $params["user_params"]["username"] ?></a>
         </div>
-        <?php endif */ ?>
+        <?php endif ?>
 
     </div>
 </div>

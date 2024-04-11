@@ -1,35 +1,30 @@
 <?php
 
 require_once "../app/Models/Note_model.php";
-require_once "../app/Core/Authenticator.php";
 
 class Calendar_controller extends Controller {
 
 	protected Model $model;
-	protected Authenticator $auth;
 
 	public function __construct() {
 		parent::__construct();
 		$this->model = new Note_model();
 
-		// authentification to all endpoints
-		$this->auth = new Authenticator();
 		if (!$this->auth->is_logged_in()) {
-			header("Location: login");
-		} else {
-			header("Location: calendar");
+			header("Location: " . site_url("login"));
 		}
 	}
 
 	// List all
 	public function index() {
-		//$this->->get_username();
-		//$this->get_user_id();
-		$notes = $this->model->get_all($user_ID);
+		$user_params = $this->auth->get_user_session_params();
+
+		$notes = $this->model->get_all($user_params["user_id"]);
 
 		$this->view->view("calendar/index", [
 			"title" => "Ropaz.dev - Joku roti",
-			"notes" => $notes
+			"notes" => $notes,
+			"user_params" => $user_params
 		]);
 	}
 
@@ -73,13 +68,14 @@ class Calendar_controller extends Controller {
     	}
 	    	
 		if (!$note) {
+			// TODO: Add better way to show errors! No html here!
     		echo "An error occurred in saving the note :(";
 		} else {
     		$notes = $this->model->add_note($day, $note);
 		}
 
 		// Back to the calendar front page
-		header("Location: calendar");
+		header("Location: " . site_url("calendar"));
 	}
 
 	// Delete existing note
@@ -90,6 +86,6 @@ class Calendar_controller extends Controller {
 		$this->model->delete_note($note_id);
 
 		// Back to the calendar front page
-		header("Location: calendar");
+		header("Location: " . site_url("calendar"));
 	}
 }

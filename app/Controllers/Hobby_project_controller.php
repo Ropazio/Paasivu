@@ -12,8 +12,11 @@ class Hobby_project_controller extends Controller {
 	}
 
 	public function index() {
+		$user_params = $this->auth->get_user_session_params();
+
 		$this->view->view("hobby_project/index", [
-			"title" => "Ropaz.dev - Askarteluprojektit"
+			"title" => "Ropaz.dev - Askarteluprojektit",
+			"user_params" => $user_params
 		]);
 	}
 }

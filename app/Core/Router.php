@@ -14,7 +14,8 @@ class Router {
 			"net_projects" 		=> ["Coding_project_controller", "index"],
 			"hobby_projects" 	=> ["Hobby_project_controller", "index"],
 			"calendar"			=> ["Calendar_controller", "index"],
-			"login"				=> ["Authenticator_controller", "index"]
+			"login"				=> ["Authenticator_controller", "index"],
+			"logout"			=> ["Authenticator_controller", "logout"],
 		],
 		"DELETE" => [
 			"delete_note" 		=> ["Calendar_controller", "delete"],
@@ -23,7 +24,7 @@ class Router {
 
 	public function __construct() {
 
-		$url = $this->parse_url();
+		$url = $this->get_and_parse_url();
 
 		if (!isset(self::ROUTING_TABLE[$url])) {
 			//header("Location: /");
@@ -52,12 +53,12 @@ class Router {
 		$controller->$method_name();
 	}
 
-	private function parse_url() {
+	private function get_and_parse_url() {
 
+		$url = "";
 		if (isset($_GET["url"])) {
 			$url = rtrim($_GET["url"], "/");
         }
-
         return $url;
 	}
 
