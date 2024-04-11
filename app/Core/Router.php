@@ -31,7 +31,7 @@ class Router {
 		}
 
 		// get the request method (GET / POST)
-		$method = $_SERVER['REQUEST_METHOD'];
+		$method = $_SERVER["REQUEST_METHOD"];
 
 		// TODO: Tarkista että $method / $url on olemassa ROUTING_TABLE:ssa, muuten näytä error 404!
 
@@ -53,7 +53,8 @@ class Router {
 		$controller->$method_name();
 	}
 
-	private function get_and_parse_url() {
+
+	private function get_and_parse_url() : string {
 
 		$url = "";
 		if (isset($_GET["url"])) {

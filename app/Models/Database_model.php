@@ -8,6 +8,7 @@ class Database_model extends Model {
 	protected PDO $pdo;
 
 	public function __construct() {
+
 		$this->database = new Database();
 		$this->pdo = $this->database->get_pdo();
 	}

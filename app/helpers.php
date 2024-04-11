@@ -11,6 +11,6 @@ define('SITE_ROOT', 'Paasivu_new');
 
 //////////////////////////////////////////////////////////////////
 
-function site_url(string $url) : string {
+function site_url( string $url ) : string {
     return '/' . SITE_ROOT . '/' . $url;
 }

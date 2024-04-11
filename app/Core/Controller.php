@@ -12,6 +12,7 @@ class Controller {
 	protected Authenticator $auth;
 
 	public function __construct() {
+
 		$this->view = new View();
 		$this->model = new Model();
 		$this->auth = new Authenticator();

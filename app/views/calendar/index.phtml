@@ -2,7 +2,7 @@
 
 $notes = $params["notes"];
 
-function print_daily_notes($day) {
+function print_daily_notes( ?string $day ) : void {
 
     if (empty($notes)) {
         echo "<p class='text'>Ei merkintöjä.</p>";
@@ -34,7 +34,7 @@ function print_daily_notes($day) {
     }
 }
 
-function print_send_notes($day_number) {
+function print_send_notes( int $day_number ) : void {
     echo "<form method='POST' action='" . site_url("add_note") . "' class='bullet_container'>";
     echo    "<ul class='bullet'>";
     echo        "<li>";

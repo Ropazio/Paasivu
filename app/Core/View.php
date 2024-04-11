@@ -2,7 +2,7 @@
 
 class View {
 
-	public function view($view_path, $params = []) {
+	public function view( string $view_path, array $params = [] ) : void {
 
 		$real_path = "../app/views/" . $view_path . ".phtml";
 
@@ -12,7 +12,8 @@ class View {
 		require_once $real_path;
 	}
 
-	public function load_snippets($params = []) {
+
+	public function load_snippets( array $params = [] ) : array {
 
 		$snippets = [
 		"navi",
@@ -28,7 +29,7 @@ class View {
 
 		foreach($snippets as $snippet_name) {
 			ob_start();
-			require_once '../app/helpers.php';
+			require_once "../app/helpers.php";
 			require("../app/views/__snippets/" . $snippet_name . ".phtml");
 			$results[$snippet_name] = ob_get_clean();
 		}
@@ -36,17 +37,18 @@ class View {
 		return $results;
 	}
 
-	public function load_theme() {
+
+	public function load_theme() : string {
 
     	$date = date("m");
     	$summer_months = array(4, 5, 6, 7, 8);
     	$christmas_months = array(12);
 
     	if (in_array($date, $summer_months)) {
-        	return '/styles/summer_theme.css';
+        	return "/styles/summer_theme.css";
     	} elseif (in_array($date, $christmas_months)) {
-        	return '/styles/christmas_theme.css';
+        	return "/styles/christmas_theme.css";
     	}
-		return '/styles/supper_theme.css';
+		return "/styles/supper_theme.css";
 	}
 }

@@ -7,6 +7,7 @@ class Calendar_controller extends Controller {
 	protected Model $model;
 
 	public function __construct() {
+
 		parent::__construct();
 		$this->model = new Note_model();
 
@@ -15,8 +16,10 @@ class Calendar_controller extends Controller {
 		}
 	}
 
+
 	// List all
-	public function index() {
+	public function index() : void {
+
 		$user_params = $this->auth->get_user_session_params();
 
 		$notes = $this->model->get_all($user_params["user_id"]);
@@ -28,8 +31,10 @@ class Calendar_controller extends Controller {
 		]);
 	}
 
+
 	// Add new note
-	public function add($day, $note) {
+	//public function add($day, $note) {
+	public function add() : void {
 
 		$day = False;
 		$note = False;
@@ -71,17 +76,21 @@ class Calendar_controller extends Controller {
 			// TODO: Add better way to show errors! No html here!
     		echo "An error occurred in saving the note :(";
 		} else {
-    		$notes = $this->model->add_note($day, $note);
+			$user_params = $this->auth->get_user_session_params();
+			$user_id = $user_params["user_id"];
+    		$notes = $this->model->add_note($day, $note, $user_id);
 		}
 
 		// Back to the calendar front page
 		header("Location: " . site_url("calendar"));
 	}
 
+
 	// Delete existing note
-	public function delete() {
+	public function delete() : void {
+
 		$note_id = $_GET['note_ID'];
-		$note_id = (int)$ID;
+		$note_id = (int)$note_id;
 
 		$this->model->delete_note($note_id);
 

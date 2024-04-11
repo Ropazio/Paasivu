@@ -7,11 +7,14 @@ class Authenticator_controller extends Controller {
 	protected Model $user;
 
 	public function __construct() {
+
 		parent::__construct();
 		$this->user = new User_model();
 	}
 
-	public function index() {
+
+	public function index() : void {
+
 		$user_params = $this->auth->get_user_session_params();
 
 		$this->view->view("authentication/login", [
@@ -20,7 +23,8 @@ class Authenticator_controller extends Controller {
 		]);
 	}
 
-	public function login() {
+
+	public function login() : void {
 
 		$username = $_POST['username'];
 		$password = $_POST['password'];
@@ -34,7 +38,8 @@ class Authenticator_controller extends Controller {
 		}
 	}
 
-	public function login_successful($username, $password) : bool {
+
+	public function login_successful( string $username, string $password ) : bool {
 
     	// Check if username and password are found in the database. If not, return to the login page. If the username or password don't match, return to the login page.
     	$id = $this->user->get_user_id($username, $password);
@@ -50,7 +55,8 @@ class Authenticator_controller extends Controller {
     	return true;
 	}
 
-	public function logout() {
+
+	public function logout() : void {
     
     	// Unset all of the session variables, delete cookies and end session.
     	$this->auth->unset_user_session();

@@ -5,10 +5,12 @@ require_once "../app/Models/Database_model.php";
 class User_model extends Database_model {
 
 	public function __construct() {
+
 		parent::__construct();
 	}
 
-	public function get_user_id($username, $password) {
+
+	public function get_user_id( string $username, string $password ) : ?int {
 
     	// Search user from the database users
     	$query = $this->pdo->prepare("SELECT password, user_ID FROM users WHERE username = ?");

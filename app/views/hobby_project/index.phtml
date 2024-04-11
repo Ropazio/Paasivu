@@ -5,18 +5,18 @@ require_once "hobby_projects.php";
 
 // HELPER FUNCTIONS FOR FORMATTING
 
-function add_img_path($img) {
+function add_img_path( string $img ) : string {
     $path = site_url("projects/") . $img;
     return $path;
 }
 
-function add_project_in_list($projects_type, $project_ordinal) {
+function add_project_in_list( array $projects_type, int $project_ordinal ) : void {
     echo "<li class='ordered_list_item'>";
     echo    $projects_type[$project_ordinal][1];
     echo "</li>";
 }
 
-function add_project_image($projects_type, $project_ordinal) {
+function add_project_image( array $projects_type, int $project_ordinal) : void {
     $image_list = $projects_type[$project_ordinal][2];
     for ($i = 0; $i < count($image_list); $i++) {
         if ($image_list[$i][1] == false) {
