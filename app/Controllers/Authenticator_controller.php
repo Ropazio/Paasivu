@@ -41,14 +41,14 @@ class Authenticator_controller extends Controller {
 
 	public function login_successful( string $username, string $password ) : bool {
 
-    	// Check if username and password are found in the database. If not, return to the login page. If the username or password don't match, return to the login page.
+		// If fetching user id fails, then id is null
     	$id = $this->user->get_user_id($username, $password);
 
     	if (empty($id)) {
         	return false;
     	}
 
-    	// start user session
+		// start user session
     	$logged_in = true;
     	$this->auth->start_user_session($logged_in, $id, $username);
 
@@ -58,7 +58,7 @@ class Authenticator_controller extends Controller {
 
 	public function logout() : void {
     
-    	// Unset all of the session variables, delete cookies and end session.
+		// Unset all of the session variables, delete cookies and end session
     	$this->auth->unset_user_session();
     	$this->auth->delete_session_cookies();
     	$this->auth->end_session();

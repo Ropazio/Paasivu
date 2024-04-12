@@ -5,47 +5,52 @@ require_once "../app/helpers.php";
 
 class Router {
 
-	//ROUTING TABLE = ["page" => [controller, action, method/function]]
+	// ROUTING TABLE = ["page url" => [controller name, method name/function]]
 		const ROUTING_TABLE = [
 			"POST" => [
-				"login" 				=> ["Authenticator_controller", "" ,"login"],
-				"calendar-add_note"		=> ["Calendar_controller", "add_note", "add"],
-				"calendar-delete_note" 	=> ["Calendar_controller", "delete_note", "delete"],
+				"login" 				=> ["Authenticator_controller", "login"],
+				"calendar-add_note"		=> ["Calendar_controller", "add"],
+				"calendar-delete_note" 	=> ["Calendar_controller", "delete"],
 			],
 			"GET" => [
-				"" 						=> ["Home_controller", "", "index"],
-				"net_projects" 			=> ["Coding_project_controller", "", "index"],
-				"hobby_projects" 		=> ["Hobby_project_controller", "", "index"],
-				"calendar"				=> ["Calendar_controller", "", "index"],
-				"login"					=> ["Authenticator_controller", "", "index"],
-				"logout"				=> ["Authenticator_controller", "", "logout"]
+				"" 						=> ["Home_controller", "index"],
+				"net_projects" 			=> ["Coding_project_controller", "index"],
+				"hobby_projects" 		=> ["Hobby_project_controller", "index"],
+				"calendar"				=> ["Calendar_controller", "index"],
+				"login"					=> ["Authenticator_controller", "index"],
+				"logout"				=> ["Authenticator_controller", "logout"],
+				"error-404"				=> ["Error_controller", "error_404"],
+				"error-500"				=> ["Error_controller", "error_500"]
 			]
 	];
 
 	public function __construct() {
 
 		$url = $this->get_url();
-		// url is split in parts by "/" and added to array
+		// Url is split in parts by "/" and added to array
 		$url = $this->parse_url($url);
 		// get the request method
 		$request_method = $_SERVER["REQUEST_METHOD"];
 
+		// If page url can't be found, show 404
 		if (!isset(self::ROUTING_TABLE[$request_method][$url[0]])) {
-			header("Location: " . site_url(""));
+			header("Location: " . site_url("error-404"));
 		}
 
+		// Based on the page url, get controller name and method name
 		$controller_name = $this->get_controller_name($url, $request_method);
 		$controller_path = $this->get_controller_path($controller_name);
 		$method_name = $this->get_method_name($url, $request_method);
-		if (count($url) > 1) {
-			$params = $this->get_params($url, $request_method);
-			if (empty($params)) {
-				$this->continue_to_page($controller_name, $controller_path, $method_name);
-			} else {
-				$this->continue_to_page($controller_name, $controller_path, $method_name, $params);
-			}
-		} else {
+
+		// If page url has no action, continue to page
+		if (count($url) == 1) {
 			$this->continue_to_page($controller_name, $controller_path, $method_name);
+		// If page url has parameters, save parameters and continue to page and pass on the parameters
+		} elseif (count($url) == 2) {
+			$params = $this->get_params($url, $request_method);
+			$this->continue_to_page($controller_name, $controller_path, $method_name, $params);
+		} else {
+			header("Location: " . site_url("error-404"));
 		}
 	}
 
@@ -80,8 +85,7 @@ class Router {
 		$controller_path = "../app/Controllers/" . $controller_name . ".php";
 
 		if (!file_exists($controller_path)) {
-			// Add error handler
-			//header("Location: " . site_url("/") );
+			header("Location: " . site_url("error-500") );
 		}
 
 		return $controller_path;
@@ -91,7 +95,7 @@ class Router {
 	protected function get_method_name( array $url, string $method ) : string {
 
 		$page_name = $url[0];
-		$method_name = self::ROUTING_TABLE[$method][$page_name][2];
+		$method_name = self::ROUTING_TABLE[$method][$page_name][1];
 
 		return $method_name;
 	}
@@ -119,14 +123,4 @@ class Router {
 			$controller->$method_name();
 		}
 	}
-
-
-	private function url_found( string $url ) : bool {
-
-		if ($url == $pattern) {
-			return true;
-		}
-		return false;
-	}
-
 }

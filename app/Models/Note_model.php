@@ -40,18 +40,8 @@ class Note_model extends Database_model {
 
 
 	public function delete( int $note_id ) : void {
+
     	// Fetch all notes and delete selected note
     	$this->pdo->prepare("DELETE FROM notes WHERE note_id = ?")->execute([$note_id]);
-	}
-
-
-	public function delete_old_from_database( int $date) : void {
-
-    	if ($date < date("o-m-d")) {
-        	// Fetch all notes and delete old notes (yesterday or before)
-			$this->pdo->prepare("DELETE FROM notes WHERE day = ?")->execute([$date]);
-    	} else {
-        	echo "No old notes.";
-    	}
 	}
 }

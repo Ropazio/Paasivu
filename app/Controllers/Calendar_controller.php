@@ -11,17 +11,18 @@ class Calendar_controller extends Controller {
 		parent::__construct();
 		$this->model = new Note_model();
 
+		// make sure that no other functions of this class can be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
 		}
 	}
 
 
-	// List all
 	public function index() : void {
 
 		$user_params = $this->auth->get_user_session_params();
 
+		// Fetch all user's notes
 		$notes = $this->model->get_all($user_params["user_id"]);
 
 		$this->view->view("calendar/index", [
@@ -32,13 +33,12 @@ class Calendar_controller extends Controller {
 	}
 
 
-	// Add new note
-	//public function add($day, $note) {
 	public function add() : void {
 
 		$day = False;
 		$note = False;
 
+		// Fetch note day and note contents
     	if (isset($_POST['day0_button'])) {
         	$day = null;
         	$note = $_POST['day0_text'];
@@ -86,11 +86,9 @@ class Calendar_controller extends Controller {
 	}
 
 
-	// Delete existing note
 	public function delete( string $note_id ) : void {
 
 		$note_id = (int)$note_id;
-
 		$this->model->delete($note_id);
 
 		// Back to the calendar front page
