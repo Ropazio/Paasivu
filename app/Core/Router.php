@@ -5,23 +5,21 @@ require_once "../app/helpers.php";
 
 class Router {
 
-	//ROUTING TABLE = ["method" => [controller, action, params]]
-	const ROUTING_TABLE = [
-		"POST" => [
-			"login" 				=> ["Authenticator_controller", "" ,"login"],
-			"calendar" 				=> ["Calendar_controller", "add_note", "add"],
-		],
-		"GET" => [
-			"" 						=> ["Home_controller", "", "index"],
-			"net_projects" 			=> ["Coding_project_controller", "", "index"],
-			"hobby_projects" 		=> ["Hobby_project_controller", "", "index"],
-			"calendar"				=> ["Calendar_controller", "", "index"],
-			"login"					=> ["Authenticator_controller", "", "index"],
-			"logout"				=> ["Authenticator_controller", "", "logout"],
-		],
-		"DELETE" => [
-			"calendar" 				=> ["Calendar_controller", "delete_note", "delete"],
-		]
+	//ROUTING TABLE = ["page" => [controller, action, method/function]]
+		const ROUTING_TABLE = [
+			"POST" => [
+				"login" 				=> ["Authenticator_controller", "" ,"login"],
+				"calendar-add_note"		=> ["Calendar_controller", "add_note", "add"],
+				"calendar-delete_note" 	=> ["Calendar_controller", "delete_note", "delete"],
+			],
+			"GET" => [
+				"" 						=> ["Home_controller", "", "index"],
+				"net_projects" 			=> ["Coding_project_controller", "", "index"],
+				"hobby_projects" 		=> ["Hobby_project_controller", "", "index"],
+				"calendar"				=> ["Calendar_controller", "", "index"],
+				"login"					=> ["Authenticator_controller", "", "index"],
+				"logout"				=> ["Authenticator_controller", "", "logout"]
+			]
 	];
 
 	public function __construct() {
@@ -40,49 +38,16 @@ class Router {
 		$controller_path = $this->get_controller_path($controller_name);
 		$method_name = $this->get_method_name($url, $request_method);
 		if (count($url) > 1) {
-			$action = $this->get_action($url, $request_method);
-			if (empty($action)) {
+			$params = $this->get_params($url, $request_method);
+			if (empty($params)) {
 				$this->continue_to_page($controller_name, $controller_path, $method_name);
 			} else {
-				echo "täällä";
+				$this->continue_to_page($controller_name, $controller_path, $method_name, $params);
 			}
 		} else {
 			$this->continue_to_page($controller_name, $controller_path, $method_name);
 		}
 	}
-
-
-		// TODO: Tarkista että $method / $url on olemassa ROUTING_TABLE:ssa, muuten näytä error 404!
-
-		// Pattern: delete_note/{note_id}
-		// delete_note => no match
-		// delete_note/1 => MATCH
-		// delete_note/1/2 => no match
-/*
-		if (self::ROUTING_TABLE[$method] !== "DELETE") {
-			$url = $this->parse_url($url);
-			$controller_name = self::ROUTING_TABLE[$method][$url][0];
-			$method_name = self::ROUTING_TABLE[$method][$url][1];
-		} else {
-
-
-		}
-
-		foreach(self::ROUTING_TABLE[$method] as $pattern => $action) {
-			if ($this->url_matches_pattern($url, $pattern)) {
-				$controller_name = self::ROUTING_TABLE[$method][$url][0];
-				$method_name = self::ROUTING_TABLE[$method][$url][1];
-			} else {
-				$controller_name = $action[0];
-				$method_name = $action[1];
-				//$args = get_url_args($url, $pattern);
-
-				break;
-			}
-		}
-
-	}
-*/
 
 	private function get_url() : string {
 
@@ -132,27 +97,27 @@ class Router {
 	}
 
 
-	protected function get_action( array $url, string $method ) : string {
+	protected function get_params( array $url, string $method ) : string {
 
-		$action_name = $url[1];
-		if (!isset(self::ROUTING_TABLE[$url[1]])) {
-			$action_name = "";
-		} else {
-			$action_name = self::ROUTING_TABLE[$method][$action_name][1];
-		}
+		$params = $url[1];
 
-		return $action_name;
+		return $params;
 	}
 
 
-	protected function continue_to_page( string $controller_name, string $controller_path, string $method_name ) : void {
+	protected function continue_to_page( string $controller_name, string $controller_path, string $method_name, string $params = "" ) : void {
 
 		Authenticator::start_session();
 
 		require_once $controller_path;
 
 		$controller = new $controller_name();
-		$controller->$method_name();
+
+		if ($method_name == "delete") {
+			$controller->$method_name($params);
+		} else {
+			$controller->$method_name();
+		}
 	}
 
 

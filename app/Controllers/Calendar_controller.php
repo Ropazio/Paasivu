@@ -87,9 +87,8 @@ class Calendar_controller extends Controller {
 
 
 	// Delete existing note
-	public function delete() : void {
+	public function delete( string $note_id ) : void {
 
-		$note_id = $_GET['note_ID'];
 		$note_id = (int)$note_id;
 
 		$this->model->delete($note_id);

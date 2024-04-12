@@ -13,13 +13,11 @@ function print_daily_notes( ?string $day, array $notes ) : void {
         foreach ($notes as $note) {
 
             if ($note['day'] == $day) {
-                echo "<div class='bullet_container'>";
+                echo "<form method='POST' action='" . site_url("calendar-delete_note/" . $note["note_id"]) . "' class='bullet_container'>";
                 echo    "<ul class='bullet'>";
-                echo        "<li>" . $note['note'] . "<button class='delete_button'><a class='button_link' href='" . 
-                            site_url("delete_note?note_ID=" . $note['note_ID'] ) . 
-                            "'><div class='button_image_container'>☠️</div></a></button>" . "</li>";
+                echo        "<li>" . $note['note'] . "<button type='submit' class='delete_button'><div class='button_image_container'>☠️</div></button>" . "</li>";
                 echo    "</ul>";
-                echo "</div>";
+                echo "</form>";
 
                 $no_notes = False;
             }
@@ -35,7 +33,7 @@ function print_daily_notes( ?string $day, array $notes ) : void {
 }
 
 function print_send_notes( int $day_number ) : void {
-    echo "<form method='POST' action='" . site_url("add_note") . "' class='bullet_container'>";
+    echo "<form method='POST' action='" . site_url("calendar-add_note") . "' class='bullet_container'>";
     echo    "<ul class='bullet'>";
     echo        "<li>";
     echo            sprintf("<textarea name='day%u_text' class='text_box'></textarea>", $day_number);
