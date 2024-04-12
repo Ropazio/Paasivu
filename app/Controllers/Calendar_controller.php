@@ -78,7 +78,7 @@ class Calendar_controller extends Controller {
 		} else {
 			$user_params = $this->auth->get_user_session_params();
 			$user_id = $user_params["user_id"];
-    		$notes = $this->model->add_note($day, $note, $user_id);
+    		$this->model->add($day, $note, $user_id);
 		}
 
 		// Back to the calendar front page
@@ -92,7 +92,7 @@ class Calendar_controller extends Controller {
 		$note_id = $_GET['note_ID'];
 		$note_id = (int)$note_id;
 
-		$this->model->delete_note($note_id);
+		$this->model->delete($note_id);
 
 		// Back to the calendar front page
 		header("Location: " . site_url("calendar"));

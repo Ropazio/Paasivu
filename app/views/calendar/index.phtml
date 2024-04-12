@@ -2,7 +2,7 @@
 
 $notes = $params["notes"];
 
-function print_daily_notes( ?string $day ) : void {
+function print_daily_notes( ?string $day, array $notes ) : void {
 
     if (empty($notes)) {
         echo "<p class='text'>Ei merkintöjä.</p>";
@@ -16,7 +16,7 @@ function print_daily_notes( ?string $day ) : void {
                 echo "<div class='bullet_container'>";
                 echo    "<ul class='bullet'>";
                 echo        "<li>" . $note['note'] . "<button class='delete_button'><a class='button_link' href='" . 
-                            site_url("delete_note/" . $note['note_ID'] ) . 
+                            site_url("delete_note?note_ID=" . $note['note_ID'] ) . 
                             "'><div class='button_image_container'>☠️</div></a></button>" . "</li>";
                 echo    "</ul>";
                 echo "</div>";
@@ -73,7 +73,7 @@ function print_send_notes( int $day_number ) : void {
                 
                     <?php
                         $day0 = null;
-                        print_daily_notes($day0);
+                        print_daily_notes($day0, $notes);
                     ?>
                     <?php
                         print_send_notes(0);
@@ -84,7 +84,7 @@ function print_send_notes( int $day_number ) : void {
                 
                 <?php
                     $day1 = date("o-m-d");
-                    print_daily_notes($day1);
+                    print_daily_notes($day1, $notes);
                 ?>
                 <?php
                     print_send_notes(1);
@@ -93,7 +93,7 @@ function print_send_notes( int $day_number ) : void {
             <h4 class="day" id="weekday2"></h4>
                 <?php
                     $day2 = date("o-m-d", strtotime("+1 day"));
-                    print_daily_notes($day2);
+                    print_daily_notes($day2, $notes);
                 ?>
                 <?php
                     print_send_notes(2);
@@ -102,7 +102,7 @@ function print_send_notes( int $day_number ) : void {
             <h4 class="day" id="weekday3"></h4>
                 <?php
                     $day3 = date("o-m-d", strtotime("+2 day"));
-                    print_daily_notes($day3);
+                    print_daily_notes($day3, $notes);
                 ?>
                 <?php
                     print_send_notes(3);
@@ -111,7 +111,7 @@ function print_send_notes( int $day_number ) : void {
             <h4 class="day" id="weekday4"></h4>
                 <?php
                     $day4 = date("o-m-d", strtotime("+3 day"));
-                    print_daily_notes($day4);
+                    print_daily_notes($day4, $notes);
                 ?>
                 <?php
                     print_send_notes(4);
@@ -120,7 +120,7 @@ function print_send_notes( int $day_number ) : void {
             <h4 class="day" id="weekday5"></h4>
                 <?php
                     $day5 = date("o-m-d", strtotime("+4 day"));
-                    print_daily_notes($day5);
+                    print_daily_notes($day5, $notes);
                 ?>
                 <?php
                     print_send_notes(5);
@@ -129,7 +129,7 @@ function print_send_notes( int $day_number ) : void {
             <h4 class="day" id="weekday6"></h4>
                 <?php
                     $day6 = date("o-m-d", strtotime("+5 day"));
-                    print_daily_notes($day6);
+                    print_daily_notes($day6, $notes);
                 ?>
                 <?php
                     print_send_notes(6);
@@ -138,7 +138,7 @@ function print_send_notes( int $day_number ) : void {
             <h4 class="day" id="weekday7"></h4>
                 <?php
                     $day7 = date("o-m-d", strtotime("+6 day"));
-                    print_daily_notes($day7);
+                    print_daily_notes($day7, $notes);
                 ?>
                 <?php
                     print_send_notes(7);
@@ -151,5 +151,8 @@ function print_send_notes( int $day_number ) : void {
     <?=$snippets["footer"]?>
 
 <script type="text/javascript" src=<?= site_url("/js/scripts.js") ?>></script>
+<script>
+    load_weekdays();
+</script>
 </body>
 </html>

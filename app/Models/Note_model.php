@@ -31,7 +31,7 @@ class Note_model extends Database_model {
 	}
 
 
-	public function add( ?int $day, string $note, int $user_id ) : void {
+	public function add( string $day, string $note, int $user_id ) : void {
 
     	// Add day specific note
     	$query = "INSERT INTO notes (day, note, user_ID) VALUES (?, ?, ?)";
