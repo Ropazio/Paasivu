@@ -1,5 +1,11 @@
 <?php
-require_once 'Core/Controller.php';
-require_once 'Core/Router.php';
+
+require_once "autoloader.php";
+require_once "helpers.php";
+
+use app\Core\{
+	Router,
+	Controller
+};
 
 $router = new Router();

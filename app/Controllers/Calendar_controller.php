@@ -1,6 +1,13 @@
 <?php
 
-require_once "../app/Models/Note_model.php";
+namespace app\Controllers;
+
+use app\{
+	Core\Controller,
+	Models\Note_model,
+	Models\Model
+};
+
 
 class Calendar_controller extends Controller {
 

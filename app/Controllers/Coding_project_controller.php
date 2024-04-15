@@ -1,6 +1,13 @@
 <?php
 
-require_once "../app/Models/Coding_project_model.php";
+namespace app\Controllers;
+
+use app\{
+	Core\Controller,
+	Models\Coding_project_model,
+	Models\Model
+};
+
 
 class Coding_project_controller extends Controller {
 

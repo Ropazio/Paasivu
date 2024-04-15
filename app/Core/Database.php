@@ -1,6 +1,11 @@
 <?php
 
-class Database {
+namespace app\Core;
+
+use PDO;
+
+
+class Database extends PDO {
 
     protected PDO $pdo;
 

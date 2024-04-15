@@ -1,5 +1,8 @@
 <?php
 
+namespace app\Core;
+
+
 class Authenticator {
 
 	/*

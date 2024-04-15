@@ -1,9 +1,13 @@
 <?php
 
-require_once "../app/Core/View.php";
-require_once "../app/Models/Model.php";
-require_once "../app/Core/Authenticator.php";
-require_once "../app/helpers.php";
+namespace app\Core;
+
+use app\{
+	Core\View,
+	Core\Authenticator,
+	Models\Model
+};
+
 
 class Controller {
 

@@ -19,7 +19,7 @@ ___|||__|||__________
 
 <head>
     <meta charset='utf-8' name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' href=<?= site_url('styles/main_page_styles.css') ?> />
-    <link rel='stylesheet' href=<?= site_url($theme) ?> />
+    <link rel='stylesheet' href=<?= file_path("styles", "main_page_styles.css") ?> />
+    <link rel='stylesheet' href=<?= file_path("styles", $theme) ?> />
     <title><?= $title ?></title>
 </head>

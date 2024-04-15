@@ -1,7 +1,12 @@
 <?php
 
-require_once "../app/Core/Authenticator.php";
-require_once "../app/helpers.php";
+namespace app\Core;
+
+use app\{
+	Core\Authenticator,
+	Controllers
+};
+
 
 class Router {
 
@@ -39,16 +44,15 @@ class Router {
 
 		// Based on the page url, get controller name and method name
 		$controller_name = $this->get_controller_name($url, $request_method);
-		$controller_path = $this->get_controller_path($controller_name);
 		$method_name = $this->get_method_name($url, $request_method);
 
 		// If page url has no action, continue to page
 		if (count($url) == 1) {
-			$this->continue_to_page($controller_name, $controller_path, $method_name);
+			$this->continue_to_page($controller_name, $method_name);
 		// If page url has parameters, save parameters and continue to page and pass on the parameters
 		} elseif (count($url) == 2) {
 			$params = $this->get_params($url, $request_method);
-			$this->continue_to_page($controller_name, $controller_path, $method_name, $params);
+			$this->continue_to_page($controller_name, $method_name, $params);
 		} else {
 			header("Location: " . site_url("error-404"));
 		}
@@ -79,19 +83,6 @@ class Router {
 		return $controller_name;
 	}
 
-
-	protected function get_controller_path( string $controller_name ) : string {
-
-		$controller_path = "../app/Controllers/" . $controller_name . ".php";
-
-		if (!file_exists($controller_path)) {
-			header("Location: " . site_url("error-500") );
-		}
-
-		return $controller_path;
-	}
-
-
 	protected function get_method_name( array $url, string $method ) : string {
 
 		$page_name = $url[0];
@@ -109,13 +100,11 @@ class Router {
 	}
 
 
-	protected function continue_to_page( string $controller_name, string $controller_path, string $method_name, string $params = "" ) : void {
+	protected function continue_to_page( string $controller_name, string $method_name, string $params = "" ) : void {
 
 		Authenticator::start_session();
 
-		require_once $controller_path;
-
-		$controller = new $controller_name();
+		$controller = new ("app\Controllers\\" . $controller_name)();
 
 		if ($method_name == "delete") {
 			$controller->$method_name($params);

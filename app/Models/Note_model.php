@@ -1,6 +1,9 @@
 <?php
 
-require_once "../app/Models/Database_model.php";
+namespace app\Models;
+
+use app\Models\Database_model;
+
 
 class Note_model extends Database_model {
 

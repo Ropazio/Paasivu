@@ -1,6 +1,13 @@
 <?php
 
-require_once "../app/Models/User_model.php";
+namespace app\Controllers;
+
+use app\{
+	Core\Controller,
+	Models\User_model,
+	Models\Model
+};
+
 
 class Authenticator_controller extends Controller {
 

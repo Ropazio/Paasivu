@@ -1,6 +1,13 @@
 <?php
 
-require_once "../app/Models/Hobby_project_model.php";
+namespace app\Controllers;
+
+use app\{
+	Core\Controller,
+	Models\Hobby_project_model,
+	Models\Model
+};
+
 
 class Hobby_project_controller extends Controller {
 

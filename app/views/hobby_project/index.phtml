@@ -1,12 +1,11 @@
 <?php
 
-require_once '../app/helpers.php';
 require_once "hobby_projects.php";
 
 // HELPER FUNCTIONS FOR FORMATTING
 
 function add_img_path( string $img ) : string {
-    $path = site_url("projects/") . $img;
+    $path = file_path("projects", $img);
     return $path;
 }
 
@@ -150,6 +149,6 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
 
     <?=$snippets["footer"]?>
 
-<script type="text/javascript" src=<?= site_url("/js/scripts.js") ?>></script>
+<script type="text/javascript" src=<?= file_path("js", "scripts.js") ?>></script>
 </body>
 </html>
