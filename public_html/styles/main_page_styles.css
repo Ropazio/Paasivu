@@ -229,34 +229,35 @@ Image related stuff
 /* Container for single image */
 .image_container {
     position: relative;
-    max-width: 200px;
-    display: inline-block;
-    margin-right: 20px;
+    background-size: cover;
+    margin: 5px;
 }
 
 .wide_image_container {
     position: relative;
-    max-width: 600px;
+    background-size: cover;
+    margin: 5px;
+}
+
+.image_container, .proj_img {
     display: inline-block;
-    margin-right: 20px;
+    max-width: 200px;
+    min-width: 200px;
+}
+
+.wide_image_container, .wide_img {
+    display: inline-block;
+    max-width: 600px;
     width: 100%;
     min-width: 300px;
 }
 
 /* Standard ratio images (taken with phone vertically) */
 .proj_img {
-    max-width: 200px;
-    padding: 10px;
-    display: inline block;
 }
 
 /* Wider images */
 .wide_img {
-    max-width: 600px;
-    padding: 10px;
-    display: inline block;
-    width: 100%;
-    min-width: 300px;
 }
 
 /* Image hover effect */
@@ -266,9 +267,8 @@ Image related stuff
 
 /* Image overlay shown when hovered */
 .overlay {
-    margin-left: 10px;
     position: absolute;
-    bottom: 15px;
+    bottom: 0px;
     padding-bottom: 20px;
     padding-top: 20px;
     background: rgb(0, 0, 0);

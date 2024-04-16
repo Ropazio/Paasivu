@@ -26,10 +26,14 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
             $name_class_image = 'wide_img';
         }
 
-        echo "<div class=" . $name_class_container . ">";
-        echo    "<img src=" . $image_list[$i][0]
-                . " class=" . $name_class_image
-                . sprintf(" onclick='enlarge_image(\"%s\")'>", $image_list[$i][0]);
+        $small_image = pathinfo($image_list[$i][0], PATHINFO_FILENAME) . "-small." . pathinfo($image_list[$i][0], PATHINFO_EXTENSION);
+
+        echo "<div class=" . $name_class_container . " style='background-image:" .
+             sprintf("url(%s)'>", file_path("projects", $small_image));
+        echo    "<img src=" . $image_list[$i][0] .
+                " class=" . $name_class_image .
+                " loading='lazy'" .
+                sprintf(" onclick='enlarge_image(\"%s\")'>", $image_list[$i][0]);
         echo    "<div class='overlay'>" . $image_list[$i][2] . "</div>";
         echo "</div>";
     }
