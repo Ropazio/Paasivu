@@ -190,10 +190,16 @@ Login
     margin-left: 20px;
 }
 
-/* Box fot the button in the login page */
-.button_box {
-    margin-left: 80px;
-    margin-top: 30px;
+/* Input fields */
+#password, #username {
+    width: 200px;
+}
+
+/* Container for the login button, login text and create account link */
+.login_container {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 40px;
 }
 
 /* Button in the login page */
@@ -201,16 +207,23 @@ Login
     padding: 10px;
 }
 
+/* Container for the login text "tai" */
+#login_text_container {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+/* Box for the create account link */
+#create_account_link_box {
+    margin-left: 10px;
+    padding: 5px;
+}
+
 /* Login error message */
 .error {
     color: red;
     margin-top: 40px;
     margin-left: 20px;
-}
-
-/* Input fields */
-#password, #username {
-    width: 200px;
 }
 
 
@@ -226,13 +239,14 @@ Image related stuff
     margin-left: var(--general_margin);
 }
 
-/* Container for single image */
+/* Container for the normal sized image. Also acts as the low quality normal sized image  */
 .image_container {
     position: relative;
     background-size: cover;
     margin: 5px;
 }
 
+/* Container for the wide image. Also acts as the low quality wide image  */
 .wide_image_container {
     position: relative;
     background-size: cover;
@@ -252,11 +266,11 @@ Image related stuff
     min-width: 300px;
 }
 
-/* Standard ratio images (taken with phone vertically) */
+/* Normal sized images (taken with phone vertically) */
 .proj_img {
 }
 
-/* Wider images */
+/* Wide images */
 .wide_img {
 }
 
@@ -282,6 +296,7 @@ Image related stuff
     text-align: center;
 }
 
+/* View when an image is clicked */
 #enlarged_image_view {
     display: none;
     position: fixed;
@@ -289,6 +304,7 @@ Image related stuff
     top: 0; 
 }
 
+/* Background for the enlarged image */
 #image_background {
     background-color: #222;
     opacity: 80%;
@@ -299,6 +315,7 @@ Image related stuff
     height: 100%;
 }
 
+/* Container for the enlarged image */
 #enlarged_image_container {
     height: 100vh;
     width: 100vw;
@@ -307,6 +324,7 @@ Image related stuff
     align-items: center;
 }
 
+/* The enlarged image */
 #enlarged_image {
     z-index: 100;
     max-width: 100%;
@@ -324,6 +342,7 @@ Image related stuff
     display: block;
 }
 
+/* Burger menu icon in the mobile menu */
 .navi_menu_icon {
     display: none;
     overflow: hidden;
@@ -332,6 +351,7 @@ Image related stuff
     margin-top: 5px;
 }
 
+/* Lines creating the burger menu icon */
 .icon {
   width: 40px;
   height: 4px;
@@ -382,6 +402,7 @@ Image related stuff
     padding-bottom: 6px;
 }
 
+/* Infobox showing the user login and logout */
 #login_info_box {
     margin-top: 40px;
 }
@@ -390,26 +411,31 @@ Image related stuff
 ****  FOOTER  ****
 *****************/
 
+/* The whole footer */
 .footer {
     box-shadow: inset -5px 5px 8px 0 rgba(0, 0, 0, 0.05);
     padding: 4px;
 }
 
+/* Box for the github logo */
 .github_area {
     margin-top: auto;
     margin-bottom: auto;
 }
 
+/* Box for the other content in the footer */
 .footer_content_area {
     color: #222;
     display: flex;
     margin-left: var(--general_margin);
 }
 
+/* Footer text */
 .footer_text {
     margin-left: 10px;
 }
 
+/* Github logo */
 #cat_button {
     background: url(../img/github.png);
     background-size: 100%;

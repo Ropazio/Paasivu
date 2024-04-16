@@ -72,4 +72,9 @@ class Authenticator_controller extends Controller {
 		
 		header ("Location: " . site_url(""));
 	}
+
+	public function create_account() : void {
+
+
+	}
 }

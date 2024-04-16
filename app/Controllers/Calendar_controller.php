@@ -80,8 +80,8 @@ class Calendar_controller extends Controller {
     	}
 	    	
 		if (!$note) {
-			// TODO: Add better way to show errors! No html here!
-    		echo "An error occurred in saving the note :(";
+			// Back to the calendar front page
+			header("Location: " . site_url("calendar"));
 		} else {
 			$user_params = $this->auth->get_user_session_params();
 			$user_id = $user_params["user_id"];

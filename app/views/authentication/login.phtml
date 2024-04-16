@@ -30,9 +30,18 @@
                         </div>
                     </div>
 
-                    <div class="button_box">
-                        <button type="submit" class="button" name="login_button">Kirjaudu!</button>
+                    <div class="login_container">
+                        <div class="button_box">
+                            <button type="submit" class="button" name="login_button">Kirjaudu!</button>
+                        </div>
+
+                        <p id="login_text_container">tai</p>
+
+                        <div id="create_account_link_box">
+                            <a class="links" href="<?= site_url('create_account') ?>" >luo tunnus -></a>
+                        </div>
                     </div>
+
 
                     <?php if(isset($_GET['error'])): ?> 
                     <div class="error">

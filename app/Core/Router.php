@@ -25,7 +25,8 @@ class Router {
 				"login"					=> ["Authenticator_controller", "index"],
 				"logout"				=> ["Authenticator_controller", "logout"],
 				"error-404"				=> ["Error_controller", "error_404"],
-				"error-500"				=> ["Error_controller", "error_500"]
+				"error-500"				=> ["Error_controller", "error_500"],
+				"create_account"		=> ["Authenticator_controller", "create_account"]
 			]
 	];
 
