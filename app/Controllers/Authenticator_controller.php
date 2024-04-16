@@ -90,11 +90,17 @@ class Authenticator_controller extends Controller {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		if (strlen($password) <= 10) {
+		if (strlen($password) < 10) {
+			header ("Location: " . site_url("create_account?error=creation_failed"));
+		} elseif (!$password || !$username) {
 			header ("Location: " . site_url("create_account?error=creation_failed"));
 		} else {
-			$this->user->add_user_id($username, $password);
-			header ("Location: " . site_url("create_account-successful"));
+			$creation_successful = $this->user->add_user($username, $password);
+			if ($creation_successful) {
+				header ("Location: " . site_url("create_account-successful"));
+			} else {
+				header ("Location: " . site_url("create_account?error=creation_failed"));
+			}
 		}
 	}
 

@@ -3,6 +3,7 @@
 namespace app\Models;
 
 use app\Models\Database_model;
+use \PDO;
 
 
 class User_model extends Database_model {
@@ -34,9 +35,17 @@ class User_model extends Database_model {
 	}
 
 
-	public function add_user_id( string $username, string $password ) : void {
+	public function add_user( string $username, string $password ) : ?bool {
 
-		$query = "INSERT INTO users (username, password) VALUES (?, ?)";
-    	$this->pdo->prepare($query)->execute([$username, $password]);
+		$query = $this->pdo->prepare("SELECT EXISTS(SELECT 1 FROM users WHERE username = ?)");
+		$query->execute([$username]);
+		$exists = $query->fetch();
+		if (!$exists[0]) {
+			$query = "INSERT INTO users (username, password) VALUES (?, ?)";
+    		$this->pdo->prepare($query)->execute([$username, $password]);
+    		return true;
+		} else {
+			return false;
+		}
 	}
 }
