@@ -32,4 +32,11 @@ class User_model extends Database_model {
 
     	return null;
 	}
+
+
+	public function add_user_id( string $username, string $password ) : void {
+
+		$query = "INSERT INTO users (username, password) VALUES (?, ?)";
+    	$this->pdo->prepare($query)->execute([$username, $password]);
+	}
 }

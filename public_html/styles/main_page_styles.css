@@ -226,6 +226,19 @@ Login
     margin-left: 20px;
 }
 
+.auth_headline {
+    margin-left: calc(var(--general_margin) + 20px);
+    margin-top: 40px;
+    color: #333;
+    margin-right: var(--general_margin);
+}
+
+/* Box for the create account button */
+#create_account_button_box {
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
 
 /*
 *
@@ -507,6 +520,10 @@ MOBILE
         margin-left: var(--mobile_general_margin);
         margin-right: var(--mobile_general_margin);
         margin-bottom: 10px;
+    }
+
+    .auth_headline {
+        margin-left: calc(var(--mobile_general_margin) + 20px);
     }
 
     .items {

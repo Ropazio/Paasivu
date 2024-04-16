@@ -12,7 +12,11 @@
         <?=$snippets["navi"]?>
 
         <div class="desc">
-            <form method="POST" data-ajax="false" action="<?= site_url('login') ?>">
+            <div>
+                <h2 class="auth_headline">Tunnusten luonti</h2>
+                <p class="text"></p>
+            </div>
+            <form method="POST" data-ajax="false" action="<?= site_url('create_account') ?>">
                 <div class="text">
                     <div>
                         <div>
@@ -30,22 +34,13 @@
                         </div>
                     </div>
 
-                    <div class="login_container">
-                        <div>
-                            <button type="submit" class="button" name="login_button">Kirjaudu!</button>
-                        </div>
-
-                        <p id="login_text_container">tai</p>
-
-                        <div id="create_account_link_box">
-                            <a class="links" href="<?= site_url('create_account') ?>" >luo tunnus -></a>
-                        </div>
+                    <div id="create_account_button_box">
+                        <button type="submit" class="button" name="login_button">Luo tunnus!</button>
                     </div>
-
 
                     <?php if(isset($_GET['error'])): ?> 
                     <div class="error">
-                        <h3>Kirjautuminen epäonnistui :(</h3>
+                        <h3>Salasanan on oltava vähintään 10 merkkiä pitkä!</h3>
                     </div>
                     <?php endif ?>
 

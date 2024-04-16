@@ -16,6 +16,7 @@ class Router {
 				"login" 				=> ["Authenticator_controller", "login"],
 				"calendar-add_note"		=> ["Calendar_controller", "add"],
 				"calendar-delete_note" 	=> ["Calendar_controller", "delete"],
+				"create_account"		=> ["Authenticator_controller", "create"]
 			],
 			"GET" => [
 				"" 						=> ["Home_controller", "index"],
