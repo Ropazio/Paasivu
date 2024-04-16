@@ -91,11 +91,21 @@ class Authenticator_controller extends Controller {
 		$password = $_POST['password'];
 
 		if (strlen($password) <= 10) {
-			header ("Location: " . site_url("create_account?error=login_failed"));
+			header ("Location: " . site_url("create_account?error=creation_failed"));
 		} else {
 			$this->user->add_user_id($username, $password);
+			header ("Location: " . site_url("create_account-successful"));
 		}
+	}
 
-		header ("Location: " . site_url("calendar"));
+
+	public function creation_successful() : void {
+
+		$user_params = $this->auth->get_user_session_params();
+
+		$this->view->view("authentication/creation_successful", [
+			"title" => "Ropaz.dev - Tunnukset luotu",
+			"user_params" => $user_params
+		]);
 	}
 }

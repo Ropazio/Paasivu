@@ -13,21 +13,22 @@ class Router {
 	// ROUTING TABLE = ["page url" => [controller name, method name/function]]
 		const ROUTING_TABLE = [
 			"POST" => [
-				"login" 				=> ["Authenticator_controller", "login"],
-				"calendar-add_note"		=> ["Calendar_controller", "add"],
-				"calendar-delete_note" 	=> ["Calendar_controller", "delete"],
-				"create_account"		=> ["Authenticator_controller", "create"]
+				"login" 					=> ["Authenticator_controller", "login"],
+				"calendar-add_note"			=> ["Calendar_controller", "add"],
+				"calendar-delete_note" 		=> ["Calendar_controller", "delete"],
+				"create_account"			=> ["Authenticator_controller", "create"]
 			],
 			"GET" => [
-				"" 						=> ["Home_controller", "index"],
-				"net_projects" 			=> ["Coding_project_controller", "index"],
-				"hobby_projects" 		=> ["Hobby_project_controller", "index"],
-				"calendar"				=> ["Calendar_controller", "index"],
-				"login"					=> ["Authenticator_controller", "index"],
-				"logout"				=> ["Authenticator_controller", "logout"],
-				"error-404"				=> ["Error_controller", "error_404"],
-				"error-500"				=> ["Error_controller", "error_500"],
-				"create_account"		=> ["Authenticator_controller", "create_account"]
+				"" 							=> ["Home_controller", "index"],
+				"net_projects" 				=> ["Coding_project_controller", "index"],
+				"hobby_projects" 			=> ["Hobby_project_controller", "index"],
+				"calendar"					=> ["Calendar_controller", "index"],
+				"login"						=> ["Authenticator_controller", "index"],
+				"logout"					=> ["Authenticator_controller", "logout"],
+				"error-404"					=> ["Error_controller", "error_404"],
+				"error-500"					=> ["Error_controller", "error_500"],
+				"create_account"			=> ["Authenticator_controller", "create_account"],
+				"create_account-successful"	=> ["Authenticator_controller", "creation_successful"]
 			]
 	];
 
