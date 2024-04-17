@@ -23,7 +23,9 @@ class Home_controller extends Controller {
 	public function index() : void {
 
 		$user_params = $this->auth->get_user_session_params();
-		$texts = $this->text->get("home");
+		$texts = $this->text->get_all("home");
+		$this->text->get_one("desc_home");
+
 
 		$this->view->view("home/index", [
 			"title" 		=> "Ropaz.dev - Pääsivu",

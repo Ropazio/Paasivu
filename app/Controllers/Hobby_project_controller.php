@@ -26,7 +26,7 @@ class Hobby_project_controller extends Controller {
 	public function index() : void {
 
 		$user_params = $this->auth->get_user_session_params();
-		$texts = $this->text->get("hobby");
+		$texts = $this->text->get_all("hobby");
 
 		$this->view->view("hobby_project/index", [
 			"title" 		=> "Ropaz.dev - Askarteluprojektit",

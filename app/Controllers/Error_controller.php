@@ -20,8 +20,8 @@ class Error_controller extends Controller {
 		$user_params = $this->auth->get_user_session_params();
 
 		$this->view->view("__errors/404", [
-			"title" => "Ropaz.dev - Virhe",
-			"user_params" => $user_params
+			"title" 		=> "Ropaz.dev - Virhe",
+			"user_params" 	=> $user_params
 		]);
 	}
 
@@ -31,8 +31,8 @@ class Error_controller extends Controller {
 		$user_params = $this->auth->get_user_session_params();
 
 		$this->view->view("__errors/500", [
-			"title" => "Ropaz.dev - Virhe",
-			"user_params" => $user_params
+			"title" 		=> "Ropaz.dev - Virhe",
+			"user_params" 	=> $user_params
 		]);
 	}
 }
