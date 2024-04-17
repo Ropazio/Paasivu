@@ -12,25 +12,25 @@ class Text_model extends Database_model {
 		parent::__construct();
 	}
 
-	public function get( string $page_name ) : array {
+	public function get( string $page_name ) : ?array {
 
 
 
 		// Get page texts
-		$query = "SELECT text FROM texts WHERE page_name = ? ORDER BY text_number";
+		$query = "SELECT text, text_name FROM texts WHERE page_name = ?";
     	$sth = $this->pdo->prepare($query);
 		$sth->execute([$page_name]);
 
-		$texts = $sth->fetchAll();
+		$texts_temp = $sth->fetchAll();
 
-		if (empty($texts)) {
-			// Add check here
+		if (empty($texts_temp)) {
+			return null;
 		}
 
-	    foreach ($texts as &$text) {
-			$text = [
-				'text'	=> $text['text']
-        	];
+		$texts = [];
+
+    	foreach ($texts_temp as &$text_info) {
+			$texts[$text_info["text_name"]] = $text_info["text"];
 		}
 
 		return $texts;

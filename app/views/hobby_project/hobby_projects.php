@@ -6,7 +6,7 @@ array (ordinal number: int, project description: str, [ image source: str, wide 
 
 $character_projects = array (
     array(1, 'Geralt of Rivia, The Witcher 1 -pelin mukaan', [[add_img_path('Geralt1.jpg'), false, 'Geralt of Rivia (#1)'], [add_img_path('Geralt3.jpg'), false, 'Geralt of Rivia (#1)']]),
-    array(2, 'Geralt of Rivia, The Witcher -sarjan mukaan (En tosin pidä henkilökohtaisesti sarjasta.)', [[add_img_path('Geralt2.jpg'), false, 'Geralt of Rivia (#2)'], [add_img_path('Geralts.jpg'), false, 'Geralts']]),
+    array(2, 'Geralt of Rivia, The Witcher -sarjan mukaan (En tosin pidä henkilökohtaisesti sarjasta.)', [[add_img_path('Geralt2.jpg'), false, 'Geralt of Rivia (#2)'], [add_img_path('Geralts.jpg'), false, 'Geraltit']]),
     array(3, 'Morrigan, Dragon Age Origins -pelin mukaan', [[add_img_path('Morrigan.jpg'), false, 'Morrigan']]),
     array(4, 'Ruttotohtori', [[add_img_path('Doctor1.jpg'), false, 'Ruttotohtori'], [add_img_path('Doctor2.jpg'), false, 'Ruttotohtori']]),
     array(5, 'Caveira, Rainbow six siege -pelistä', [[add_img_path('Caveira.jpg'), false, 'Caveira']]),
@@ -39,7 +39,7 @@ $technical_projects = array (
 
 $other_projects = array (
     array(1, 'Enderman, Minecraft-pelistä', [[add_img_path('Enderman.jpg'), false, 'Enderman']]),
-    array(2, 'Pörriäinen, Minecraft-pelistä', [[add_img_path('Minecraft.jpg'), false, 'Pörriäinen']]),
+    array(2, 'Pörriäinen, Minecraft-pelistä', [[add_img_path('Minecraft.jpg'), false, 'Pörriäinen ja Enderman']]),
     array(3, 'Lasinpuhallusta: pingviini, lintu, koristepallo, maljakko x 2', [[add_img_path('Glassware.jpg'), false, 'Lasinpuhallustöitä']]),
     array(4, 'Nuka-Cola Quantum, Fallout-pelissarjasta (Etiketti netistä.)', [[add_img_path('Bottle.jpg'), false, 'Nuka-Cola Quantum']]),
     array(5, 'Normandy SR-2, Mass Effect 2 -pelistä (Nimi puuttuu aluksen kyljestä. Löysin aluksen ja sukkuloiden 3D-mallit täältä: https://www.thingiverse.com/thing:4921765. Tuki omasta päästä.)', [[add_img_path('Normandy1.jpg'), true, 'Normandy SR-2'], [add_img_path('Normandy2.jpg'), true, 'Normandy SR-2'] ])

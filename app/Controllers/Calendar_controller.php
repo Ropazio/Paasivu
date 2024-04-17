@@ -33,9 +33,9 @@ class Calendar_controller extends Controller {
 		$notes = $this->model->get_all($user_params["user_id"]);
 
 		$this->view->view("calendar/index", [
-			"title" => "Ropaz.dev - Joku roti",
-			"notes" => $notes,
-			"user_params" => $user_params
+			"title" 		=> "Ropaz.dev - Joku roti",
+			"notes" 		=> $notes,
+			"user_params" 	=> $user_params
 		]);
 	}
 

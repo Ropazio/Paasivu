@@ -61,7 +61,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 Askarteluja
             </h2>
             <p class="text">
-                <?= $params["texts"][0]["text"] ?>
+                <?= $params["texts"]["desc_hobby"] ?>
             </p>
 
             <!-- Crocheted figurines -->
@@ -69,7 +69,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 Virkatut hahmot
             </h3>
             <p class="text">
-                <?= $params["texts"][1]["text"] ?>
+                <?= $params["texts"]["hobby_crochet"] ?>
             <ol class="items">
                 <?php
                     for ($i = 0; $i < count($character_projects); $i++) {
@@ -93,7 +93,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 Tekstiilityöt
             </h3>
             <p class="text">
-                <?= $params["texts"][2]["text"] ?>
+                <?= $params["texts"]["hobby_textile"] ?>
             <ol class="items">
                 <?php
                     for ($i = 0; $i < count($textile_projects); $i++) {
@@ -116,7 +116,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 Tekniset työt
             </h3>
             <p class="text">
-                <?= $params["texts"][3]["text"] ?>
+                <?= $params["texts"]["hobby_tech"] ?>
             <ol class="items">
                 <?php
                     for ($i = 0; $i < count($technical_projects); $i++) {
@@ -139,7 +139,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 Muut käsityöt
             </h3>
             <p class="text">
-                <?= $params["texts"][4]["text"] ?>
+                <?= $params["texts"]["hobby_other"] ?>
             <ol class="items">
                 <?php
                     for ($i = 0; $i < count($other_projects); $i++) {
