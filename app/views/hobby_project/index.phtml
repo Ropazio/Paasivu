@@ -57,12 +57,19 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
         <?=$snippets["navi"]?>
 
         <div class="desc">
-            <h2 class="main_text_headline">Askarteluja</h2>
-            <p class="text">Tänne lisäilen kuvia askarteluistani, joihin lukeutuu paljon virkkaustöitä ja jonkin verran puutöitä sekä satunnaisia muita projekteja. Valitettavasti en ole vielä optimoinut kuvien lataamista, joten ensimmäinen vierailukerta sivulla on suunnatonta tuskaa!
+            <h2 class="main_text_headline">
+                Askarteluja
+            </h2>
+            <p class="text">
+                <?= $params["texts"][0]["text"] ?>
             </p>
 
-            <h3 class="text_headline" id="crochet">Virkatut hahmot</h3>
-            <p class="text">Hahmojen virkkaaminen on ollut varsin antoisaa hommaa yksityskohtiensa vuoksi. Tässäpä lista hahmoista kuvineen, mitä olen saanut tuherrettua tähän mennessä (Suunnitteilla on tehdä seuraavaksi Kim Kitsuragi Disco Elysiumista!):
+            <!-- Crocheted figurines -->
+            <h3 class="text_headline" id="crochet">
+                Virkatut hahmot
+            </h3>
+            <p class="text">
+                <?= $params["texts"][1]["text"] ?>
             <ol class="items">
                 <?php
                     for ($i = 0; $i < count($character_projects); $i++) {
@@ -81,9 +88,12 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 ?>
             </div>
 
-
-            <h3 class="text_headline" id="textile">Tekstiilityöt</h3>
-            <p class="text">Joitain tekstiilitöitä:
+            <!-- Textile work -->
+            <h3 class="text_headline" id="textile">
+                Tekstiilityöt
+            </h3>
+            <p class="text">
+                <?= $params["texts"][2]["text"] ?>
             <ol class="items">
                 <?php
                     for ($i = 0; $i < count($textile_projects); $i++) {
@@ -101,9 +111,12 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 ?>
             </div>
 
-
-            <h3 class="text_headline" id="tech">Tekniset työt</h3>
-            <p class="text">Joitain teknisiä töitä:
+            <!-- Technical work -->
+            <h3 class="text_headline" id="tech">
+                Tekniset työt
+            </h3>
+            <p class="text">
+                <?= $params["texts"][3]["text"] ?>
             <ol class="items">
                 <?php
                     for ($i = 0; $i < count($technical_projects); $i++) {
@@ -121,9 +134,12 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 ?>
             </div>
             
-
-            <h3 class="text_headline" id="other">Muut käsityöt</h3>
-            <p class="text">Muita paskarteluja:
+            <!-- Other crafts -->
+            <h3 class="text_headline" id="other">
+                Muut käsityöt
+            </h3>
+            <p class="text">
+                <?= $params["texts"][4]["text"] ?>
             <ol class="items">
                 <?php
                     for ($i = 0; $i < count($other_projects); $i++) {
