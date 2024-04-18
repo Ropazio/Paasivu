@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<?=$snippets["head_and_theme"]?>
+
+<body>
+        
+    <?=$snippets["header"]?>
+
+    <div class="bottom">
+
+        <?=$snippets["navi"]?>
+        
+        <div class="desc">
+
+            <form method="POST" action="<?= site_url("coding-update") ?>">
+                <div>
+                    <h2 class="main_text_headline">
+                        Heipä hei ja tervetuloa katsomaan verkkoprojektejani!
+                    </h2>
+                    <p class="text">
+                        <textarea name="desc_coding_text" class="update_box">
+                            <?= $params["texts"]["desc_coding"] ?>
+                        </textarea>
+                    </p>
+                </div>
+    
+                <!-- Project "Pekkaspäivät" -->
+                <h3 class="text_headline" id="pekkaspaivat">
+                    Pekkaspäivät
+                </h3>
+                <p class="text">
+                    <textarea name="desc_coding_pekkaspaivat_text" class="update_box">
+                        <?= $params["texts"]["coding_pekkaspaivat"] ?>
+                    </textarea>
+                </p>
+                <p class="text">
+                    <a class="links" href="/Pekkaspaivat/index.php" target="_blank">
+                        Tästä linkistä pääset tutustumaan Pekkaspäiviin!
+                    </a>
+                </p>
+    
+                <!-- Project "Nettikasvio" -->
+                <h3 class="text_headline" id="nettikasvio">
+                    Nettikasvio
+                </h3>
+                <p class="text">
+                    <textarea name="desc_coding_nettikasvio_text" class="update_box">
+                        <?= $params["texts"]["coding_nettikasvio"] ?>
+                    </textarea>
+                </p>
+                <p class="text">
+                    <a class="links" href="/Nettikasvio/index.php" target="_blank">
+                        Tästä linkistä pääset tutustumaan Nettikasvioon!
+                    </a>
+                </p>
+    
+                <!-- Project "Joulutoivelista" -->
+                <h3 class="text_headline" id="joulutoivelista">
+                    Joulutoivelista
+                </h3>
+                <p class="text">
+                    <textarea name="desc_coding_joulutoivelista_text" class="update_box">
+                        <?= $params["texts"]["coding_joulutoivelista"] ?>
+                    </textarea>
+                </p>
+                <p class="text">
+                    <a class="links" href="/Toivelista/index.php" target="_blank">
+                        
+                    </a>
+                </p>
+                <!-- Update button -->
+                <button type="submit" name="update_desc_coding_button" class="button update_button">
+                    Päivitä
+                </button>
+            </form>
+
+            <form method="GET" action="<?= site_url("coding_projects") ?>">
+                <!-- Cancel button -->
+                <button type="submit" name="cancel_desc_coding_button" class="button cancel_button">
+                    Peruuta
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <?=$snippets["footer"]?>
+
+<script type="text/javascript" src=<?= file_path("js", "scripts.js") ?>></script>
+</body>
+</html>

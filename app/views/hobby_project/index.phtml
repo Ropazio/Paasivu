@@ -156,6 +156,13 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                     }
                 ?>
             </div>
+
+            <?php if($params["user_params"]["is_admin"]): ?> 
+            <div class="text">
+                <a class="update_link" href="<?= site_url('hobby-update') ?>">Päivitä tekstejä</a>
+            </div>
+            <?php endif ?>
+
         </div>
 
         <!-- Background for the image enlargement  -->

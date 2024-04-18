@@ -60,6 +60,12 @@
                     
                 </a>
             </p>
+
+            <?php if($params["user_params"]["is_admin"]): ?> 
+            <div class="text">
+                <a class="update_link" href="<?= site_url('coding-update') ?>">Päivitä tekstejä</a>
+            </div>
+            <?php endif ?>
         </div>
     </div>
 

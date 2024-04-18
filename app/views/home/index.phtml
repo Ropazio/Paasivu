@@ -18,8 +18,13 @@
             <p class="text">
                 <?= $params["texts"]["desc_home"] ?>
             </p>
-        </div>
 
+            <?php if($params["user_params"]["is_admin"]): ?> 
+            <div class="text">
+                <a class="update_link" href="<?= site_url('home-update') ?>">Päivitä tekstejä</a>
+            </div>
+            <?php endif ?>
+        </div>
     </div>
 
     <?=$snippets["footer"]?>

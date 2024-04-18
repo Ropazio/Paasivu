@@ -17,11 +17,13 @@ class Router {
 				"calendar-add_note"			=> ["Calendar_controller", "add"],
 				"calendar-delete_note" 		=> ["Calendar_controller", "delete"],
 				"create_account"			=> ["Authenticator_controller", "create"],
-				"home-update"				=> ["Home_controller", "update"]
+				"home-update"				=> ["Home_controller", "update"],
+				"coding-update"				=> ["Coding_project_controller", "update"],
+				"hobby-update"				=> ["Hobby_project_controller", "update"]
 			],
 			"GET" => [
 				"" 							=> ["Home_controller", "index"],
-				"net_projects" 				=> ["Coding_project_controller", "index"],
+				"coding_projects" 			=> ["Coding_project_controller", "index"],
 				"hobby_projects" 			=> ["Hobby_project_controller", "index"],
 				"calendar"					=> ["Calendar_controller", "index"],
 				"login"						=> ["Authenticator_controller", "index"],
@@ -30,7 +32,9 @@ class Router {
 				"error-500"					=> ["Error_controller", "error_500"],
 				"create_account"			=> ["Authenticator_controller", "create_account_view"],
 				"create_account-successful"	=> ["Authenticator_controller", "creation_successful_view"],
-				"home-update"				=> ["Home_controller", "update_view"]
+				"home-update"				=> ["Home_controller", "update_view"],
+				"coding-update"				=> ["Coding_project_controller", "update_view"],
+				"hobby-update"				=> ["Hobby_project_controller", "update_view"]
 			]
 	];
 

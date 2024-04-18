@@ -15,21 +15,21 @@
             <h2 class="text_headline">
                 Tervetuloa Ropaz.dev:in pääsivulle!
             </h2>
-            <div class="text">
-                <form method="POST" action="<?= site_url("home-update") ?>">
+            <form method="POST" action="<?= site_url("home-update") ?>">
+                <div class="text">
                     <textarea name="desc_home_text" class="update_box">
                         <?= $params["texts"]["desc_home"] ?>
                     </textarea>
                     <button type="submit" name="update_desc_home_button" class="button update_button">
                         Päivitä
                     </button>
-                </form>
-                <form method="GET" action="<?= site_url("") ?>">
-                    <button type="submit" name="cancel_desc_home_button" class="button cancel_button">
-                        Peruuta
-                    </button>
-                </form>
-            </div>
+                </div>
+            </form>
+            <form method="GET" action="<?= site_url("") ?>">
+                <button type="submit" name="cancel_desc_home_button" class="button cancel_button">
+                    Peruuta
+                </button>
+            </form>
         </div>
 
     </div>

@@ -253,20 +253,23 @@ Image related stuff
 .image_area{
     margin-right: var(--general_margin);
     margin-left: var(--general_margin);
+    margin-bottom: 40px;
 }
 
 /* Container for the normal sized image. Also acts as the low quality normal sized image  */
 .image_container {
     position: relative;
     background-size: cover;
-    margin: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
 }
 
 /* Container for the wide image. Also acts as the low quality wide image  */
 .wide_image_container {
     position: relative;
     background-size: cover;
-    margin: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
 }
 
 .image_container, .proj_img {
@@ -363,14 +366,18 @@ Update page
 
 .update_button {
     position: absolute;
-    bottom: 60px;
-    left: var(--general_margin);
+    bottom: 40px;
+    left: calc(var(--general_margin));
 }
 
 .cancel_button {
     position: absolute;
-    bottom: 60px;
+    bottom: 40px;
     left: calc(2*var(--general_margin));
+}
+
+.update_link {
+    color: #FF001D;
 }
 
 /********************
@@ -446,7 +453,8 @@ Update page
 
 /* Infobox showing the user login and logout */
 #login_info_box {
-    margin-top: 40px;
+    padding-top: 10px;
+    padding-bottom: 40px;
 }
 
 
