@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<?=$snippets["head_and_theme"]?>
+
+<body>
+    
+    <?=$snippets["header"]?>
+
+    <div class="bottom">
+
+        <?=$snippets["navi"]?>
+        
+        <div class="desc">
+            <h2 class="text_headline">
+                Tervetuloa Ropaz.dev:in pääsivulle!
+            </h2>
+            <div class="text">
+                <form method="POST" action="<?= site_url("home-update") ?>">
+                    <textarea name="desc_home_text" class="update_box">
+                        <?= $params["texts"]["desc_home"] ?>
+                    </textarea>
+                    <button type="submit" name="update_desc_home_button" class="button update_button">
+                        Päivitä
+                    </button>
+                </form>
+                <form method="GET" action="<?= site_url("") ?>">
+                    <button type="submit" name="cancel_desc_home_button" class="button cancel_button">
+                        Peruuta
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <?=$snippets["footer"]?>
+
+<script type="text/javascript" src=<?= file_path("js", "scripts.js") ?>></script>
+</body>
+</html>

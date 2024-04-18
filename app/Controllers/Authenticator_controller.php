@@ -49,15 +49,15 @@ class Authenticator_controller extends Controller {
 	public function login_successful( string $username, string $password ) : bool {
 
 		// If fetching user id fails, then id is null
-    	$id = $this->user->get_user_id($username, $password);
+    	$user_info = $this->user->get_user_info($username, $password);
 
-    	if (empty($id)) {
+    	if (empty($user_info)) {
         	return false;
     	}
 
 		// start user session
     	$logged_in = true;
-    	$this->auth->start_user_session($logged_in, $id, $username);
+    	$this->auth->start_user_session($logged_in, $user_info["user_id"], $user_info["is_admin"], $username);
 
     	return true;
 	}
@@ -74,7 +74,7 @@ class Authenticator_controller extends Controller {
 	}
 
 
-	public function create_account() : void {
+	public function create_account_view() : void {
 
 		$user_params = $this->auth->get_user_session_params();
 
@@ -105,7 +105,7 @@ class Authenticator_controller extends Controller {
 	}
 
 
-	public function creation_successful() : void {
+	public function creation_successful_view() : void {
 
 		$user_params = $this->auth->get_user_session_params();
 

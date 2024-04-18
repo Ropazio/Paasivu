@@ -9,9 +9,10 @@ class Authenticator {
 
 	SESSION INFO:
 
-	$_SESSION['logged_in'],
-	$_SESSION['username'],
-	$_SESSION['user_id']
+	$_SESSION["logged_in"],
+	$_SESSION["username"],
+	$_SESSION["is_admin"]
+	$_SESSION["user_id"]
 
 	*/
 
@@ -35,10 +36,11 @@ class Authenticator {
 	}
 
 
-	public static function start_user_session( bool $logged_in, int $user_id, string $username ) : void {
+	public static function start_user_session( bool $logged_in, int $user_id, bool $is_admin, string $username ) : void {
 
 		$_SESSION['logged_in'] = $logged_in;
     	$_SESSION['user_id'] = $user_id;
+    	$_SESSION['is_admin'] = $is_admin;
     	$_SESSION['username'] = $username;
 	}
 
@@ -47,11 +49,13 @@ class Authenticator {
 
 		$logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
 		$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "";
+		$is_admin = isset($_SESSION['is_admin']) ? $_SESSION['is_admin'] : false;
 		$username = isset($_SESSION['username']) ? $_SESSION['username'] : "";
 
 		$params = [
 			"logged_in" 	=> $logged_in,
 			"user_id" 		=> $user_id,
+			"is_admin"		=> $is_admin,
 			"username" 		=> $username
 		];
 		return $params;

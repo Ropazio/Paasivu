@@ -14,12 +14,12 @@ class User_model extends Database_model {
 	}
 
 
-	public function get_user_id( string $username, string $password ) : ?int {
+	public function get_user_info( string $username, string $password ) : ?array {
 
     	// Search user from the database users
-    	$query = $this->pdo->prepare("SELECT password, user_ID FROM users WHERE username = ?");
+    	$query = $this->pdo->prepare("SELECT password, user_ID, admin FROM users WHERE username = ?");
     	$query->execute([$username]);
-    	[$user_password_in_database, $user_ID_in_database] = $query->fetch();
+    	[$user_password_in_database, $user_id_in_database, $is_admin] = $query->fetch();
 
     	// Return null if user password is empty
     	if (empty($user_password_in_database)) {
@@ -28,7 +28,11 @@ class User_model extends Database_model {
 
     	// Return user ID if user password is found and it matches the one in the database
     	if ($user_password_in_database == $password) {
-        	return $user_ID_in_database;
+    		$user_info = [
+    			"user_id" 	=> $user_id_in_database,
+    			"is_admin" 	=> $is_admin
+    		];
+        	return $user_info;
     	}
 
     	return null;

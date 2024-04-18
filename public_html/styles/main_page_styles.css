@@ -68,11 +68,12 @@ html, body {
 }
 
 
-/*
+
+/*****************
 *
 Text related stuff
 *
-*/
+*****************/
 
 /* Text area (paragraphs) in the description area */
 .text {
@@ -179,11 +180,12 @@ Text related stuff
 }
 
 
-/*
+
+/****
 *
 Login
 *
-*/
+****/
 
 /* Input and input headline in the login page */
 .input, .input_headline {
@@ -240,11 +242,12 @@ Login
 }
 
 
-/*
+
+/******************
 *
 Image related stuff
 *
-*/
+*******************/
 
 /* Container for all images */
 .image_area{
@@ -344,6 +347,32 @@ Image related stuff
     max-height: 100%;
 }
 
+
+
+/**********
+*
+Update page
+*
+**********/
+
+.update_box {
+    padding: 10px;
+    width: 500px;
+    height: 200px;
+}
+
+.update_button {
+    position: absolute;
+    bottom: 60px;
+    left: var(--general_margin);
+}
+
+.cancel_button {
+    position: absolute;
+    bottom: 60px;
+    left: calc(2*var(--general_margin));
+}
+
 /********************
 ****  NAVIGATOR  ****
 ********************/
@@ -419,6 +448,7 @@ Image related stuff
 #login_info_box {
     margin-top: 40px;
 }
+
 
 /*****************
 ****  FOOTER  ****

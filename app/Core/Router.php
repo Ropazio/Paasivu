@@ -16,7 +16,8 @@ class Router {
 				"login" 					=> ["Authenticator_controller", "login"],
 				"calendar-add_note"			=> ["Calendar_controller", "add"],
 				"calendar-delete_note" 		=> ["Calendar_controller", "delete"],
-				"create_account"			=> ["Authenticator_controller", "create"]
+				"create_account"			=> ["Authenticator_controller", "create"],
+				"home-update"				=> ["Home_controller", "update"]
 			],
 			"GET" => [
 				"" 							=> ["Home_controller", "index"],
@@ -27,8 +28,9 @@ class Router {
 				"logout"					=> ["Authenticator_controller", "logout"],
 				"error-404"					=> ["Error_controller", "error_404"],
 				"error-500"					=> ["Error_controller", "error_500"],
-				"create_account"			=> ["Authenticator_controller", "create_account"],
-				"create_account-successful"	=> ["Authenticator_controller", "creation_successful"]
+				"create_account"			=> ["Authenticator_controller", "create_account_view"],
+				"create_account-successful"	=> ["Authenticator_controller", "creation_successful_view"],
+				"home-update"				=> ["Home_controller", "update_view"]
 			]
 	];
 
