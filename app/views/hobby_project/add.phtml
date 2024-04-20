@@ -18,7 +18,7 @@
             <form method="POST" action="<?= site_url("hobby-add_project") ?>">
                 <div class="text">
                     <!-- Project type -->
-                    <fieldset>
+                    <fieldset class="project_data_section">
                         <legend>Projektityyppi:</legend>
                         <div>
                             <input type="checkbox" class="checkbox" id="checkbox_crochet" name="checkbox_crochet"/>
@@ -40,42 +40,49 @@
                     <!---->
 
                     <!-- Project desc -->
-                    <div>
+                    <div class="project_form_1 project_data_section">
                         <label for="hobby_project_desc" class="input_label">Projektin kuvaus:</label>
                         <textarea type="text" id="hobby_project_desc" name="hobby_project_desc"></textarea>
                     </div>
                     <!---->
 
                     <!-- Image data -->
-                    <div class="project_form">
-                        <!-- Labels for image data -->
-                        <div>
-                            <label for="image_name_info" class="input_label">Kuvan tiedostonimi (.jpg/.png/.jpeg):</label>
+                    <div class="project_data_section">
+                        <div class="project_form_2">
+                            <!-- Labels for image data -->
+                            <div>
+                                <label for="image_name_info" class="input_label">Kuvan tiedostonimi: (.jpg/.png/.jpeg)</label>
+                            </div>
+                            <div>
+                                <label for="project_name_info" class="input_label">Kuvan nimi:</label>
+                            </div>
+                            <div>
+                                <label for="wide_image_info" class="input_label">Laajakuva:</label>
+                            </div>
+                            <!---->
+                            <!-- Input fields for image data -->
+                            <div>
+                                <input type="text" id="image_name_info" name="image_name_info"></input>
+                            </div>
+                            <div>
+                                <input type="text" id="project_name_info" name="project_name_info"></input>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="checkbox" id="wide_image_info" name="wide_image_info"></input>
+                            </div>
+                            <!---->
+                            <!-- Add more images button -->
+                            <div>
+                                <a onclick="add_project_image()" id="add_image_button" name="add_image_button">Lisää enemmän kuvia</a>
+                            </div>
+                            <!---->
                         </div>
-                        <div>
-                            <label for="project_name_info" class="input_label">Kuvan nimi:</label>
-                        </div>
-                        <div>
-                            <label for="wide_image_info" class="input_label">Laajakuva:</label>
-                        </div>
-                        <!---->
-                        <!-- Input fields for image data -->
-                        <div>
-                            <input type="text" id="image_name_info" name="image_name_info"></input>
-                        </div>
-                        <div>
-                            <input type="text" id="project_name_info" name="project_name_info"></input>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="wide_image_info" name="wide_image_info"></input>
-                        </div>
-                        <!---->
                     </div>
                     <!---->
 
                     <!-- Send button -->
                     <button type="submit" name="add_project_button" class="button">
-                        Lisää
+                        Lisää projekti
                     </button>
                     <!---->
                 </div>

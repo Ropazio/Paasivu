@@ -55,3 +55,7 @@ function enlarge_image(image_src) {
 	let img = document.getElementById('enlarged_image');
 	img.src = image_src;
 }
+
+function add_project_image() {
+	
+}

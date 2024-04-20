@@ -25,6 +25,7 @@ html, body {
     --white_colour: #FAFAFA;
     --light_grey_colour: #E9E9E9;
     --grey_colour: #D1D1D1;
+    --admin_colour: #4C7DB3;
 }
 
 
@@ -378,7 +379,7 @@ Update text pages
 }
 
 .admin_link {
-    color: #4c7db3;
+    color: var(--admin_colour);
 }
 
 
@@ -422,13 +423,28 @@ Add project page
 *
 **********/
 
-.input_label {
-    margin-right: 50px;
+.project_form_1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 50px;
 }
 
-.project_form {
+.project_form_2 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 1fr;
+}
+
+.project_data_section {
+    margin-bottom: 40px;
+}
+
+#project_name_info, #image_name_info {
+    width: 250px;
+}
+
+#add_image_button {
+    text-decoration: underline;
+    color: var(--admin_colour);
 }
 
 /********************
