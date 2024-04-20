@@ -47,7 +47,7 @@ class Coding_project_controller extends Controller {
 		$texts = $this->text->get_all("coding");
 
 		$this->view->view("coding_project/update", [
-			"title" 		=> "Ropaz.dev - Pääsivu",
+			"title" 		=> "Ropaz.dev - Päivitä verkkoprojektiteksti",
 			"user_params" 	=> $user_params,
 			"texts" 		=> $texts
 		]);

@@ -414,6 +414,23 @@ Add blog text page
     height: 200px;
 }
 
+
+
+/**********
+*
+Add project page
+*
+**********/
+
+.input_label {
+    margin-right: 50px;
+}
+
+.project_form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 /********************
 ****  NAVIGATOR  ****
 ********************/

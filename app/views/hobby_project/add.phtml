@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<?=$snippets["head_and_theme"]?>
+
+<body>
+        
+    <?=$snippets["header"]?>
+
+    <div class="bottom">
+
+        <?=$snippets["navi"]?>
+
+        <div class="desc">
+            <div>
+                <h2 class="text_headline">Projektin lisäys</h2>
+            </div>
+            <form method="POST" action="<?= site_url("hobby-add_project") ?>">
+                <div class="text">
+                    <!-- Project type -->
+                    <fieldset>
+                        <legend>Projektityyppi:</legend>
+                        <div>
+                            <input type="checkbox" class="checkbox" id="checkbox_crochet" name="checkbox_crochet"/>
+                            <label for="checkbox_crochet">Virkatut hahmot</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox" id="checkbox_textile" name="checkbox_textile"/>
+                            <label for="checkbox_textile">Tekstiilityöt</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox" id="checkbox_tech" name="checkbox_tech"/>
+                            <label for="checkbox_tech">Tekniset työt</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox" id="checkbox_other" name="checkbox_other"/>
+                            <label for="checkbox_other">Muut käsityöt</label>
+                        </div>
+                    </fieldset>
+                    <!---->
+
+                    <!-- Project desc -->
+                    <div>
+                        <label for="hobby_project_desc" class="input_label">Projektin kuvaus:</label>
+                        <textarea type="text" id="hobby_project_desc" name="hobby_project_desc"></textarea>
+                    </div>
+                    <!---->
+
+                    <!-- Image data -->
+                    <div class="project_form">
+                        <!-- Labels for image data -->
+                        <div>
+                            <label for="image_name_info" class="input_label">Kuvan tiedostonimi (.jpg/.png/.jpeg):</label>
+                        </div>
+                        <div>
+                            <label for="project_name_info" class="input_label">Kuvan nimi:</label>
+                        </div>
+                        <div>
+                            <label for="wide_image_info" class="input_label">Laajakuva:</label>
+                        </div>
+                        <!---->
+                        <!-- Input fields for image data -->
+                        <div>
+                            <input type="text" id="image_name_info" name="image_name_info"></input>
+                        </div>
+                        <div>
+                            <input type="text" id="project_name_info" name="project_name_info"></input>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="wide_image_info" name="wide_image_info"></input>
+                        </div>
+                        <!---->
+                    </div>
+                    <!---->
+
+                    <!-- Send button -->
+                    <button type="submit" name="add_project_button" class="button">
+                        Lisää
+                    </button>
+                    <!---->
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <?=$snippets["footer"]?>
+
+<script type="text/javascript" src=<?= file_path("js", "scripts.js") ?>></script>
+</body>
+</html>

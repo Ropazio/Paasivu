@@ -49,7 +49,7 @@ class Home_controller extends Controller {
 		$texts = $this->text->get_all("home");
 
 		$this->view->view("home/update", [
-			"title" 		=> "Ropaz.dev - Pääsivu",
+			"title" 		=> "Ropaz.dev - Päivitä pääsivuteksti",
 			"user_params" 	=> $user_params,
 			"texts" 		=> $texts
 		]);
@@ -93,7 +93,7 @@ class Home_controller extends Controller {
 		$blog_texts = $this->blog->get_all();
 
 		$this->view->view("home/add", [
-			"title" 		=> "Ropaz.dev - Pääsivu",
+			"title" 		=> "Ropaz.dev - Lisää blogiteksti",
 			"user_params" 	=> $user_params,
 			"texts" 		=> $texts,
 			"blog_texts" 	=> $blog_texts

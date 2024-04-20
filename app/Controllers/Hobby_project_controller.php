@@ -47,7 +47,7 @@ class Hobby_project_controller extends Controller {
 		$texts = $this->text->get_all("hobby");
 
 		$this->view->view("hobby_project/update", [
-			"title" 		=> "Ropaz.dev - Pääsivu",
+			"title" 		=> "Ropaz.dev - Päivitä askarteluprojektiteksti",
 			"user_params" 	=> $user_params,
 			"texts" 		=> $texts
 		]);
@@ -77,6 +77,44 @@ class Hobby_project_controller extends Controller {
         	}
         } else {
         	header("Location: " . site_url("hobby_projects"));
+		}
+
+		// Back to the hobby page
+		header("Location: " . site_url("hobby_projects"));
+	}
+
+
+	public function add_view() : void {
+
+		// make sure that this function of this class can't be accessed before login
+		if (!$this->auth->is_logged_in()) {
+			header("Location: " . site_url("login"));
+		}
+
+		$user_params = $this->auth->get_user_session_params();
+
+		$this->view->view("hobby_project/add", [
+			"title" 		=> "Ropaz.dev - Lisää askarteluprojekti",
+			"user_params" 	=> $user_params
+		]);
+	}
+
+
+	public function add() : void {
+
+		// make sure that this function of this class can't be accessed before login
+		if (!$this->auth->is_logged_in()) {
+			header("Location: " . site_url("login"));
+		}
+
+		if (isset($_POST[""])) {
+        	$blog_text = $_POST[""];
+        }
+        if (!$blog_text) {
+			// Back to the hobby page
+			header("Location: " . site_url("hobby_projects"));
+		} else {
+    		$this->model->add( $project_info );
 		}
 
 		// Back to the hobby page
