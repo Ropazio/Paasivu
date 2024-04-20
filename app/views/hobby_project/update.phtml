@@ -57,7 +57,9 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
         <?=$snippets["navi"]?>
 
         <div class="desc">
+
             <form method="POST" action="<?= site_url("hobby-update_text") ?>">
+                <!-- Page text area -->
                 <h2 class="main_text_headline">
                     Askarteluja
                 </h2>
@@ -67,6 +69,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                         <?= $params["texts"]["desc_hobby"] ?>
                     </textarea>
                 </p>
+                <!---->
     
                 <!-- Crocheted figurines -->
                 <h3 class="text_headline" id="crochet">
@@ -93,6 +96,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                         }
                     ?>
                 </div>
+                <!---->
     
                 <!-- Textile work -->
                 <h3 class="text_headline" id="textile">
@@ -118,6 +122,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                         }
                     ?>
                 </div>
+                <!---->
     
                 <!-- Technical work -->
                 <h3 class="text_headline" id="tech">
@@ -143,6 +148,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                         }
                     ?>
                 </div>
+                <!---->
                 
                 <!-- Other crafts -->
                 <h3 class="text_headline" id="other">
@@ -168,6 +174,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                         }
                     ?>
                 </div>
+                <!---->
 
                 <!-- Update button -->
                 <button type="submit" name="update_desc_hobby_button" class="button update_button">
@@ -190,6 +197,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 <img id="enlarged_image" src="" />
             </div>
         </div>
+        <!---->
     </div>
 
     <?=$snippets["footer"]?>

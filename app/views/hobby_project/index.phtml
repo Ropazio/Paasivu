@@ -57,12 +57,15 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
         <?=$snippets["navi"]?>
 
         <div class="desc">
+
+            <!-- Page text area -->
             <h2 class="main_text_headline">
                 Askarteluja
             </h2>
             <p class="text">
                 <?= $params["texts"]["desc_hobby"] ?>
             </p>
+            <!---->
 
             <!-- Crocheted figurines -->
             <h3 class="text_headline" id="crochet">
@@ -87,6 +90,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                     }
                 ?>
             </div>
+            <!---->
 
             <!-- Textile work -->
             <h3 class="text_headline" id="textile">
@@ -110,6 +114,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                     }
                 ?>
             </div>
+            <!---->
 
             <!-- Technical work -->
             <h3 class="text_headline" id="tech">
@@ -133,6 +138,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                     }
                 ?>
             </div>
+            <!---->
             
             <!-- Other crafts -->
             <h3 class="text_headline" id="other">
@@ -156,12 +162,15 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                     }
                 ?>
             </div>
+            <!---->
 
+            <!-- Admin area -->
             <?php if($params["user_params"]["is_admin"]): ?> 
             <div class="text">
                 <a class="admin_link" href="<?= site_url('hobby-update_text') ?>">Päivitä tekstejä</a>
             </div>
             <?php endif ?>
+            <!---->
 
         </div>
 
@@ -172,6 +181,7 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 <img id="enlarged_image" src="" />
             </div>
         </div>
+        <!---->
     </div>
 
     <?=$snippets["footer"]?>

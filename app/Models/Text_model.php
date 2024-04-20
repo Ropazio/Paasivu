@@ -36,19 +36,6 @@ class Text_model extends Database_model {
 	}
 
 
-	public function get_one( string $text_name ) : string {
-
-		// Get one page text
-		$query = "SELECT text FROM page_texts WHERE text_name = ?";
-		$sth = $this->pdo->prepare($query);
-		$sth->execute([$text_name]);
-
-		$text = $sth->fetch(\PDO::FETCH_ASSOC);
-
-		return $text["text"];
-	}
-
-
 	public function update( string $text, string $text_name ) : void {
 
 		// Update text with given text name
