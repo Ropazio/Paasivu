@@ -17,9 +17,11 @@ class Router {
 				"calendar-add_note"			=> ["Calendar_controller", "add"],
 				"calendar-delete_note" 		=> ["Calendar_controller", "delete"],
 				"create_account"			=> ["Authenticator_controller", "create"],
-				"home-update"				=> ["Home_controller", "update"],
-				"coding-update"				=> ["Coding_project_controller", "update"],
-				"hobby-update"				=> ["Hobby_project_controller", "update"]
+				"home-update_text"			=> ["Home_controller", "update"],
+				"coding-update_text"		=> ["Coding_project_controller", "update"],
+				"hobby-update_text"			=> ["Hobby_project_controller", "update"],
+				"home-add_blog_text"		=> ["Home_controller", "add"],
+				"home-delete_blog_text"		=> ["Home_controller", "delete"]
 			],
 			"GET" => [
 				"" 							=> ["Home_controller", "index"],
@@ -32,9 +34,10 @@ class Router {
 				"error-500"					=> ["Error_controller", "error_500"],
 				"create_account"			=> ["Authenticator_controller", "create_account_view"],
 				"create_account-successful"	=> ["Authenticator_controller", "creation_successful_view"],
-				"home-update"				=> ["Home_controller", "update_view"],
-				"coding-update"				=> ["Coding_project_controller", "update_view"],
-				"hobby-update"				=> ["Hobby_project_controller", "update_view"]
+				"home-update_text"			=> ["Home_controller", "update_view"],
+				"coding-update_text"		=> ["Coding_project_controller", "update_view"],
+				"hobby-update_text"			=> ["Hobby_project_controller", "update_view"],
+				"home-add_blog_text"		=> ["Home_controller", "add_view"],
 			]
 	];
 

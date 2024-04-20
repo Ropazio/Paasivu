@@ -38,6 +38,11 @@ class Coding_project_controller extends Controller {
 
 	public function update_view() : void {
 
+		// make sure that this function of this class can't be accessed before login
+		if (!$this->auth->is_logged_in()) {
+			header("Location: " . site_url("login"));
+		}
+
 		$user_params = $this->auth->get_user_session_params();
 		$texts = $this->text->get_all("coding");
 
@@ -50,6 +55,11 @@ class Coding_project_controller extends Controller {
 
 
 	public function update() : void {
+
+		// make sure that this function of this class can't be accessed before login
+		if (!$this->auth->is_logged_in()) {
+			header("Location: " . site_url("login"));
+		}
 
 		$text_field = [
 			"desc"				=>	["desc_coding", "desc_coding_text"],

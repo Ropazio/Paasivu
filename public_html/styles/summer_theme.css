@@ -1,4 +1,5 @@
 :root {
+    --light_green_colour: #4ec459;
     --green_colour: #03ac13;
     --dark_green_colour: #028a0f;
 }
@@ -33,7 +34,6 @@
 	background-image: url("../img/summer.jpg");
 	background-size: 100% 100%;
 }
-
 
 @media(max-width: 768px) {
 

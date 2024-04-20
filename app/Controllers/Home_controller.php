@@ -5,6 +5,7 @@ namespace app\Controllers;
 use app\{
 	Core\Controller,
 	Models\Text_model,
+	Models\Blog_model,
 	Models\Model
 };
 
@@ -12,11 +13,13 @@ use app\{
 class Home_controller extends Controller {
 
 	protected Model $text;
+	protected Model $blog;
 
 	public function __construct() {
 
 		parent::__construct();
 		$this->text = new Text_model();
+		$this->blog = new Blog_model();
 	}
 
 
@@ -24,18 +27,23 @@ class Home_controller extends Controller {
 
 		$user_params = $this->auth->get_user_session_params();
 		$texts = $this->text->get_all("home");
-		$this->text->get_one("desc_home");
-
+		$blog_texts = $this->blog->get_all();
 
 		$this->view->view("home/index", [
 			"title" 		=> "Ropaz.dev - Pääsivu",
 			"user_params" 	=> $user_params,
-			"texts" 		=> $texts
+			"texts" 		=> $texts,
+			"blog_texts" 	=> $blog_texts
 		]);
 	}
 
 
 	public function update_view() : void {
+
+		// make sure that this function of this class can't be accessed before login
+		if (!$this->auth->is_logged_in()) {
+			header("Location: " . site_url("login"));
+		}
 
 		$user_params = $this->auth->get_user_session_params();
 		$texts = $this->text->get_all("home");
@@ -49,6 +57,11 @@ class Home_controller extends Controller {
 
 
 	public function update() : void {
+
+		// make sure that this function of this class can't be accessed before login
+		if (!$this->auth->is_logged_in()) {
+			header("Location: " . site_url("login"));
+		}
 
 		$text = False;
 
@@ -65,5 +78,60 @@ class Home_controller extends Controller {
 
 		// Back to the home page
 		header("Location: " . site_url(""));
+	}
+
+
+	public function add_view() : void {
+
+		// make sure that this function of this class can't be accessed before login
+		if (!$this->auth->is_logged_in()) {
+			header("Location: " . site_url("login"));
+		}
+
+		$user_params = $this->auth->get_user_session_params();
+		$texts = $this->text->get_all("home");
+		$blog_texts = $this->blog->get_all();
+
+		$this->view->view("home/add", [
+			"title" 		=> "Ropaz.dev - Pääsivu",
+			"user_params" 	=> $user_params,
+			"texts" 		=> $texts,
+			"blog_texts" 	=> $blog_texts
+		]);
+	}
+
+
+	public function add() : void {
+
+		// make sure that this function of this class can't be accessed before login
+		if (!$this->auth->is_logged_in()) {
+			header("Location: " . site_url("login"));
+		}
+
+		$blog_text = False;
+
+		if (isset($_POST["add_blog_text_button"])) {
+        	$blog_text = $_POST["blog_text"];
+        }
+        if (!$blog_text) {
+			// Back to the home page
+			header("Location: " . site_url(""));
+		} else {
+			$timestamp = date("o-m-d-h-i-s");
+    		$this->blog->add($timestamp, $blog_text);
+		}
+
+		// Back to the home page add view
+		header("Location: " . site_url("home-add_blog_text"));
+	}
+
+
+	public function delete( string $blog_text_id ) : void {
+
+		$blog_text_id = (int)$blog_text_id;
+		$this->blog->delete($blog_text_id);
+
+		// Back to the home page add view
+		header("Location: " . site_url("home-add_blog_text"));
 	}
 }

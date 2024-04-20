@@ -24,6 +24,7 @@ html, body {
     --mobile_general_margin: 30px;
     --white_colour: #FAFAFA;
     --light_grey_colour: #E9E9E9;
+    --grey_colour: #D1D1D1;
 }
 
 
@@ -354,7 +355,7 @@ Image related stuff
 
 /**********
 *
-Update page
+Update text pages
 *
 **********/
 
@@ -376,8 +377,41 @@ Update page
     left: calc(2*var(--general_margin));
 }
 
-.update_link {
-    color: #FF001D;
+.admin_link {
+    color: #4c7db3;
+}
+
+
+
+/**********
+*
+Add blog text page
+*
+**********/
+
+.add_blog_text_button {
+    position: relative;
+    left: var(--general_margin);
+}
+
+.blog_text_headline {
+    margin: auto;
+}
+
+.blog_text_box {
+    border: 1px solid var(--grey_colour);
+    color: #222;
+    background-color: #F5F5F5;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.blog_text_area {
+    padding: 10px;
+    margin-top: 40px;
+    width: 500px;
+    height: 200px;
 }
 
 /********************
