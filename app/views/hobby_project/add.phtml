@@ -15,26 +15,34 @@
             <div>
                 <h2 class="text_headline">Projektin lisäys</h2>
             </div>
+
             <form method="POST" action="<?= site_url("hobby-add_project") ?>">
                 <div class="text">
+
+                    <?php if(isset($_GET['error'])): ?>
+                        <div class="error">
+                            <h3>Projektin lisäys epäonnistui :(</h3>
+                        </div>
+                    <?php endif ?>
+
                     <!-- Project type -->
                     <fieldset class="project_data_section">
                         <legend>Projektityyppi:</legend>
                         <div>
-                            <input type="checkbox" class="checkbox" id="checkbox_crochet" name="checkbox_crochet"/>
-                            <label for="checkbox_crochet">Virkatut hahmot</label>
+                            <input type="radio" class="radio" id="radio_crochet" name="project_type" value="crochet" required>
+                            <label for="radio_crochet">Virkatut hahmot</label>
                         </div>
                         <div>
-                            <input type="checkbox" class="checkbox" id="checkbox_textile" name="checkbox_textile"/>
-                            <label for="checkbox_textile">Tekstiilityöt</label>
+                            <input type="radio" class="radio" id="radio_textile" name="project_type" value="textile" required>
+                            <label for="radio_textile">Tekstiilityöt</label>
                         </div>
                         <div>
-                            <input type="checkbox" class="checkbox" id="checkbox_tech" name="checkbox_tech"/>
-                            <label for="checkbox_tech">Tekniset työt</label>
+                            <input type="radio" class="radio" id="radio_tech" name="project_type" value="tech" required>
+                            <label for="radio_tech">Tekniset työt</label>
                         </div>
                         <div>
-                            <input type="checkbox" class="checkbox" id="checkbox_other" name="checkbox_other"/>
-                            <label for="checkbox_other">Muut käsityöt</label>
+                            <input type="radio" class="radio" id="radio_other" name="project_type" value="other" required>
+                            <label for="radio_other">Muut käsityöt</label>
                         </div>
                     </fieldset>
                     <!---->
@@ -42,7 +50,7 @@
                     <!-- Project desc -->
                     <fieldset class="project_data_section">
                         <legend>Projektin kuvaus:</legend>
-                        <textarea type="text" id="hobby_project_desc" name="hobby_project_desc"></textarea>
+                        <textarea type="text" id="hobby_project_desc" name="project_desc" required></textarea>
                     </fieldset>
                     <!---->
 
@@ -54,14 +62,16 @@
                                 <!-- Labels for image data -->
                                 <th>Kuvan tiedostonimi: (.jpg/.png/.jpeg)</th>
                                 <th>Kuvan nimi:</th>
+                                <th></th>
                                 <th>Laajakuva:</th>
                             <!---->
                             </tr>
                             <tr>
                                 <!-- Input fields for image data -->
-                                <th><input type="text" id="image_name_info" name="image_name_info" required=""></th>
-                                <th><input type="text" id="project_name_info" name="project_name_info" required=""></th>
-                                <th><input type="checkbox" class="checkbox" id="wide_image_info" name="wide_image_info"></th>
+                                <th><input type="text" id="image_src" name="image_src[]" required></th>
+                                <th><input type="text" id="image_name" name="image_name[]" required></th>
+                                <th><input type="hidden" name="wide_image[]" value="0"></th>
+                                <th><input type="checkbox" id="wide_image" name="wide_image[]" value="1"></th>
                                 <!---->
                                 <!-- Add more images button -->
                                 <th><input type="button" class="button" onclick="add_project_image()" id="add_image_button" name="add_image_button" value="Lisää"></th>

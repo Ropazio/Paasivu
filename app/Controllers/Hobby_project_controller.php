@@ -107,17 +107,35 @@ class Hobby_project_controller extends Controller {
 			header("Location: " . site_url("login"));
 		}
 
-		if (isset($_POST[""])) {
-        	$blog_text = $_POST[""];
+		if (isset($_POST["add_project_button"])) {
+			$project_type = $_POST["project_type"];
+			$project_desc = $_POST["project_desc"];
+			$image_info = [
+        		"src"		=> $_POST["image_src"],
+        		"name"		=> $_POST["image_name"],
+        		"is_wide"	=> $_POST["wide_image"]
+        	];
         }
-        if (!$blog_text) {
-			// Back to the hobby page
-			header("Location: " . site_url("hobby_projects"));
-		} else {
-    		$this->model->add( $project_info );
-		}
+			
+		foreach ($image_info["src"] as $src) {
+			if (!preg_match("(\.png|\.jpg|\.jpeg)", $src)) {
+        		header("Location: " . site_url("hobby-add_project?error=failed"));
+        		exit;
+       		}
+       	}
 
-		// Back to the hobby page
-		header("Location: " . site_url("hobby_projects"));
+        $image_data = [];
+       	for ($i=0; $i < count($image_info["src"]); $i++) {
+       		$image = [];
+       		foreach ($image_info as $key => $value) {
+       			$image[$key] = $value[$i];
+       		}
+       		array_push($image_data, $image);
+       	}
+
+       	$this->model->add( $project_type, $project_desc, $image_data );
+
+        // Back to the hobby page
+		header("Location: " . site_url("hobby-add_project"));
 	}
 }

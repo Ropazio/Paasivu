@@ -227,7 +227,7 @@ Login
 .error {
     color: red;
     margin-top: 40px;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
 }
 
 .auth_headline {
@@ -432,8 +432,15 @@ Add project page
     margin-bottom: 40px;
 }
 
-#project_name_info, #image_name_info {
+#image_name, #image_src {
     width: 250px;
+}
+
+#wide_image {
+    margin: auto;
+    display: block;
+    margin-top: 2px;
+    transform: scale(1.6);
 }
 
 #add_image_button {

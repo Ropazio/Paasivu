@@ -66,9 +66,10 @@ function add_project_image() {
 
 	var html =	'<tr>' + 
 								'<!-- Input fields for image data -->' +
-								'<th><input type="text" id="image_name_info" name="image_name_info" required=""></th>' +
-								'<th><input type="text" id="project_name_info" name="project_name_info" required=""></th>' +
-								'<th><input type="checkbox" class="checkbox" id="wide_image_info" name="wide_image_info"></th>' +
+								'<th><input type="text" id="image_src" name="image_src[]" required></th>' +
+								'<th><input type="text" id="image_name" name="image_name[]" required></th>' +
+								'<th><input type="hidden" name="wide_image[]" value="0"></th>' +
+								'<th><input type="checkbox" id="wide_image" name="wide_image[]" value="1"></th>' +
 								'<!---->' +
 								'<!-- Remove images button -->' +
 								'<th><input type="button" class="button" onclick="remove_project_image.call(this)" id="remove_image_button" name="remove_image_button" value="Poista"></th>' +
