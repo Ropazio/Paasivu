@@ -35,6 +35,8 @@ function load_weekdays() {
 	}
 }
 
+///////////////////////////////////////////
+
 function activate_mobile_navi() {
   var navi = document.getElementById("navi_headlines");
   if (navi.className === "headline_container") {
@@ -56,6 +58,10 @@ function enlarge_image(image_src) {
 	img.src = image_src;
 }
 
+///////////////////////////////////////////
+
+var images = 1;
+
 function add_project_image() {
 
 	var html =	'<tr>' + 
@@ -65,12 +71,20 @@ function add_project_image() {
 								'<th><input type="checkbox" class="checkbox" id="wide_image_info" name="wide_image_info"></th>' +
 								'<!---->' +
 								'<!-- Remove images button -->' +
-								'<th><input type="button" class="button" onclick="remove_project_image()" id="remove_image_button" name="remove_image_button" value="Poista"></th>' +
+								'<th><input type="button" class="button" onclick="remove_project_image.call(this)" id="remove_image_button" name="remove_image_button" value="Poista"></th>' +
 								'<!---->' +
 							'</tr>';
-  var x = 1;
 
-  var add = document.getElementById("image_data_form");
-  add.innerHTML += html;
+  var max_images = 5;
 
+  var table = document.getElementById("image_data_form");
+ 	if (images <= max_images) {
+ 		table.innerHTML += html;
+ 		images++;
+ 	}
+}
+
+var remove_project_image = function () {
+	this.parentNode.parentNode.remove();
+	images--;
 }
