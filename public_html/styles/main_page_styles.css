@@ -423,15 +423,9 @@ Add project page
 *
 **********/
 
-.project_form_1 {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    height: 50px;
-}
-
-.project_form_2 {
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
+#hobby_project_desc {
+    width: 600px;
+    height: 40px;
 }
 
 .project_data_section {
@@ -443,8 +437,6 @@ Add project page
 }
 
 #add_image_button {
-    text-decoration: underline;
-    color: var(--admin_colour);
 }
 
 /********************

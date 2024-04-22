@@ -52,10 +52,25 @@ function close_image() {
 function enlarge_image(image_src) {
 	var bg = document.getElementById("enlarged_image_view");
 	bg.style.display = "block";
-	let img = document.getElementById('enlarged_image');
+	let img = document.getElementById("enlarged_image");
 	img.src = image_src;
 }
 
 function add_project_image() {
-	
+
+	var html =	'<tr>' + 
+								'<!-- Input fields for image data -->' +
+								'<th><input type="text" id="image_name_info" name="image_name_info" required=""></th>' +
+								'<th><input type="text" id="project_name_info" name="project_name_info" required=""></th>' +
+								'<th><input type="checkbox" class="checkbox" id="wide_image_info" name="wide_image_info"></th>' +
+								'<!---->' +
+								'<!-- Remove images button -->' +
+								'<th><input type="button" class="button" onclick="remove_project_image()" id="remove_image_button" name="remove_image_button" value="Poista"></th>' +
+								'<!---->' +
+							'</tr>';
+  var x = 1;
+
+  var add = document.getElementById("image_data_form");
+  add.innerHTML += html;
+
 }
