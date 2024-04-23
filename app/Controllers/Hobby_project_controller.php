@@ -27,11 +27,13 @@ class Hobby_project_controller extends Controller {
 
 		$user_params = $this->auth->get_user_session_params();
 		$texts = $this->text->get_all("hobby");
+		$projects = $this->model->get_all();
 
 		$this->view->view("hobby_project/index", [
 			"title" 		=> "Ropaz.dev - Askarteluprojektit",
 			"user_params" 	=> $user_params,
-			"texts"			=> $texts
+			"texts"			=> $texts,
+			"projects"		=> $projects
 		]);
 	}
 
@@ -128,8 +130,8 @@ class Hobby_project_controller extends Controller {
         			exit;
        			}
        			if ($key == "src") {
-       				$image = $this->prepare_image($values["name"][$i], $values["tmp_name"][$i]);
-       				$data[$key] = $image;
+       				$this->add_to_images( $values["name"][$i], $values["tmp_name"][$i] );
+       				$data[$key] = $values["name"][$i];
        			} else {
        				$data[$key] = $values[$i];
        			}
@@ -137,28 +139,31 @@ class Hobby_project_controller extends Controller {
        		array_push($image_data, $data);
        	}
 
-       	$this->model->add( $project_type, $project_desc, $image_data );
-    	//$image = $this->model->get();
-    	//die($image);
+       	for ($i=0; $i < count($image_info["name"]); $i++) {
+       		$this->model->add( $project_type, $project_desc, $image_data );
+       	}
 
         // Back to the hobby page
 		header("Location: " . site_url("hobby-add_project"));
 	}
 
 
-	public function prepare_image( $image_name, $image_tmp_name ) {
+	public function add_to_images( string $image_name, string $image_tmp_name ) : void {
 
-       	// Get file info 
+       	// Get file info
         $file_name = basename($image_name);
-        $file_type = pathinfo($file_name, PATHINFO_EXTENSION); 
+        $file_type = pathinfo($file_name, PATHINFO_EXTENSION);
+        $folder = ROOT . "/" . file_path("projects", $file_name);
 
-		// Allow certain file formats 
+		// Allow certain file formats
        	$allow_types = array("jpg","png","jpeg");
        	if (in_array($file_type, $allow_types)) {
- 	      	$image = $image_tmp_name;
-           	$image_content = addslashes(file_get_contents($image));
-
-        	return $image_content;
+       		if (move_uploaded_file($image_tmp_name, $folder)) {
+       			return;
+       		} else {
+ 				header("Location: " . site_url("hobby-add_project?error=failed"));
+       			exit;
+       		}
 		} else {
        		header("Location: " . site_url("hobby-add_project?error=failed"));
        		exit;
