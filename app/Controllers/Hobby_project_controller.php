@@ -111,31 +111,57 @@ class Hobby_project_controller extends Controller {
 			$project_type = $_POST["project_type"];
 			$project_desc = $_POST["project_desc"];
 			$image_info = [
-        		"src"		=> $_POST["image_src"],
+        		"src"		=> $_FILES["image_src"],
         		"name"		=> $_POST["image_name"],
         		"is_wide"	=> $_POST["wide_image"]
         	];
         }
-			
-		foreach ($image_info["src"] as $src) {
-			if (!preg_match("(\.png|\.jpg|\.jpeg)", $src)) {
-        		header("Location: " . site_url("hobby-add_project?error=failed"));
-        		exit;
-       		}
-       	}
 
         $image_data = [];
-       	for ($i=0; $i < count($image_info["src"]); $i++) {
-       		$image = [];
-       		foreach ($image_info as $key => $value) {
-       			$image[$key] = $value[$i];
+
+        // Loop through each image data row
+       	for ($i=0; $i < count($image_info["name"]); $i++) {
+       		$data = [];
+       		foreach ($image_info as $key => $values) {
+       			if (empty($values)) {
+       				header("Location: " . site_url("hobby-add_project?error=failed"));
+        			exit;
+       			}
+       			if ($key == "src") {
+       				$image = $this->prepare_image($values["name"][$i], $values["tmp_name"][$i]);
+       				$data[$key] = $image;
+       			} else {
+       				$data[$key] = $values[$i];
+       			}
        		}
-       		array_push($image_data, $image);
+       		array_push($image_data, $data);
        	}
 
        	$this->model->add( $project_type, $project_desc, $image_data );
+    	//$image = $this->model->get();
+    	//die($image);
 
         // Back to the hobby page
 		header("Location: " . site_url("hobby-add_project"));
+	}
+
+
+	public function prepare_image( $image_name, $image_tmp_name ) {
+
+       	// Get file info 
+        $file_name = basename($image_name);
+        $file_type = pathinfo($file_name, PATHINFO_EXTENSION); 
+
+		// Allow certain file formats 
+       	$allow_types = array("jpg","png","jpeg");
+       	if (in_array($file_type, $allow_types)) {
+ 	      	$image = $image_tmp_name;
+           	$image_content = addslashes(file_get_contents($image));
+
+        	return $image_content;
+		} else {
+       		header("Location: " . site_url("hobby-add_project?error=failed"));
+       		exit;
+       	}
 	}
 }
