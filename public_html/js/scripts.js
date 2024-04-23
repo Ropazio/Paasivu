@@ -66,7 +66,7 @@ function add_project_image() {
 
 	var html =	'<tr>' + 
 								'<!-- Input fields for image data -->' +
-								'<th><input type="text" id="image_src" name="image_src[]" required></th>' +
+								'<th><input type="file" id="image_src" name="image_src[]" required></th>' +
 								'<th><input type="text" id="image_name" name="image_name[]" required></th>' +
 								'<th><input type="hidden" name="wide_image[]" value="0"></th>' +
 								'<th><input type="checkbox" id="wide_image" name="wide_image[]" value="1"></th>' +

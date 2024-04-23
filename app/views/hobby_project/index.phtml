@@ -1,24 +1,17 @@
 <?php
 
-require_once "hobby_projects.php";
-
 // HELPER FUNCTIONS FOR FORMATTING
 
-function add_img_path( string $img ) : string {
-    $path = file_path("projects", $img);
-    return $path;
-}
-
-function add_project_in_list( array $projects_type, int $project_ordinal ) : void {
+function add_project_in_list( array $projects, int $project_ordinal ) : void {
     echo "<li class='ordered_list_item'>";
-    echo    $projects_type[$project_ordinal][1];
+    echo    $projects["project_desc"];
     echo "</li>";
 }
 
-function add_project_image( array $projects_type, int $project_ordinal) : void {
-    $image_list = $projects_type[$project_ordinal][2];
-    for ($i = 0; $i < count($image_list); $i++) {
-        if ($image_list[$i][1] == false) {
+function add_project_image( array $projects, int $project_ordinal) : void {
+    $image_data = $projects["image_data"];
+    for ($i = 0; $i < count($image_data); $i++) {
+        if ($image_data[$i]["is_wide"] == false) {
             $name_class_container = 'image_container';
             $name_class_image = 'proj_img';
         } else {
@@ -26,15 +19,16 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
             $name_class_image = 'wide_img';
         }
 
-        $small_image = pathinfo($image_list[$i][0], PATHINFO_FILENAME) . "-small." . pathinfo($image_list[$i][0], PATHINFO_EXTENSION);
+        $small_image = file_path("projects", (pathinfo($image_data[$i]["src"], PATHINFO_FILENAME) . "-small." . pathinfo($image_data[$i]["src"], PATHINFO_EXTENSION)));
+        $image = file_path("projects", $image_data[$i]["src"]);
 
         echo "<div class=" . $name_class_container . " style='background-image:" .
-             sprintf("url(%s)'>", file_path("projects", $small_image));
-        echo    "<img src=" . $image_list[$i][0] .
+             sprintf("url(%s)'>", $small_image);
+        echo    "<img src=" . $image .
                 " class=" . $name_class_image .
                 " loading='lazy'" .
-                sprintf(" onclick='enlarge_image(\"%s\")'>", $image_list[$i][0]);
-        echo    "<div class='overlay'>" . $image_list[$i][2] . "</div>";
+                sprintf(" onclick='enlarge_image(\"%s\")'>", $image);
+        echo    "<div class='overlay'>" . $image_data[$i]["name"] . "</div>";
         echo "</div>";
     }
 }
@@ -75,8 +69,8 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 <?= $params["texts"]["hobby_crochet"] ?>
             <ol class="items">
                 <?php
-                    for ($i = 0; $i < count($character_projects); $i++) {
-                        add_project_in_list($character_projects, $i);
+                    for ($i = 0; $i < $params["counts"]["crochet"]; $i++) {
+                        add_project_in_list($params["projects"]["crochet"][$i], $i);
                     }
                 ?>
             </ol>
@@ -85,8 +79,8 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
 
             <div class="image_area">
                 <?php
-                    for ($i = 0; $i < count($character_projects); $i++) {
-                        add_project_image($character_projects, $i);
+                    for ($i = 0; $i < $params["counts"]["crochet"]; $i++) {
+                        add_project_image($params["projects"]["crochet"][$i], $i);
                     }
                 ?>
             </div>
@@ -100,8 +94,8 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 <?= $params["texts"]["hobby_textile"] ?>
             <ol class="items">
                 <?php
-                    for ($i = 0; $i < count($textile_projects); $i++) {
-                        add_project_in_list($textile_projects, $i);
+                    for ($i = 0; $i < $params["counts"]["textile"]; $i++) {
+                        add_project_in_list($params["projects"]["textile"][$i], $i);
                     }
                 ?>
             </ol>
@@ -109,8 +103,8 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
 
             <div class="image_area">
                 <?php
-                    for ($i = 0; $i < count($textile_projects); $i++) {
-                        add_project_image($textile_projects, $i);
+                    for ($i = 0; $i < $params["counts"]["textile"]; $i++) {
+                        add_project_image($params["projects"]["textile"][$i], $i);
                     }
                 ?>
             </div>
@@ -124,8 +118,8 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 <?= $params["texts"]["hobby_tech"] ?>
             <ol class="items">
                 <?php
-                    for ($i = 0; $i < count($technical_projects); $i++) {
-                        add_project_in_list($technical_projects, $i);
+                    for ($i = 0; $i < $params["counts"]["tech"]; $i++) {
+                        add_project_in_list($params["projects"]["tech"][$i], $i);
                     }
                 ?>
             </ol>
@@ -133,8 +127,8 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
 
             <div class="image_area">
                 <?php
-                    for ($i = 0; $i < count($technical_projects); $i++) {
-                        add_project_image($technical_projects, $i);
+                    for ($i = 0; $i < $params["counts"]["tech"]; $i++) {
+                        add_project_image($params["projects"]["tech"][$i], $i);
                     }
                 ?>
             </div>
@@ -148,8 +142,8 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
                 <?= $params["texts"]["hobby_other"] ?>
             <ol class="items">
                 <?php
-                    for ($i = 0; $i < count($other_projects); $i++) {
-                        add_project_in_list($other_projects, $i);
+                    for ($i = 0; $i < $params["counts"]["other"]; $i++) {
+                        add_project_in_list($params["projects"]["other"][$i], $i);
                     }
                 ?>
             </ol>
@@ -157,8 +151,8 @@ function add_project_image( array $projects_type, int $project_ordinal) : void {
 
             <div class="image_area">
                 <?php
-                    for ($i = 0; $i < count($other_projects); $i++) {
-                        add_project_image($other_projects, $i);
+                    for ($i = 0; $i < $params["counts"]["other"]; $i++) {
+                        add_project_image($params["projects"]["other"][$i], $i);
                     }
                 ?>
             </div>

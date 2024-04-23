@@ -29,7 +29,7 @@ class Hobby_project_model extends Database_model {
             	'project_desc'	=> $project['project_desc'],
             	'image_data'	=> $project['image_data']
         	];
-        	$project['image_data'] = json_decode($project['image_data']);
+        	$project['image_data'] = json_decode($project['image_data'], true);
 		}
 
 		return $projects;
