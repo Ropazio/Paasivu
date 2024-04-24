@@ -43,6 +43,12 @@ class Home_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
+		}
+
+		if (!$this->auth->is_admin()) {
+			header("Location: " . site_url("error-401"));
+			exit;
 		}
 
 		$user_params = $this->auth->get_user_session_params();
@@ -61,6 +67,7 @@ class Home_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
 		}
 
 		$text = False;
@@ -71,6 +78,7 @@ class Home_controller extends Controller {
         if (!$text) {
 			// Back to the home page
 			header("Location: " . site_url(""));
+			exit;
 		} else {
 			$text_name = "desc_home";
     		$this->text->update($text, $text_name);
@@ -86,6 +94,12 @@ class Home_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
+		}
+
+		if (!$this->auth->is_admin()) {
+			header("Location: " . site_url("error-401"));
+			exit;
 		}
 
 		$user_params = $this->auth->get_user_session_params();
@@ -106,6 +120,7 @@ class Home_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
 		}
 
 		$blog_text = False;

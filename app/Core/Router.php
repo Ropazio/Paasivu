@@ -33,6 +33,7 @@ class Router {
 				"logout"					=> ["Authenticator_controller", "logout"],
 				"error-404"					=> ["Error_controller", "error_404"],
 				"error-500"					=> ["Error_controller", "error_500"],
+				"error-401"					=> ["Error_controller", "error_401"],
 				"create_account"			=> ["Authenticator_controller", "create_account_view"],
 				"create_account-successful"	=> ["Authenticator_controller", "creation_successful_view"],
 				"home-update_text"			=> ["Home_controller", "update_view"],

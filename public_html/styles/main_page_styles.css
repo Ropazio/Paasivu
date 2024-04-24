@@ -432,20 +432,21 @@ Add project page
     margin-bottom: 40px;
 }
 
-#image_name, #image_src {
+.image_name, #image_src {
     width: 250px;
 }
 
-#wide_image {
+.is_wide {
     margin: auto;
     display: block;
     margin-top: 2px;
     transform: scale(1.6);
 }
 
-#add_image_button {
+.project_button {
+    padding: 4px;
+    width: 48px;
 }
-
 /********************
 ****  NAVIGATOR  ****
 ********************/

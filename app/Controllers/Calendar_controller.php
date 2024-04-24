@@ -21,6 +21,7 @@ class Calendar_controller extends Controller {
 		// make sure that no other functions of this class can be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
 		}
 	}
 

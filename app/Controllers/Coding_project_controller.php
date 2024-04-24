@@ -41,6 +41,12 @@ class Coding_project_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
+		}
+
+		if (!$this->auth->is_admin()) {
+			header("Location: " . site_url("error-401"));
+			exit;
 		}
 
 		$user_params = $this->auth->get_user_session_params();
@@ -59,6 +65,7 @@ class Coding_project_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
 		}
 
 		$text_field = [
@@ -76,6 +83,7 @@ class Coding_project_controller extends Controller {
         	}
         } else {
         	header("Location: " . site_url("coding_projects"));
+        	exit;
 		}
 
 		// Back to the coding page

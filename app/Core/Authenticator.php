@@ -36,6 +36,15 @@ class Authenticator {
 	}
 
 
+	public static function is_admin() : bool {
+
+		if ($_SESSION['is_admin']) {
+			return true;
+		}
+		return false;
+	}
+
+
 	public static function start_user_session( bool $logged_in, int $user_id, bool $is_admin, string $username ) : void {
 
 		$_SESSION['logged_in'] = $logged_in;

@@ -64,23 +64,23 @@ var images = 1;
 
 function add_project_image() {
 
-	var html =	'<tr>' + 
-								'<!-- Input fields for image data -->' +
-								'<th><input type="file" id="image_src" name="image_src[]" required></th>' +
-								'<th><input type="text" id="image_name" name="image_name[]" required></th>' +
-								'<th><input type="hidden" name="wide_image[]" value="0"></th>' +
-								'<th><input type="checkbox" id="wide_image" name="wide_image[]" value="1"></th>' +
-								'<!---->' +
-								'<!-- Remove images button -->' +
-								'<th><input type="button" class="button" onclick="remove_project_image.call(this)" id="remove_image_button" name="remove_image_button" value="Poista"></th>' +
-								'<!---->' +
-							'</tr>';
+	var html =	`<tr>
+								<!-- Input fields for image data -->
+								<th><input type="file" class="image_src" name="images[${images}]" required></th>
+								<th><input type="text" class="image_name" name="images[${images}][name]" required></th>
+								<th><input type="checkbox" class="is_wide" name="images[${images}][is_wide]" value="${images+1}"></th>
+								<!---->
+								<!-- Remove images button -->
+								<th><input type="button" class="button project_button" onclick="remove_project_image.call(this)" id="remove_image_button" name="remove_image_button" value="Poista"></th>
+								<!---->
+							</tr>
+							`;
 
-  var max_images = 5;
+  var max_images = 3;
 
   var table = document.getElementById("image_data_form");
  	if (images <= max_images) {
- 		table.innerHTML += html;
+ 		table.insertAdjacentHTML("beforeend",html);
  		images++;
  	}
 }

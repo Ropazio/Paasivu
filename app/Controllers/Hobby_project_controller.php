@@ -49,6 +49,12 @@ class Hobby_project_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
+		}
+
+		if (!$this->auth->is_admin()) {
+			header("Location: " . site_url("error-401"));
+			exit;
 		}
 
 		$user_params = $this->auth->get_user_session_params();
@@ -67,6 +73,7 @@ class Hobby_project_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
 		}
 
 		$text_field = [
@@ -85,6 +92,7 @@ class Hobby_project_controller extends Controller {
         	}
         } else {
         	header("Location: " . site_url("hobby_projects"));
+        	exit;
 		}
 
 		// Back to the hobby page
@@ -97,6 +105,12 @@ class Hobby_project_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
+		}
+
+		if (!$this->auth->is_admin()) {
+			header("Location: " . site_url("error-401"));
+			exit;
 		}
 
 		$user_params = $this->auth->get_user_session_params();
@@ -113,39 +127,32 @@ class Hobby_project_controller extends Controller {
 		// make sure that this function of this class can't be accessed before login
 		if (!$this->auth->is_logged_in()) {
 			header("Location: " . site_url("login"));
+			exit;
 		}
 
 		if (isset($_POST["add_project_button"])) {
+			// Project metadata
 			$project_type = $_POST["project_type"];
 			$project_desc = $_POST["project_desc"];
-			$image_info = [
-        		"src"		=> $_FILES["image_src"],
-        		"name"		=> $_POST["image_name"],
-        		"is_wide"	=> $_POST["wide_image"]
-        	];
+
+    		$images = [];
+    		$files = $this->restructure_files($_FILES["images"]);
+    		$i = 0;
+
+    		foreach($_POST["images"] as $image_meta) {
+    			// Save imagedata that goes to the database
+        		$images[] = [
+            		"name" 		=> $image_meta["name"],
+           			"is_wide" 	=> isset($image_meta["is_wide"]) ? true : false,
+           			"src"		=> $files[$i]["name"]
+        		];
+        		// Save image (and small image) to img/projects
+        		$this->add_to_images($files[$i]["name"], $files[$i]["tmp_name"]);
+        		$i++;
+    		}
+    		// Add data to database
+    		$this->model->add($project_type, $project_desc, $images);
         }
-
-        $image_data = [];
-
-        // Loop through each image data row
-       	for ($i=0; $i < count($image_info["name"]); $i++) {
-       		$data = [];
-       		foreach ($image_info as $key => $values) {
-       			if (empty($values)) {
-       				header("Location: " . site_url("hobby-add_project?error=failed"));
-        			exit;
-       			}
-       			if ($key == "src") {
-       				$this->add_to_images( $values["name"][$i], $values["tmp_name"][$i] );
-       				$data[$key] = $values["name"][$i];
-       			} else {
-       				$data[$key] = $values[$i];
-       			}
-       		}
-       		array_push($image_data, $data);
-       	}
-
-       	$this->model->add( $project_type, $project_desc, $image_data );
 
         // Back to the hobby page
 		header("Location: " . site_url("hobby-add_project"));
@@ -163,8 +170,7 @@ class Hobby_project_controller extends Controller {
        	$allow_types = array("jpg","png","jpeg");
        	if (in_array($file_type, $allow_types)) {
        		if (move_uploaded_file($image_tmp_name, $folder)) {
-       			//$this->create_small_image($image_name);
-       			return;
+       			$this->create_small_image($image_name);
        		} else {
  				header("Location: " . site_url("hobby-add_project?error=failed"));
        			exit;
@@ -178,18 +184,13 @@ class Hobby_project_controller extends Controller {
 
 	public function create_small_image( string $original_image ) : void {
 
-		// THIS FUNCTION IS NOT WORKING!!!
-		$reduce_factor = 10;
 		$original_path = ROOT . "/" . file_path("projects", $original_image);
-		
-		// Content type
-		header('Content-Type: image/jpeg');
 		
 		// Get new dimensions
 		list($width, $height) = getimagesize($original_path);
-		$new_width = $width / $reduce_factor;
-		$new_height = $height / $reduce_factor;
-		
+		$new_width = 40;
+		$new_height =  round($new_width * $height / $width);
+
 		// Resample
 		$image_p = imagecreatetruecolor($new_width, $new_height);
 		$image = imagecreatefromjpeg($original_path);
@@ -203,6 +204,7 @@ class Hobby_project_controller extends Controller {
 
 
 	public function get_category_info() : array {
+
 		$categories = ["crochet", "textile", "tech", "other"];
 
 		$counts = [];
@@ -220,6 +222,7 @@ class Hobby_project_controller extends Controller {
 
 
 	public function arrange_projects( array $projects ) : array {
+
 		$categories = [
 			"crochet"	=> [],
 			"textile"	=> [],
@@ -236,5 +239,23 @@ class Hobby_project_controller extends Controller {
 		}
 
 		return $categories;
+	}
+
+
+	public function restructure_files( array $files ) : array {
+
+		/* 	This function restructures files array in the following manner:
+	 		array([0] = [image0 metadata], [1] = [image1 metadata]...).
+	 		Before restructuring, the structure was somewhat like this:
+	 		array([meta0] = [image0, image1...], [meta1] = [image0, image1...]).
+	 	*/
+
+    	$new_files = [];
+    	foreach ($files as $attribute => $values) {
+        	foreach ($values as $key => $value) {
+            	$new_files[$key][$attribute] = $value;
+        	}
+    	}
+    	return $new_files;
 	}
 }
