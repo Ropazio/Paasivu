@@ -58,23 +58,27 @@
                     <fieldset class="project_data_section">
                         <legend>Kuvatiedot:</legend>
                         <table id="image_data_form">
-                            <tr>
-                                <!-- Labels for image data -->
-                                <th>Kuvatiedosto: (.jpg/.png/.jpeg)</th>
-                                <th>Kuvan nimi:</th>
-                                <th>Laajakuva:</th>
-                            <!---->
-                            </tr>
-                            <tr>
-                                <!-- Input fields for image data -->
-                                <th><input type="file" class="image_src" name="images[0]" required></th>
-                                <th><input type="text" class="image_name" name="images[0][name]" required></th>
-                                <th><input type="checkbox" class="is_wide" name="images[0][is_wide]" value="1"></th>
-                                <!---->
-                                <!-- Add more images button -->
-                                <th><input type="button" class="button project_button" onclick="add_project_image()" id="add_image_button" name="add_image_button" value="Lisää"></th>
-                                <!---->
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <!-- Labels for image data -->
+                                    <th scope="col">Kuvatiedosto:   (.jpg/.png/.jpeg)</th>
+                                    <th scope="col">Kuvan nimi:</th>
+                                    <th scope="col">Laajakuva:</th>
+                                    <!---->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- Input fields for image data -->
+                                    <td data-label="Kuvatiedosto:   (.jpg/.png/.jpeg)" scope="row"><input type="file" class="image_src" name="images[0]" required></td>
+                                    <td data-label="Kuvan nimi:"><input type="text" class="image_name" name="images[0][name]" required></td>
+                                    <td data-label="Laajakuva:"><input type="checkbox" class="is_wide" name="images[0][is_wide]" value="1"></td>
+                                    <!---->
+                                    <!-- Add more images button -->
+                                    <td><input type="button" class="button project_button" onclick="add_project_image()" id="add_image_button" name="add_image_button" value="Lisää"></td>
+                                    <!---->
+                                </tr>
+                            </tbody>
                         </table>
                     </fieldset>
                     <!---->

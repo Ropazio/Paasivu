@@ -66,12 +66,12 @@ function add_project_image() {
 
     var html =  `<tr>
                     <!-- Input fields for image data -->
-                    <th><input type="file" class="image_src" name="images[${images}]" required></th>
-                    <th><input type="text" class="image_name" name="images[${images}][name]" required></th>
-                    <th><input type="checkbox" class="is_wide" name="images[${images}][is_wide]" value="${images+1}"></th>
+                    <td data-label="Kuvatiedosto (.jpg/.png/.jpeg):" scope="row"><input type="file" class="image_src" name="images[${images}]" required></td>
+                    <td data-label="Kuvan nimi:"><input type="text" class="image_name" name="images[${images}][name]" required></td>
+                    <td data-label="Laajakuva:"><input type="checkbox" class="is_wide" name="images[${images}][is_wide]" value="${images+1}"></td>
                     <!---->
                     <!-- Remove images button -->
-                    <th><input type="button" class="button project_button" onclick="remove_project_image.call(this)" id="remove_image_button" name="remove_image_button" value="Poista"></th>
+                    <td><input type="button" class="button project_button" onclick="remove_project_image.call(this)" id="remove_image_button" name="remove_image_button" value="Poista"></td>
                     <!---->
                 </tr>
                 `;

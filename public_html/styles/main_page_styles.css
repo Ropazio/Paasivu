@@ -360,25 +360,29 @@ Update text pages
 *
 **********/
 
+/* Update text text area */
 .update_box {
     padding: 10px;
-    width: 500px;
+    width: 100%;
     height: 200px;
     margin-bottom: 20px;
 }
 
+/* Button to update text */
 .update_button {
     position: absolute;
     bottom: 40px;
-    left: calc(var(--general_margin));
+    left: var(--general_margin);
 }
 
+/* Button to cancel text update */
 .cancel_button {
     position: absolute;
     bottom: 40px;
     left: calc(2*var(--general_margin));
 }
 
+/* Links for admin edits */
 .admin_link {
     color: var(--admin_colour);
 }
@@ -391,15 +395,18 @@ Add blog text page
 *
 **********/
 
+/* Button that adds blog text */
 .add_blog_text_button {
     position: relative;
     left: var(--general_margin);
 }
 
+/* Headline/date of the existing blog text */
 .blog_text_headline {
     margin: auto;
 }
 
+/* Box for the existing blog text(s) */
 .blog_text_box {
     border: 1px solid var(--grey_colour);
     color: #222;
@@ -409,10 +416,11 @@ Add blog text page
     padding: 5px;
 }
 
+/* Text area for the blog text */
 .blog_text_area {
     padding: 10px;
     margin-top: 40px;
-    width: 500px;
+    width: 100%;
     height: 200px;
 }
 
@@ -424,19 +432,23 @@ Add project page
 *
 **********/
 
-#hobby_project_desc {
-    width: 600px;
-    height: 40px;
-}
-
+/* Fieldsets in the add hobby project section */
 .project_data_section {
     margin-bottom: 40px;
 }
 
-.image_name, #image_src {
-    width: 250px;
+/* Text area in the add description */
+#hobby_project_desc {
+    width: 100%;
+    height: 40px;
 }
 
+/* Image name input field and file input */
+.image_name, #image_src {
+    width: 100%;
+}
+
+/* Wide image checkbox */
 .is_wide {
     margin: auto;
     display: block;
@@ -444,10 +456,14 @@ Add project page
     transform: scale(1.6);
 }
 
+/* Add or remove image buttons */
 .project_button {
     padding: 4px;
     width: 48px;
 }
+
+
+
 /********************
 ****  NAVIGATOR  ****
 ********************/
@@ -584,6 +600,47 @@ TABLET
         max-width: 300px;
     }
 
+    /* Table the in add project view */
+    table thead {
+        border: none;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    tbody {
+        display: block;
+        border: 1px solid #BBB;
+        margin-bottom: 6px;
+        padding: 6px;
+    }
+  
+    table td {
+        display: block;
+        padding: 10px;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+    }
+
+    .is_wide {
+        margin-top: 10px;
+        float: right;
+    }
+
+    #add_image_button, #remove_image_button {
+        position: relative;
+        margin-top: 30px;
+        left: -80px;
+    }
+
+    /*********************************/
+
 /*
 MOBILE
 */
@@ -642,7 +699,7 @@ MOBILE
     }
 
     .text_headline {
-        margin-top: 0;
+        margin-top: 40px;
     }
 
     .text_box {
@@ -676,4 +733,53 @@ MOBILE
     .footer_content_area {
         margin-left: var(--mobile_general_margin);
     }
+
+    .add_blog_text_button, .update_button {
+        left: var(--mobile_general_margin);
+    }
+
+    .cancel_button {
+        left: calc(4*var(--mobile_general_margin));
+    }
+
+    /* Table the in add project view */
+    table thead {
+        border: none;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    tbody {
+        display: block;
+        border: 1px solid #BBB;
+        margin-bottom: 6px;
+        padding: 6px;
+    }
+  
+    table td {
+        display: block;
+        padding: 10px;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+    }
+
+    .is_wide {
+        margin-top: 10px;
+        float: right;
+    }
+
+    #add_image_button, #remove_image_button {
+        position: relative;
+        margin-top: 30px;
+        left: -80px;
+    }
+
+    /*********************************/
 }
