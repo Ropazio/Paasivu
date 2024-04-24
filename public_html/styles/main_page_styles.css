@@ -129,7 +129,7 @@ Text related stuff
 /* Text box in the calendar page */
 .text_box {
     margin-bottom: -8px;
-    width: 500px;
+    width: 80%;
     height: 20px;
 }
 
@@ -375,11 +375,17 @@ Update text pages
     left: var(--general_margin);
 }
 
+.ready_button {
+    position: relative;
+    margin-top: 40px;
+    margin-left: var(--general_margin);
+}
+
 /* Button to cancel text update */
 .cancel_button {
     position: absolute;
     bottom: 40px;
-    left: calc(2*var(--general_margin));
+    left: calc(2.2*var(--general_margin));
 }
 
 /* Links for admin edits */
@@ -462,6 +468,10 @@ Add project page
     width: 48px;
 }
 
+#add_project_button {
+    position: absolute;
+    bottom: 40px;
+}
 
 
 /********************
@@ -703,7 +713,7 @@ MOBILE
     }
 
     .text_box {
-        width: 240px;
+        width: 70%;
     }
 
     .headline_container {
@@ -738,8 +748,12 @@ MOBILE
         left: var(--mobile_general_margin);
     }
 
+    .ready_button {
+        margin-left: 30px;
+    }
+
     .cancel_button {
-        left: calc(4*var(--mobile_general_margin));
+        left: calc(5*var(--mobile_general_margin));
     }
 
     /* Table the in add project view */
