@@ -255,7 +255,7 @@ Image related stuff
 .image_area{
     margin-right: var(--general_margin);
     margin-left: var(--general_margin);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 /* Container for the normal sized image. Also acts as the low quality normal sized image  */
@@ -364,6 +364,7 @@ Update text pages
     padding: 10px;
     width: 500px;
     height: 200px;
+    margin-bottom: 20px;
 }
 
 .update_button {

@@ -31,8 +31,8 @@
 
 /* Images */
 .header {
-	background-image: url("../img/summer.jpg");
-	background-size: 100% 100%;
+    background-image: url("../img/summer.jpg");
+    background-size: 100% 100%;
 }
 
 @media(max-width: 768px) {

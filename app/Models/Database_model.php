@@ -3,19 +3,19 @@
 namespace app\Models;
 
 use app\{
-	Models\Model,
-	Core\Database
+    Models\Model,
+    Core\Database
 };
 
 
 class Database_model extends Model {
 
-	private Database $database;
-	protected \PDO $pdo;
+    private Database $database;
+    protected \PDO $pdo;
 
-	public function __construct() {
+    public function __construct() {
 
-		$this->database = new Database();
-		$this->pdo = $this->database->get_pdo();
-	}
+        $this->database = new Database();
+        $this->pdo = $this->database->get_pdo();
+    }
 }
