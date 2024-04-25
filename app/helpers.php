@@ -3,12 +3,13 @@
 // Move to: require_once "site_config.php";
 // Then have a separate site_config.php for server (prod) and local (dev)
 
-// Development (local)
-define("SITE_ROOT", "Paasivu_new");
 define("ROOT", dirname(__DIR__));
 
+// Development (local)
+define("SITE_ROOT_URL", "Paasivu_new");
+
 // Production (server)
-//define("SITE_ROOT", "");
+//define("SITE_ROOT_URL", "");
 
 //////////////////////////////////////////////////////////////////
 
@@ -20,15 +21,15 @@ $folders = [
         "views"             => (ROOT . "/app/" . "views/"),
         "snippets"          => (ROOT . "/app/" . "views/" . "__snippets/"),
         "errors"            => (ROOT . "/app/" . "views/" . "__errors/"),
-        "styles"            => ("public_html/" . "styles/"),
-        "js"                => ("public_html/" . "js/"),
-        "fonts"             => ("public_html/" . "fonts/"),
-        "img"               => ("public_html/" . "img/"),
-        "projects"          => ("public_html/" . "img/projects/"),
+        "styles"            => (ROOT . "/public_html/" . "styles/"),
+        "js"                => (ROOT . "/public_html/" . "js/"),
+        "fonts"             => (ROOT . "/public_html/" . "fonts/"),
+        "img"               => (ROOT . "/public_html/" . "img/"),
+        "projects"          => (ROOT . "/public_html/" . "img/projects/"),
 ];
 
 function site_url( string $url ) : string {
-    return "/" . SITE_ROOT . "/" . $url;
+    return "/" . SITE_ROOT_URL . "/" . $url;
 }
 
 

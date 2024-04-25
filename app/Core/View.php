@@ -46,10 +46,11 @@ class View {
         $christmas_months = array(12);
 
         if (in_array($date, $summer_months)) {
-            return file_path("styles", "summer_theme.css");
+            return "summer_theme.css";
         } elseif (in_array($date, $christmas_months)) {
-            return file_path("styles", "christmas_theme.css");
+            return "christmas_theme.css";
         }
-        return file_path("styles", "supper_theme.css");
+
+        return "supper_theme.css";
     }
 }

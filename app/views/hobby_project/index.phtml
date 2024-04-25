@@ -19,8 +19,8 @@ function add_project_image( array $projects, int $project_ordinal) : void {
             $name_class_image = 'wide_img';
         }
 
-        $small_image = file_path("projects", (pathinfo($image_data[$i]["src"], PATHINFO_FILENAME) . "-small." . pathinfo($image_data[$i]["src"], PATHINFO_EXTENSION)));
-        $image = file_path("projects", $image_data[$i]["src"]);
+        $small_image = site_url("img/projects/" . (pathinfo($image_data[$i]["src"], PATHINFO_FILENAME) . "-small." . pathinfo($image_data[$i]["src"], PATHINFO_EXTENSION)));
+        $image = site_url("img/projects/" . $image_data[$i]["src"]);
 
         echo "<div class=" . $name_class_container . " style='background-image:" .
              sprintf("url(%s)'>", $small_image);
@@ -181,6 +181,6 @@ function add_project_image( array $projects, int $project_ordinal) : void {
 
     <?=$snippets["footer"]?>
 
-<script type="text/javascript" src=<?= file_path("js", "scripts.js") ?>></script>
+<script type="text/javascript" src=<?= site_url("js/scripts.js") ?>></script>
 </body>
 </html>
