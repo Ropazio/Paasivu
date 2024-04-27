@@ -213,7 +213,7 @@ class Hobby_project_controller extends Controller {
 
         // Save
         $file_name = pathinfo($original_image, PATHINFO_FILENAME) . "-small." . pathinfo($original_image, PATHINFO_EXTENSION);
-        $folder = "img/projects/{$original_image}";
+        $folder = "img/projects/{$file_name}";
         if ($file_type != "png") {
             imagejpeg($image_p, $folder, 100);
         } else {
