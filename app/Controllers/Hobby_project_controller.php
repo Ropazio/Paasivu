@@ -133,6 +133,7 @@ class Hobby_project_controller extends Controller {
         if (isset($_POST["add_project_button"])) {
             // Project metadata
             $project_type = $_POST["project_type"];
+            $project_name = $_POST["project_name"];
             $project_desc = $_POST["project_desc"];
 
             $images = [];
@@ -151,8 +152,9 @@ class Hobby_project_controller extends Controller {
                 $i++;
             }
             // Add data to database
-            $this->model->add($project_type, $project_desc, $images);
+            $this->model->add($project_type, $project_name, $project_desc, $images);
         }
+        die();
 
         // Back to the hobby page
         header("Location: " . site_url("hobby-add_project"));
@@ -164,14 +166,15 @@ class Hobby_project_controller extends Controller {
         // Get file info
         $file_name = basename($image_name);
         $file_type = pathinfo($file_name, PATHINFO_EXTENSION);
-        $folder = ROOT . "/" . file_path("projects", $file_name);
+        $folder = "img/projects/{$file_name}";
 
         // Allow certain file formats
         $allow_types = array("jpg","png","jpeg");
         if (in_array($file_type, $allow_types)) {
             if (move_uploaded_file($image_tmp_name, $folder)) {
-                $this->create_small_image($image_name);
+                $this->create_small_image($image_name, $file_type);
             } else {
+                die();
                 header("Location: " . site_url("hobby-add_project?error=failed"));
                 exit;
             }
@@ -182,9 +185,9 @@ class Hobby_project_controller extends Controller {
     }
 
 
-    public function create_small_image( string $original_image ) : void {
+    public function create_small_image( string $original_image, string $file_type ) : void {
 
-        $original_path = ROOT . "/" . file_path("projects", $original_image);
+        $original_path = "img/projects/{$original_image}";
 
         // Get new dimensions
         list($width, $height) = getimagesize($original_path);
@@ -192,14 +195,30 @@ class Hobby_project_controller extends Controller {
         $new_height =  round($new_width * $height / $width);
 
         // Resample
-        $image_p = imagecreatetruecolor($new_width, $new_height);
-        $image = imagecreatefromjpeg($original_path);
-        imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+        if (imagecreatetruecolor($new_width, $new_height)) {
+            $image_p = imagecreatetruecolor($new_width, $new_height);
+        } else {
+            header("Location: " . site_url("hobby-add_project?error=failed"));
+            exit;
+        }
+        if ($file_type != "png") {
+            $image = imagecreatefromjpeg($original_path);
+        } else {
+            $image = imagecreatefrompng($original_path);
+        }
+        if (!imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height)) {
+            header("Location: " . site_url("hobby-add_project?error=failed"));
+            exit;
+        }
 
         // Save
         $file_name = pathinfo($original_image, PATHINFO_FILENAME) . "-small." . pathinfo($original_image, PATHINFO_EXTENSION);
-        $folder = ROOT . "/" . file_path("projects", $file_name);
-        imagejpeg($image_p, $folder, 100);
+        $folder = "img/projects/{$original_image}";
+        if ($file_type != "png") {
+            imagejpeg($image_p, $folder, 100);
+        } else {
+            imagepng($image_p, $folder);
+        }
     }
 
 
@@ -257,5 +276,50 @@ class Hobby_project_controller extends Controller {
             }
         }
         return $new_files;
+    }
+
+
+    public function delete_view() : void {
+
+        // make sure that this function of this class can't be accessed before login
+        if (!$this->auth->is_logged_in()) {
+            header("Location: " . site_url("login"));
+            exit;
+        }
+
+        if (!$this->auth->is_admin()) {
+            header("Location: " . site_url("error-401"));
+            exit;
+        }
+
+        $user_params = $this->auth->get_user_session_params();
+        $projects = $this->model->get_all();
+
+        $this->view->view("hobby_project/delete", [
+            "title"         => "Ropaz.dev - Poista askarteluprojekti",
+            "user_params"   => $user_params,
+            "projects"         => $projects,
+        ]);
+    }
+
+
+    public function delete() : void {
+
+        // make sure that this function of this class can't be accessed before login
+        if (!$this->auth->is_logged_in()) {
+            header("Location: " . site_url("login"));
+            exit;
+        }
+
+        if (isset($_POST["delete_project_button"])) {
+            $project = $_POST["projects_dropdown"];
+            $this->model->delete($project);
+        } else {
+            header("Location: " . site_url("hobby_projects"));
+            exit;
+        }
+
+        // Back to the hobby page
+        header("Location: " . site_url("hobby_projects"));
     }
 }

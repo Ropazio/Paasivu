@@ -37,7 +37,6 @@ html, body {
     justify-content: center;
     height: 240px;
     padding: 10px;
-    border-bottom: 1px solid #AAA;
 }
 
 
@@ -441,6 +440,15 @@ Add project page
 /* Fieldsets in the add hobby project section */
 .project_data_section {
     margin-bottom: 40px;
+}
+
+#label_hobby_project_name, #label_hobby_project_desc {
+    display: block;
+}
+
+/* Input field in the add name */
+#hobby_project_name {
+    width: 100%;
 }
 
 /* Text area in the add description */

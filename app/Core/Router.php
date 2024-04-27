@@ -22,7 +22,8 @@ class Router {
                 "hobby-update_text"         => ["Hobby_project_controller", "update"],
                 "home-add_blog_text"        => ["Home_controller", "add"],
                 "home-delete_blog_text"     => ["Home_controller", "delete"],
-                "hobby-add_project"         => ["Hobby_project_controller", "add"]
+                "hobby-add_project"         => ["Hobby_project_controller", "add"],
+                "hobby-delete_project"      => ["Hobby_project_controller", "delete"]
             ],
             "GET" => [
                 ""                          => ["Home_controller", "index"],
@@ -40,7 +41,8 @@ class Router {
                 "coding-update_text"        => ["Coding_project_controller", "update_view"],
                 "hobby-update_text"         => ["Hobby_project_controller", "update_view"],
                 "home-add_blog_text"        => ["Home_controller", "add_view"],
-                "hobby-add_project"         => ["Hobby_project_controller", "add_view"]
+                "hobby-add_project"         => ["Hobby_project_controller", "add_view"],
+                "hobby-delete_project"      => ["Hobby_project_controller", "delete_view"]
             ]
     ];
 

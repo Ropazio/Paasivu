@@ -1,0 +1,76 @@
+<?php
+
+function get_dropdown( $projects ) {
+
+    if (!isset($_SESSION['project'])) {
+        $_SESSION['project'] = null;
+    };
+
+    echo    '<select name="projects_dropdown" id="projects_dropdown">';
+                $project = null;
+                $selected_project = $project == $_SESSION['project'];
+    echo        "<option value=\"{$project}\"{$selected_project} disabled hidden selected>" . "( Valitse projekti )" . '</option>';
+                for ($i = 0; $i < count($projects); $i++) {
+                    $project = $projects[$i]["project_name"];
+                    $selected_project = $project == $_SESSION['project'];
+    echo            "<option value=\"{$project}\"{$selected_project}>" . $project . '</option>';
+                }
+    echo    '</select>';
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+
+<?=$snippets["head_and_theme"]?>
+
+<body>
+        
+    <?=$snippets["header"]?>
+
+    <div class="bottom">
+
+        <?=$snippets["navi"]?>
+
+        <div class="desc">
+            <div>
+                <h2 class="text_headline">Projektien poistaminen</h2>
+            </div>
+
+            <form method="POST" action="<?= site_url("hobby-delete_project") ?>">
+                <div class="text">
+
+                    <?php if(isset($_GET['error'])): ?>
+                        <div class="error">
+                            <h3>Projektin poistaminen epäonnistui :(</h3>
+                        </div>
+                    <?php endif ?>
+
+                    <!-- Project dropdown -->
+                    <?= get_dropdown($params["projects"]) ?>
+                    <!---->
+
+                    <!-- Delete button -->
+                    <button type="submit" name="delete_project_button" class="button delete_button">
+                        Poista valittu projekti
+                    </button>
+                    <!---->
+                </div>
+            </form>
+
+            <!-- Cancel button -->
+            <a href="<?= site_url("") ?>">
+                <button class="button cancel_button">
+                    Peruuta
+                </button>
+            </a>
+            <!---->
+        </div>
+    </div>
+
+    <?=$snippets["footer"]?>
+
+<script type="text/javascript" src=<?= site_url("js/scripts.js") ?>></script>
+</body>
+</html>
