@@ -46,16 +46,8 @@ class Hobby_project_controller extends Controller {
 
     public function update_view() : void {
 
-        // make sure that this function of this class can't be accessed before login
-        if (!$this->auth->is_logged_in()) {
-            header("Location: " . site_url("login"));
-            exit;
-        }
-
-        if (!$this->auth->is_admin()) {
-            header("Location: " . site_url("error-401"));
-            exit;
-        }
+        // make sure that this function of this class can't be accessed without admin rights
+        $this->auth->check_rights_to_access_page();
 
         $user_params = $this->auth->get_user_session_params();
         $texts = $this->text->get_all("hobby");
@@ -70,11 +62,8 @@ class Hobby_project_controller extends Controller {
 
     public function update() : void {
 
-        // make sure that this function of this class can't be accessed before login
-        if (!$this->auth->is_logged_in()) {
-            header("Location: " . site_url("login"));
-            exit;
-        }
+        // make sure that this function of this class can't be accessed without admin rights
+        $this->auth->check_rights_to_access_page();
 
         $text_field = [
             "desc"          =>  ["desc_hobby", "desc_hobby_text"],
@@ -102,16 +91,8 @@ class Hobby_project_controller extends Controller {
 
     public function add_view() : void {
 
-        // make sure that this function of this class can't be accessed before login
-        if (!$this->auth->is_logged_in()) {
-            header("Location: " . site_url("login"));
-            exit;
-        }
-
-        if (!$this->auth->is_admin()) {
-            header("Location: " . site_url("error-401"));
-            exit;
-        }
+        // make sure that this function of this class can't be accessed without admin rights
+        $this->auth->check_rights_to_access_page();
 
         $user_params = $this->auth->get_user_session_params();
 
@@ -124,11 +105,8 @@ class Hobby_project_controller extends Controller {
 
     public function add() : void {
 
-        // make sure that this function of this class can't be accessed before login
-        if (!$this->auth->is_logged_in()) {
-            header("Location: " . site_url("login"));
-            exit;
-        }
+        // make sure that this function of this class can't be accessed without admin rights
+        $this->auth->check_rights_to_access_page();
 
         if (isset($_POST["add_project_button"])) {
             // Project metadata
@@ -154,7 +132,6 @@ class Hobby_project_controller extends Controller {
             // Add data to database
             $this->model->add($project_type, $project_name, $project_desc, $images);
         }
-        die();
 
         // Back to the hobby page
         header("Location: " . site_url("hobby-add_project"));
@@ -174,7 +151,6 @@ class Hobby_project_controller extends Controller {
             if (move_uploaded_file($image_tmp_name, $folder)) {
                 $this->create_small_image($image_name, $file_type);
             } else {
-                die();
                 header("Location: " . site_url("hobby-add_project?error=failed"));
                 exit;
             }
@@ -281,16 +257,8 @@ class Hobby_project_controller extends Controller {
 
     public function delete_view() : void {
 
-        // make sure that this function of this class can't be accessed before login
-        if (!$this->auth->is_logged_in()) {
-            header("Location: " . site_url("login"));
-            exit;
-        }
-
-        if (!$this->auth->is_admin()) {
-            header("Location: " . site_url("error-401"));
-            exit;
-        }
+        // make sure that this function of this class can't be accessed without admin rights
+        $this->auth->check_rights_to_access_page();
 
         $user_params = $this->auth->get_user_session_params();
         $projects = $this->model->get_all();
@@ -298,21 +266,20 @@ class Hobby_project_controller extends Controller {
         $this->view->view("hobby_project/delete", [
             "title"         => "Ropaz.dev - Poista askarteluprojekti",
             "user_params"   => $user_params,
-            "projects"         => $projects,
+            "projects"      => $projects,
         ]);
     }
 
 
     public function delete() : void {
 
-        // make sure that this function of this class can't be accessed before login
-        if (!$this->auth->is_logged_in()) {
-            header("Location: " . site_url("login"));
-            exit;
-        }
+        // make sure that this function of this class can't be accessed without admin rights
+        $this->auth->check_rights_to_access_page();
 
         if (isset($_POST["delete_project_button"])) {
             $project = $_POST["projects_dropdown"];
+            $images = $this->model->get_images($project);
+            $this->delete_images($images);
             $this->model->delete($project);
         } else {
             header("Location: " . site_url("hobby_projects"));
@@ -321,5 +288,17 @@ class Hobby_project_controller extends Controller {
 
         // Back to the hobby page
         header("Location: " . site_url("hobby_projects"));
+    }
+
+
+    public function delete_images( array $images ) : void {
+
+        foreach ($images as $image) {
+            $small = pathinfo($image, PATHINFO_FILENAME) . "-small." . pathinfo($image, PATHINFO_EXTENSION);
+            if (!unlink(realpath("img/projects/{$image}")) || !unlink(realpath("img/projects/{$small}"))) {
+                header("Location: " . site_url("hobby-delete_project?error=failed"));
+                exit;
+            };
+        }
     }
 }

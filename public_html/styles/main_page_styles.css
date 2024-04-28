@@ -374,6 +374,7 @@ Update text pages
     left: var(--general_margin);
 }
 
+/* Ready with the text updates */
 .ready_button {
     position: relative;
     margin-top: 40px;
@@ -476,11 +477,39 @@ Add project page
     width: 48px;
 }
 
+/* Add project button */
 #add_project_button {
     position: absolute;
     bottom: 40px;
 }
 
+
+
+/**********
+*
+Delete project page
+*
+**********/
+
+/* The projects dropdown */
+#projects_dropdown {
+    height: 40px;
+    width: 30%;
+    margin-top: 40px;
+}
+
+/* Delete project button */
+.remove_button {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+/* Cancel button */
+.cancel_button_2 {
+    position: absolute;
+    bottom: 80px;
+    left: var(--general_margin);
+}
 
 /********************
 ****  NAVIGATOR  ****

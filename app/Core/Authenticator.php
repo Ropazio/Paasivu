@@ -45,6 +45,20 @@ class Authenticator {
     }
 
 
+    public function check_rights_to_access_page() : void {
+
+        if (!$this->is_logged_in()) {
+            header("Location: " . site_url("login"));
+            exit;
+        }
+
+        if (!$this->is_admin()) {
+            header("Location: " . site_url("error-401"));
+            exit;
+        }
+    }
+
+
     public static function start_user_session( bool $logged_in, int $user_id, bool $is_admin, string $username ) : void {
 
         $_SESSION['logged_in'] = $logged_in;

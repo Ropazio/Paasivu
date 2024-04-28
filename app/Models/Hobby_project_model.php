@@ -50,4 +50,22 @@ class Hobby_project_model extends Database_model {
 
         $this->pdo->prepare("DELETE FROM hobby_projects WHERE project_name = ?")->execute([$project_name]);
     }
+
+
+    public function get_images( string $project_name ) : array {
+
+        $sth = $this->pdo->prepare("SELECT image_data FROM hobby_projects WHERE project_name = ?");
+        $sth->execute([$project_name]);
+
+        $projects = $sth->fetch(\PDO::FETCH_ASSOC);
+
+        $images = json_decode($projects["image_data"], true);
+
+        $image_names = [];
+        foreach ($images as $image) {
+            array_push($image_names, $image["src"]);
+        }
+
+        return $image_names;
+    }
 }

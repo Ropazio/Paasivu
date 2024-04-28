@@ -38,16 +38,8 @@ class Coding_project_controller extends Controller {
 
     public function update_view() : void {
 
-        // make sure that this function of this class can't be accessed before login
-        if (!$this->auth->is_logged_in()) {
-            header("Location: " . site_url("login"));
-            exit;
-        }
-
-        if (!$this->auth->is_admin()) {
-            header("Location: " . site_url("error-401"));
-            exit;
-        }
+        // make sure that this function of this class can't be accessed without admin rights
+        $this->auth->check_rights_to_access_page();
 
         $user_params = $this->auth->get_user_session_params();
         $texts = $this->text->get_all("coding");
@@ -62,11 +54,8 @@ class Coding_project_controller extends Controller {
 
     public function update() : void {
 
-        // make sure that this function of this class can't be accessed before login
-        if (!$this->auth->is_logged_in()) {
-            header("Location: " . site_url("login"));
-            exit;
-        }
+        // make sure that this function of this class can't be accessed without admin rights
+        $this->auth->check_rights_to_access_page();
 
         $text_field = [
             "desc"              =>  ["desc_coding", "desc_coding_text"],
