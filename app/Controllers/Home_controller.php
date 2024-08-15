@@ -33,7 +33,7 @@ class Home_controller extends Controller {
             "title"         => "Ropaz.dev - Pääsivu",
             "user_params"   => $user_params,
             "texts"         => $texts,
-            "blog_texts"    => $blog_texts
+            "blog_texts"    => array_reverse($blog_texts)
         ]);
     }
 
@@ -91,7 +91,7 @@ class Home_controller extends Controller {
             "title"         => "Ropaz.dev - Lisää blogiteksti",
             "user_params"   => $user_params,
             "texts"         => $texts,
-            "blog_texts"    => $blog_texts
+            "blog_texts"    => array_reverse($blog_texts)
         ]);
     }
 
