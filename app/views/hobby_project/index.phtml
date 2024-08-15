@@ -26,8 +26,7 @@ function add_project_image( array $projects, int $project_ordinal) : void {
              sprintf("url(%s)'>", $small_image);
         echo    "<img src=" . $image .
                 " class=" . $name_class_image .
-                " loading='lazy'" .
-                sprintf(" onclick='enlarge_image(\"%s\")'>", $image);
+                " loading='lazy'" . sprintf(" onclick='enlarge_image(\"%s\")'>", $image);
         echo    "<div class='overlay'>" . $image_data[$i]["name"] . "</div>";
         echo "</div>";
     }

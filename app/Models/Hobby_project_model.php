@@ -37,7 +37,7 @@ class Hobby_project_model extends Database_model {
     }
 
 
-    public function add( string $project_type, string $project_name, string $project_desc, $image_data ) : void {
+    public function add( string $project_type, string $project_name, string $project_desc, array $image_data ) : void {
 
         // Add project
         $image_data = json_encode($image_data);
