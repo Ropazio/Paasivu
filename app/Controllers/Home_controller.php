@@ -110,7 +110,7 @@ class Home_controller extends Controller {
             // Back to the home page
             header("Location: " . site_url(""));
         } else {
-            $timestamp = date("o-m-d-h-i-s");
+            $timestamp = date("Y-m-d-H-i-s");
             $this->blog->add($timestamp, $blog_text);
         }
 

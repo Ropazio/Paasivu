@@ -26,7 +26,7 @@ class Blog_model extends Database_model {
             $blog_text = [
                 "blog_id"           => $blog_text["blog_ID"],
                 "blog_text"         => $blog_text["blog_text"],
-                "timestamp"         => $blog_text["timestamp"]
+                "timestamp"         => date("j.n.Y H:i", strtotime($blog_text["timestamp"]))
             ];
         }
 
