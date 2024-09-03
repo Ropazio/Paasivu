@@ -17,7 +17,6 @@ class Controller {
 
     public function __construct() {
 
-        date_default_timezone_set("Europe/Helsinki");
         $this->view = new View();
         $this->model = new Model();
         $this->auth = new Authenticator();
