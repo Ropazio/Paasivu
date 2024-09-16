@@ -19,15 +19,15 @@ class User_model extends Database_model {
         // Search user from the database users
         $query = $this->pdo->prepare("SELECT password, user_ID, admin FROM users WHERE username = ?");
         $query->execute([$username]);
-        [$user_password_in_database, $user_id_in_database, $is_admin] = $query->fetch();
+        [$password_hash, $user_id_in_database, $is_admin] = $query->fetch();
 
         // Return null if user password is empty
-        if (empty($user_password_in_database)) {
+        if (empty($password_hash)) {
             return null;
         }
 
         // Return user ID if user password is found and it matches the one in the database
-        if ($user_password_in_database == $password) {
+        if (password_verify($password, $password_hash)) {
             $user_info = [
                 "user_id"   => $user_id_in_database,
                 "is_admin"  => $is_admin

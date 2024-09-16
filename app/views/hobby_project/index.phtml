@@ -51,6 +51,16 @@ function add_project_image( array $projects, int $project_ordinal) : void {
 
         <div class="desc">
 
+            <!-- Admin area -->
+            <?php if($params["user_params"]["is_admin"]): ?>
+            <div class="text">
+                <a class="admin_link" href="<?= site_url('hobby-update_text') ?>">Päivitä tekstejä</a>
+                <a class="admin_link" href="<?= site_url('hobby-add_project') ?>">Lisää projekti</a>
+                <a class="admin_link" href="<?= site_url('hobby-delete_project') ?>">Poista projekti</a>
+            </div>
+            <?php endif ?>
+            <!---->
+
             <!-- Page text area -->
             <h2 class="main_text_headline">
                 Askarteluja
@@ -156,17 +166,6 @@ function add_project_image( array $projects, int $project_ordinal) : void {
                 ?>
             </div>
             <!---->
-
-            <!-- Admin area -->
-            <?php if($params["user_params"]["is_admin"]): ?> 
-            <div class="text">
-                <a class="admin_link" href="<?= site_url('hobby-update_text') ?>">Päivitä tekstejä</a>
-                <a class="admin_link" href="<?= site_url('hobby-add_project') ?>">Lisää projekti</a>
-                <a class="admin_link" href="<?= site_url('hobby-delete_project') ?>">Poista projekti</a>
-            </div>
-            <?php endif ?>
-            <!---->
-
         </div>
 
         <!-- Background for the image enlargement  -->

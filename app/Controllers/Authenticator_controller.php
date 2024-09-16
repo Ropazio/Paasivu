@@ -95,7 +95,7 @@ class Authenticator_controller extends Controller {
         } elseif (!$password || !$username) {
             header ("Location: " . site_url("create_account?error=creation_failed"));
         } else {
-            $creation_successful = $this->user->add_user($username, $password);
+            $creation_successful = $this->user->add_user($username, password_hash($password, PASSWORD_BCRYPT));
             if ($creation_successful) {
                 header ("Location: " . site_url("create_account-successful"));
             } else {

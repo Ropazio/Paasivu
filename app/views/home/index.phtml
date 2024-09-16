@@ -33,6 +33,15 @@ function show_blog_texts( array $blog_texts ) : void {
         
         <div class="desc">
 
+            <!-- Admin area -->
+            <?php if($params["user_params"]["is_admin"]): ?>
+            <div class="text">
+                <a class="admin_link" href="<?= site_url('home-update_text') ?>">Päivitä sivun tekstiä</a>
+                <a class="admin_link" href="<?= site_url('home-add_blog_text') ?>">Lisää päivittelyjä</a>
+            </div>
+            <?php endif ?>
+            <!---->
+
             <!-- Home text area -->
             <h2 class="text_headline">
                 Tervetuloa Ropaz.dev:in pääsivulle!
@@ -48,15 +57,6 @@ function show_blog_texts( array $blog_texts ) : void {
             </h3>
 
             <?= show_blog_texts($params["blog_texts"]) ?>
-            <!---->
-
-            <!-- Admin area -->
-            <?php if($params["user_params"]["is_admin"]): ?> 
-            <div class="text">
-                <a class="admin_link" href="<?= site_url('home-update_text') ?>">Päivitä tekstejä</a>
-                <a class="admin_link" href="<?= site_url('home-add_blog_text') ?>">Lisää päivittelyjä</a>
-            </div>
-            <?php endif ?>
             <!---->
         </div>
     </div>

@@ -13,6 +13,14 @@
         
         <div class="desc">
 
+            <!-- Admin area -->
+            <?php if($params["user_params"]["is_admin"]): ?>
+            <div class="text">
+                <a class="admin_link" href="<?= site_url('coding-update_text') ?>">Päivitä tekstejä</a>
+            </div>
+            <?php endif ?>
+            <!---->
+
             <!-- Page text area -->
             <div>
                 <h2 class="main_text_headline">
@@ -64,14 +72,6 @@
                     
                 </a>
             </p>
-            <!---->
-
-            <!-- Admin area -->
-            <?php if($params["user_params"]["is_admin"]): ?> 
-            <div class="text">
-                <a class="admin_link" href="<?= site_url('coding-update_text') ?>">Päivitä tekstejä</a>
-            </div>
-            <?php endif ?>
             <!---->
         </div>
     </div>

@@ -377,7 +377,8 @@ Update text pages
 /* Ready with the text updates */
 .ready_button {
     position: relative;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     margin-left: var(--general_margin);
 }
 

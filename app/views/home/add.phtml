@@ -50,9 +50,6 @@ function show_blog_texts( array $blog_texts ) : void {
                 Päivittelyjä
             </h3>
 
-            <?= show_blog_texts($params["blog_texts"]) ?>
-            <!---->
-
             <!-- Add blog text area -->
             <form method="POST" action="<?= site_url("home-add_blog_text") ?>">
                 <div class="text">
@@ -70,6 +67,9 @@ function show_blog_texts( array $blog_texts ) : void {
                 </button>
             </a>
             <!---->
+            <?= show_blog_texts($params["blog_texts"]) ?>
+            <!---->
+
         </div>
     </div>
 
