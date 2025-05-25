@@ -89,3 +89,58 @@ var remove_project_image = function () {
     this.parentNode.parentNode.remove();
     images--;
 }
+
+//////////////////////////////////////////////////////////
+
+// A black cutie cat is running across the screen when certain button in the screen is pressed.//
+
+var cat = null;     // cat gif.
+var animate;        // cat 
+var catX = 0;       // cat position in x axis.
+var catY = 0;       // cat position in y axis.
+var sign = 1;       // sign to change cat y direction.
+
+function init() {
+    let elems = document.getElementsByClassName("cat");
+    if (elems.length == 0)
+        return;
+    cat = elems[0];
+
+    //set initial values
+    cat.style.position = "fixed";
+    cat.style.left = "0px";
+    cat.style.bottom = "0px";
+}
+
+function move() {
+    if (cat == null)
+        return;
+
+    cat.style.display = "block";            // make cat visible on screen.
+    if (catX < window.innerWidth && catY < window.innerHeight) {
+        catX += 3;
+        catY += sign * 8 * Math.random();
+        if (catX % 60 == 0) {
+            sign = -1;
+            cat.style.transform = "rotate(10deg)";
+        }
+        if (catX % 90 == 0) {
+            sign = 1;
+            cat.style.transform = "rotate(-10deg)";
+
+        }
+        cat.style.left = catX + "px";
+        cat.style.bottom = ((window.innerHeight - 200) / 2) + catY + "px";
+        animate = setTimeout(move, 8);      // call move in 15msec.
+    }
+    else {
+        clearTimeout(animate);              // set cat back to starting position and make it invisible. 
+        catX = 0;
+        catY = 0;
+        cat.style.left = catX + "px";
+        cat.style.bottom = catY + "px";
+        cat.style.display = "none";
+    }
+}
+
+window.onload = init;

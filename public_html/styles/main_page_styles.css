@@ -353,6 +353,21 @@ Image related stuff
 
 
 
+/******************
+*
+Animated kitty cat
+*
+******************/
+
+.cat {
+    display: none;
+    width: 200px;
+    z-index: 100;
+    transition: 0.4s ease transform;
+}
+
+
+
 /**********
 *
 Update text pages
