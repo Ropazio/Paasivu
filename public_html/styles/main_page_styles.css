@@ -366,6 +366,35 @@ Animated kitty cat
     transition: 0.4s ease transform;
 }
 
+#animated_cat_button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+#animated_cat_button:hover {
+    animation: shake 0.6s;
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateY(0)
+    }
+    25% {
+        transform: translateY(2px);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+    75% {
+        transform: translateY(1px);
+    }
+    100% {
+        transform: translateY(-1px);
+    }
+}
+
 
 
 /**********
@@ -572,7 +601,7 @@ Delete project page
 /* Hover effect for the main headline */
 .main_headline:hover {
     transition: all ease-out 0.2s;
-    font-size: 110%;
+    font-size: 105%;
 }
 
 /* Rest of the headlines */
@@ -584,7 +613,7 @@ Delete project page
 /* Hover effects for the rest of the headlines */
 .headlines:hover {
     transition: all ease-out 0.1s;
-    font-size: 110%;
+    font-size: 102%;
 }
 
 /* Topics under the headlines */
