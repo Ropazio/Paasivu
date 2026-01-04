@@ -87,7 +87,7 @@ class Router {
 
     private function parse_url( string $url ) : array {
 
-        $partitioned_url = explode("/", rtrim($url, "/"));
+        $partitioned_url = explode("/", trim($url, "/"));
         return $partitioned_url;
     }
 

@@ -6,7 +6,7 @@
 define("ROOT", dirname(__DIR__));
 
 // Development (local)
-define("SITE_ROOT_URL", "Paasivu_new");
+define("SITE_ROOT_URL", "/Paasivu_new");
 
 // Production (server)
 //define("SITE_ROOT_URL", "");
@@ -29,7 +29,7 @@ $folders = [
 ];
 
 function site_url( string $url ) : string {
-    return "/" . SITE_ROOT_URL . "/" . $url;
+    return SITE_ROOT_URL . "/" . $url;
 }
 
 
