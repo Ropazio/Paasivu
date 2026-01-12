@@ -114,6 +114,19 @@ Text related stuff
     padding: 4px;
 }
 
+.code_snippet {
+    margin-left: var(--general_margin);
+    margin-right: var(--general_margin);
+    background-color: #333;
+    border-radius: 2px;
+    padding: 8px;
+}
+
+.code_snippet > pre {
+    margin: 0px;
+    overflow-x: scroll;
+}
+
 /* Sticky note box in the calendar page */
 .sticky_box {
     margin-bottom: 100px;

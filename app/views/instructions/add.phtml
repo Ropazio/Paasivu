@@ -1,0 +1,80 @@
+<?php
+
+function show_blog_texts( array $blog_texts ) : void {
+
+    if (empty($blog_texts)) {
+        echo "<p class='text'>Ei päivittelyjä.</p>";
+    } else {
+        foreach ($blog_texts as $blog_text) {
+            echo "<form method='POST' action='" . site_url('home-delete_blog_text/' . $blog_text['blog_id']) . "'>";
+            echo    "<div class='text'>";
+            echo        "<p class='blog_text_headline'>" . $blog_text["timestamp"] . "</p>";
+            echo        "<div class='blog_text_box'>";
+            echo            "<p>" . $blog_text["blog_text"] . "</p>";
+            echo        "</div>";
+            echo        "<button type='submit' name='delete_blog_text_button' class='button delete_blog_text_button'>Poista</button>";
+            echo    "</div>";            
+            echo "</form>";
+        }
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+
+<?=$snippets["head_and_theme"]?>
+
+<body>
+    
+    <?=$snippets["header"]?>
+
+    <div class="bottom">
+
+        <?=$snippets["navi"]?>
+        
+        <div class="desc">
+
+            <!-- Home text area -->
+            <h2 class="text_headline">
+                Tervetuloa Ropaz.dev:in pääsivulle!
+            </h2>
+            <p class="text">
+                <?= $params["texts"]["desc_home"] ?>
+            </p>
+            <!---->
+
+            <!-- Blog text area -->
+            <h3 class="text_headline">
+                Päivittelyjä
+            </h3>
+
+            <!-- Add blog text area -->
+            <form method="POST" action="<?= site_url("home-add_blog_text") ?>">
+                <div class="text">
+                    <textarea name="blog_text" class="blog_text_area"></textarea>
+                </div>
+                <button type="submit" name="add_blog_text_button" class="button add_blog_text_button">
+                    Lisää
+                </button>
+            </form>
+
+            <!-- Ready button -->
+            <a href="<?= site_url("") ?>">
+                <button class="button ready_button">
+                    Valmis
+                </button>
+            </a>
+            <!---->
+            <?= show_blog_texts($params["blog_texts"]) ?>
+            <!---->
+
+        </div>
+    </div>
+
+    <?=$snippets["footer"]?>
+
+<script type="text/javascript" src=<?= site_url("js/scripts.js") ?>></script>
+</body>
+</html>
