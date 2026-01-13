@@ -202,11 +202,6 @@ Login
 *
 ****/
 
-/* Input and input headline in the login page */
-.input, .input_headline {
-    margin-left: 20px;
-}
-
 /* Input fields */
 #password, #username {
     width: 200px;
@@ -215,7 +210,6 @@ Login
 /* Container for the login button, login text and create account link */
 .login_container {
     display: flex;
-    margin-left: 20px;
     margin-top: 40px;
 }
 
@@ -244,7 +238,7 @@ Login
 }
 
 .auth_headline {
-    margin-left: calc(var(--general_margin) + 20px);
+    margin-left: var(--general_margin);
     margin-top: 40px;
     color: #333;
     margin-right: var(--general_margin);
@@ -252,7 +246,6 @@ Login
 
 /* Box for the create account button */
 #create_account_button_box {
-    margin-left: 20px;
     margin-top: 40px;
 }
 
@@ -419,16 +412,15 @@ Update text pages
 
 /* Update text text area */
 .update_box {
-    padding: 10px;
+    padding: 6px;
     width: 100%;
-    height: 200px;
-    margin-bottom: 20px;
+    height: 160px;
 }
 
 /* Button to update text */
 .update_button {
     position: absolute;
-    bottom: 40px;
+    bottom: 10px;
     left: var(--general_margin);
 }
 
@@ -436,19 +428,20 @@ Update text pages
 .ready_button {
     position: relative;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     margin-left: var(--general_margin);
 }
 
 /* Button to cancel text update */
 .cancel_button {
     position: absolute;
-    bottom: 40px;
+    bottom: 10px;
     left: calc(2.2*var(--general_margin));
 }
 
 /* Links for admin edits */
 .admin_link {
+    margin-top: 8px;
     margin-left: var(--general_margin);
     display: block;
     color: var(--admin_colour);

@@ -56,7 +56,16 @@ class Instructions_controller extends Controller {
 
         $text_field = [
             "desc"              =>  ["desc_instructions", "desc_instructions_text"],
+            "desc2"             =>  ["desc_instructions2", "desc_instructions2_text"],
             "git"               =>  ["instructions_git", "instructions_git_text"],
+            "linux"             =>  ["instructions_linux", "instructions_linux_text"],
+            "sublimetext"       =>  ["instructions_sublimetext", "instructions_sublimetext_text"],
+            "selenium"          =>  ["instructions_selenium", "instructions_selenium_text"],
+            "ec2"               =>  ["instructions_ec2", "instructions_ec2_text"],
+            "nginx"             =>  ["instructions_nginx", "instructions_nginx_text"],
+            "php"               =>  ["instructions_php", "instructions_php_text"],
+            "mysql"             =>  ["instructions_mysql", "instructions_mysql_text"],
+            "tableplus"         =>  ["instructions_tableplus", "instructions_tableplus_text"],
         ];
 
         if (isset($_POST["update_desc_instructions_button"])) {
