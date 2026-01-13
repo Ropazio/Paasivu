@@ -5,7 +5,7 @@
 }
 
 /* Colored themed */
-.links, .day, .text_headline, .items, .input_headline, .main_headline, .bullet {
+.links, .day, .text_headline, .items, .input_headline, .main_headline, .bullet, .subbullet {
     color: var(--orange_colour);
 }
 

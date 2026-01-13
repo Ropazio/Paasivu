@@ -115,6 +115,7 @@ Text related stuff
     padding: 4px;
 }
 
+/* snippets used in instructions page in database to view console inputs */
 .code_snippet {
     display: inline-grid;
     color: var(--white_colour);
@@ -602,6 +603,14 @@ Delete project page
     display: block;
 }
 
+.headline_container > ul, .projects > ol {
+    padding: 0px;
+}
+
+.projects > ol {
+    margin-left: 16px;
+}
+
 /* The main headline "Etusivu" */
 .main_headline {
     text-decoration: none;
@@ -632,7 +641,7 @@ Delete project page
 
 /* Unordered list styling (bullets) */
 .bullet {
-    list-style: inside;
+    list-style: outside;
     padding-bottom: 6px;
 }
 
