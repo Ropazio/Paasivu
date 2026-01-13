@@ -789,7 +789,7 @@ MOBILE
         display: block;
     }
 
-    .text, .text_headline, .main_text_headline, .image_area, .day {
+    .text, .text_headline, .main_text_headline, .image_area, .day, .admin_link {
         margin-left: var(--mobile_general_margin);
         margin-right: var(--mobile_general_margin);
         margin-bottom: 10px;
