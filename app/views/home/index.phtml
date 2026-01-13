@@ -9,7 +9,7 @@ function show_blog_texts( array $blog_texts ) : void {
             echo "<div class='text'>";
             echo    "<p class='blog_text_headline'>" . $blog_text["timestamp"] . "</p>";
             echo        "<div class='blog_text_box'>";
-            echo        "<p>" . $blog_text["blog_text"] . "</p>";
+            echo        "<p class='text_with_whitespace'>" . $blog_text["blog_text"] . "</p>";
             echo    "</div>";
             echo "</div>";
         }
@@ -35,7 +35,7 @@ function show_blog_texts( array $blog_texts ) : void {
 
             <!-- Admin area -->
             <?php if($params["user_params"]["is_admin"]): ?>
-            <div class="text">
+            <div>
                 <a class="admin_link" href="<?= site_url('home-update_text') ?>">Päivitä sivun tekstiä</a>
                 <a class="admin_link" href="<?= site_url('home-add_blog_text') ?>">Lisää päivittelyjä</a>
             </div>
@@ -46,9 +46,9 @@ function show_blog_texts( array $blog_texts ) : void {
             <h2 class="text_headline">
                 Tervetuloa Ropaz.dev:in pääsivulle!
             </h2>
-            <p class="text">
-                <?= $params["texts"]["desc_home"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["desc_home"] ?></p>
+            </div>
             <!---->
 
             <!-- Blog text area -->

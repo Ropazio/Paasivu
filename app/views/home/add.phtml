@@ -10,7 +10,7 @@ function show_blog_texts( array $blog_texts ) : void {
             echo    "<div class='text'>";
             echo        "<p class='blog_text_headline'>" . $blog_text["timestamp"] . "</p>";
             echo        "<div class='blog_text_box'>";
-            echo            "<p>" . $blog_text["blog_text"] . "</p>";
+            echo            "<p class='text_with_whitespace'>" . $blog_text["blog_text"] . "</p>";
             echo        "</div>";
             echo        "<button type='submit' name='delete_blog_text_button' class='button delete_blog_text_button'>Poista</button>";
             echo    "</div>";            
@@ -40,9 +40,7 @@ function show_blog_texts( array $blog_texts ) : void {
             <h2 class="text_headline">
                 Tervetuloa Ropaz.dev:in pääsivulle!
             </h2>
-            <p class="text">
-                <?= $params["texts"]["desc_home"] ?>
-            </p>
+            <p class="text"><?= $params["texts"]["desc_home"] ?></p>
             <!---->
 
             <!-- Blog text area -->

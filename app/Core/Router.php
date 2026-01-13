@@ -24,28 +24,28 @@ class Router {
                 "home-delete_blog_text"                     => ["Home_controller", "delete"],
                 "hobby-add_project"                         => ["Hobby_project_controller", "add"],
                 "hobby-delete_project"                      => ["Hobby_project_controller", "delete"],
-                "instructions-update_instructions"          => ["Instructions_controller", "update"],
-                "instructions-add_instructions"             => ["Instructions_controller", "add"]
+                "instructions-update_instructions"          => ["Instructions_controller", "update"]
             ],
             "GET" => [
-                ""                          => ["Home_controller", "index"],
-                "coding_projects"           => ["Coding_project_controller", "index"],
-                "hobby_projects"            => ["Hobby_project_controller", "index"],
-                "calendar"                  => ["Calendar_controller", "index"],
-                "instructions"              => ["Instructions_controller", "index"],
-                "login"                     => ["Authenticator_controller", "index"],
-                "logout"                    => ["Authenticator_controller", "logout"],
-                "error-404"                 => ["Error_controller", "error_404"],
-                "error-500"                 => ["Error_controller", "error_500"],
-                "error-401"                 => ["Error_controller", "error_401"],
-                "create_account"            => ["Authenticator_controller", "create_account_view"],
-                "create_account-successful" => ["Authenticator_controller", "creation_successful_view"],
-                "home-update_text"          => ["Home_controller", "update_view"],
-                "coding-update_text"        => ["Coding_project_controller", "update_view"],
-                "hobby-update_text"         => ["Hobby_project_controller", "update_view"],
-                "home-add_blog_text"        => ["Home_controller", "add_view"],
-                "hobby-add_project"         => ["Hobby_project_controller", "add_view"],
-                "hobby-delete_project"      => ["Hobby_project_controller", "delete_view"]
+                ""                                          => ["Home_controller", "index"],
+                "coding_projects"                           => ["Coding_project_controller", "index"],
+                "hobby_projects"                            => ["Hobby_project_controller", "index"],
+                "calendar"                                  => ["Calendar_controller", "index"],
+                "instructions"                              => ["Instructions_controller", "index"],
+                "login"                                     => ["Authenticator_controller", "index"],
+                "logout"                                    => ["Authenticator_controller", "logout"],
+                "error-404"                                 => ["Error_controller", "error_404"],
+                "error-500"                                 => ["Error_controller", "error_500"],
+                "error-401"                                 => ["Error_controller", "error_401"],
+                "create_account"                            => ["Authenticator_controller", "create_account_view"],
+                "create_account-successful"                 => ["Authenticator_controller", "creation_successful_view"],
+                "home-update_text"                          => ["Home_controller", "update_view"],
+                "coding-update_text"                        => ["Coding_project_controller", "update_view"],
+                "hobby-update_text"                         => ["Hobby_project_controller", "update_view"],
+                "instructions-update_instructions"          => ["Instructions_controller", "update_view"],
+                "home-add_blog_text"                        => ["Home_controller", "add_view"],
+                "hobby-add_project"                         => ["Hobby_project_controller", "add_view"],
+                "hobby-delete_project"                      => ["Hobby_project_controller", "delete_view"]
             ]
     ];
 

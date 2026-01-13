@@ -4,7 +4,7 @@
 <?=$snippets["head_and_theme"]?>
 
 <body>
-    
+        
     <?=$snippets["header"]?>
 
     <div class="bottom">
@@ -13,28 +13,40 @@
         
         <div class="desc">
 
-            <!-- Home text area -->
-            <h2 class="text_headline">
-                Tervetuloa Ropaz.dev:in pääsivulle!
-            </h2>
-            <form method="POST" action="<?= site_url("home-update_text") ?>">
-                <div class="text">
-                    <textarea name="desc_home_text" class="update_box"><?= $params["texts"]["desc_home"] ?></textarea>
-                    <button type="submit" name="update_desc_home_button" class="button update_button">
-                        Päivitä
-                    </button>
+            <form method="POST" action="<?= site_url("instructions-update_instructions") ?>">
+                <!-- Page text area -->
+                <div>
+                    <h2 class="main_text_headline">
+                        Muokkaa ohjetta
+                    </h2>
+                    <p class="text">
+                        <textarea name="desc_instructions_text" class="update_box"><?= $params["texts"]["desc_instructions"] ?></textarea>
+                    </p>
                 </div>
+                <!---->
+
+                <!-- Git -->
+                <h3 class="text_headline" id="git">
+                    Gitiä
+                </h3>
+                <div class="text">
+                    <textarea name="instructions_git_text" class="update_box"><?= $params["texts"]["instructions_git"] ?></textarea>
+                </div>
+                <!---->
+
+                <!-- Update button -->
+                <button type="submit" name="update_desc_instructions_button" class="button update_button">
+                    Päivitä
+                </button>
             </form>
 
             <!-- Cancel button -->
-            <a href="<?= site_url("") ?>">
+            <a href="<?= site_url("instructions") ?>">
                 <button class="button cancel_button">
                     Peruuta
                 </button>
             </a>
-            <!---->
         </div>
-
     </div>
 
     <?=$snippets["footer"]?>

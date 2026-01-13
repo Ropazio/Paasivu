@@ -19,9 +19,8 @@
 
             <!-- Admin area -->
             <?php if($params["user_params"]["is_admin"]): ?>
-            <div class="text">
+            <div>
                 <a class="admin_link" href="<?= site_url('instructions-update_instructions') ?>">Päivitä ohjeita</a>
-                <a class="admin_link" href="<?= site_url('instructions-add_instructions') ?>">Lisää ohje</a>
             </div>
             <?php endif ?>
             <!---->
@@ -30,45 +29,45 @@
             <h2 class="text_headline">
                 Miten käyttää...
             </h2>
-            <p class="text">
-                <?= $params["texts"]["desc_instructions"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["desc_instructions"] ?></p>
+            </div>
             <!---->
 
             <!-- Git -->
             <h3 class="text_headline" id="git">
                 Gitiä
             </h3>
-            <p class="text">
-                <?= $params["instructions"]["instructions_git"] ?>
-            </p>
+            <div class="text">
+                <div class="text_with_whitespace"><?= $params["texts"]["instructions_git"] ?></div>
+            </div>
             <!---->
 
             <!-- Linux -->
             <h3 class="text_headline" id="linux">
                 Linuxia
             </h3>
-            <p class="text">
-                <?= $params["instructions"]["instructions_linux"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["instructions_linux"] ?></p>
+            </div>
             <!---->
 
             <!-- Sublime Text -->
             <h3 class="text_headline" id="Sublime Text">
                 Sublime Textiä
             </h3>
-            <p class="text">
-                <?= $params["instructions"]["instructions_Sublime Text"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["instructions_Sublime Text"] ?></p>
+            </div>
             <!---->
 
             <!-- Selenium -->
             <h3 class="text_headline" id="Selenium">
                 Seleniumia
             </h3>
-            <p class="text">
-                <?= $params["instructions"]["instructions_Selenium"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["instructions_Selenium"] ?></p>
+            </div>
             <!---->
 
 
@@ -76,54 +75,54 @@
             <h2 class="text_headline" id="server">
                 Ja miten perustan nettiservun
             </h2>
-            <p class="text">
-                <?= $params["texts"]["desc_instructions2"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["desc_instructions2"] ?></p>
+            </div>
             <!---->
 
             <!-- EC2 -->
             <h3 class="text_headline" id="EC2">
                 EC2
             </h3>
-            <p class="text">
-                <?= $params["instructions"]["instructions_EC2"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["instructions_EC2"] ?></p>
+            </div>
             <!---->
 
             <!-- Nginx -->
             <h3 class="text_headline" id="Nginx">
                 Nginx
             </h3>
-            <p class="text">
-                <?= $params["instructions"]["instructions_Nginx"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["instructions_Nginx"] ?></p>
+            </div>
             <!---->
 
             <!-- PHP -->
             <h3 class="text_headline" id="PHP">
                 PHP
             </h3>
-            <p class="text">
-                <?= $params["instructions"]["instructions_PHP"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["instructions_PHP"] ?></p>
+            </div>
             <!---->
 
             <!-- MySql -->
             <h3 class="text_headline" id="MySql">
                 MySql
             </h3>
-            <p class="text">
-                <?= $params["instructions"]["instructions_MySql"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["instructions_MySql"] ?></p>
+            </div>
             <!---->
 
             <!-- TablePlus -->
             <h3 class="text_headline" id="TablePlus">
                 TablePlus
             </h3>
-            <p class="text">
-                <?= $params["instructions"]["instructions_TablePlus"] ?>
-            </p>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["instructions_TablePlus"] ?></p>
+            </div>
             <!---->
         </div>
     </div>

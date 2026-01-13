@@ -80,33 +80,34 @@ Text related stuff
 .text {
     color: #222;
     text-align: left;
-    padding-top: 10px;
     margin-left: var(--general_margin);
     margin-right: var(--general_margin);
     line-height: 1.6;
 }
 
+.text_with_whitespace {
+    white-space: pre-wrap;
+}
+
 /* Headlines for the paragraphs aka subheadlines */
 .text_headline {
     margin-left: var(--general_margin);
-    margin-top: 80px;
+    margin-top: 50px;
     margin-right: var(--general_margin);
 }
 
 /* Main headline in the description area */
 .main_text_headline {
+    margin-top: 80px;
     margin-left: var(--general_margin);
-    margin-top: 100px;
-    margin-bottom: 50px;
     color: #333;
     margin-right: var(--general_margin);
 }
 
 /* Ordered list styling (ordinal) */
 .items {
-    margin-left: 80px;
     margin-bottom: 40px;
-    margin-right: 80px;
+    margin-right: var(--general_margin);
 }
 
 /* Single list item in the ordered list styling */
@@ -115,8 +116,8 @@ Text related stuff
 }
 
 .code_snippet {
-    margin-left: var(--general_margin);
-    margin-right: var(--general_margin);
+    display: inline-grid;
+    color: var(--white_colour);
     background-color: #333;
     border-radius: 2px;
     padding: 8px;
@@ -448,6 +449,8 @@ Update text pages
 
 /* Links for admin edits */
 .admin_link {
+    margin-left: var(--general_margin);
+    display: block;
     color: var(--admin_colour);
 }
 
@@ -801,10 +804,6 @@ MOBILE
     .bullet_container {
         margin-left: -20px;
         margin-right: 10px;
-    }
-
-    .text_headline {
-        margin-top: 40px;
     }
 
     .text_box {

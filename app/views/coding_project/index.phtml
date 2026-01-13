@@ -15,7 +15,7 @@
 
             <!-- Admin area -->
             <?php if($params["user_params"]["is_admin"]): ?>
-            <div class="text">
+            <div>
                 <a class="admin_link" href="<?= site_url('coding-update_text') ?>">Päivitä tekstejä</a>
             </div>
             <?php endif ?>
@@ -26,9 +26,9 @@
                 <h2 class="main_text_headline">
                     Heipä hei ja tervetuloa katsomaan verkkoprojektejani!
                 </h2>
-                <p class="text">
-                    <?= $params["texts"]["desc_coding"] ?>
-                </p>
+                <div class="text">
+                    <p class="text_with_whitespace"><?= $params["texts"]["desc_coding"] ?></p>
+                </div>
             </div>
             <!---->
 
@@ -36,13 +36,11 @@
             <h3 class="text_headline" id="pekkaspaivat">
                 Pekkaspäivät
             </h3>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["coding_pekkaspaivat"] ?></p>
+            </div>
             <p class="text">
-                <?= $params["texts"]["coding_pekkaspaivat"] ?>
-            </p>
-            <p class="text">
-                <a class="links" href="https://pekkaspaivat.ropaz.dev" target="_blank">
-                    Tästä linkistä pääset tutustumaan Pekkaspäiviin!
-                </a>
+                <a class="links" href="https://pekkaspaivat.ropaz.dev" target="_blank">Tästä linkistä pääset tutustumaan Pekkaspäiviin!</a>
             </p>
             <!---->
 
@@ -50,13 +48,11 @@
             <h3 class="text_headline" id="nettikasvio">
                 Nettikasvio
             </h3>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["coding_nettikasvio"] ?></p>
+            </div>
             <p class="text">
-                <?= $params["texts"]["coding_nettikasvio"] ?>
-            </p>
-            <p class="text">
-                <a class="links" href="https://nettikasvio.ropaz.dev" target="_blank">
-                    Tästä linkistä pääset tutustumaan Nettikasvioon!
-                </a>
+                <a class="links" href="https://nettikasvio.ropaz.dev" target="_blank">Tästä linkistä pääset tutustumaan Nettikasvioon!</a>
             </p>
             <!---->
 
@@ -64,13 +60,11 @@
             <h3 class="text_headline" id="joulutoivelista">
                 Joulutoivelista
             </h3>
+            <div class="text">
+                <p class="text_with_whitespace"><?= $params["texts"]["coding_joulutoivelista"] ?></p>
+            </div>
             <p class="text">
-                <?= $params["texts"]["coding_joulutoivelista"] ?>
-            </p>
-            <p class="text">
-                <a class="links" href="https://toivelista.ropaz.dev" target="_blank">
-                    
-                </a>
+                <a class="links" href="https://toivelista.ropaz.dev" target="_blank"></a>
             </p>
             <!---->
         </div>
