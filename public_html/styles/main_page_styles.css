@@ -20,8 +20,8 @@ html, body {
 
 /* Creating variables for the styles */
 :root {
-    --general_margin: 100px;
-    --mobile_general_margin: 30px;
+    --general_margin: 70px;
+    --mobile_general_margin: 20px;
     --white_colour: #FAFAFA;
     --light_grey_colour: #E9E9E9;
     --grey_colour: #D1D1D1;
@@ -119,13 +119,42 @@ Text related stuff
 .code_snippet {
     display: inline-grid;
     color: var(--white_colour);
-    background-color: #333;
+    background-color: gray;
     border-radius: 2px;
     padding: 8px;
+    width: -webkit-fill-available;
+    margin-bottom: 1px;
 }
 
 .code_snippet > pre {
     margin: 0px;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+/* Grid for instructions page in database */
+
+.grid_3wide {
+    background-color: whitesmoke;
+    border: 2px solid lightgray;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid_2wide {
+    background-color: whitesmoke;
+    border: 2px solid lightgray;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid_3wide > div, .grid_2wide > div {
+    white-space: nowrap;
+    height: 28px;
+    border: 1px solid lightgray;
+    padding: 4px;
     overflow-x: scroll;
 }
 

@@ -66,6 +66,8 @@ class Instructions_controller extends Controller {
             "php"               =>  ["instructions_php", "instructions_php_text"],
             "mysql"             =>  ["instructions_mysql", "instructions_mysql_text"],
             "tableplus"         =>  ["instructions_tableplus", "instructions_tableplus_text"],
+            "namecheap"         =>  ["instructions_namecheap", "instructions_namecheap_text"],
+            "certbot"           =>  ["instructions_certbot", "instructions_certbot_text"]
         ];
 
         if (isset($_POST["update_desc_instructions_button"])) {
