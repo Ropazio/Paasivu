@@ -14,10 +14,10 @@ class Database extends PDO {
         // Database
     
         $dbConfig = [
-            "name"          => "paasivu",
-            "user"          => "root",
-            "password"      => "",
-            "options"       => []
+            "name"          => DB_NAME,
+            "user"          => DB_USER,
+            "password"      => DB_PASSWORD,
+            "options"       => DB_OPTIONS
         ];
     
         $this->pdo = new PDO(
