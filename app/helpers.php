@@ -5,11 +5,14 @@
 
 define("ROOT", dirname(__DIR__));
 
-// Development (local)
-define("SITE_ROOT_URL", "/Paasivu_new");
-
-// Production (server)
-//define("SITE_ROOT_URL", "");
+// Set enviroment to server or local
+if (ENVIRONMENT == "server") {
+    define("SITE_ROOT_URL", "");
+} elseif (ENVIRONMENT == "local") {
+    define("SITE_ROOT_URL", "/Paasivu_new");
+} else {
+    die("Unknown environment");
+}
 
 //////////////////////////////////////////////////////////////////
 
