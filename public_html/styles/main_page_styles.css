@@ -115,7 +115,7 @@ Text related stuff
     padding: 4px;
 }
 
-/* snippets used in instructions page in database to view console inputs */
+/* Snippets used in instructions page to view console inputs added to database */
 .code_snippet {
     display: inline-grid;
     color: var(--white_colour);
@@ -132,8 +132,12 @@ Text related stuff
     white-space: nowrap;
 }
 
-/* Grid for instructions page in database */
+/* Piece of code script in the instructions page for the database */
+.code_script {
+    background-color: whitesmoke;
+}
 
+/* Grid table for instructions page for the database */
 .grid_3wide {
     background-color: whitesmoke;
     border: 2px solid lightgray;
