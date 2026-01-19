@@ -134,6 +134,8 @@ Text related stuff
 
 /* Piece of code script in the instructions page for the database */
 .code_script {
+    white-space: pre;
+    overflow-x: scroll;
     background-color: whitesmoke;
 }
 
