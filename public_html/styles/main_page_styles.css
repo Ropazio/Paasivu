@@ -128,13 +128,13 @@ Text related stuff
 
 .code_snippet > pre {
     margin: 0px;
-    overflow-x: scroll;
+    overflow-x: auto;
     white-space: nowrap;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-.code_snippet > pre :hover {
+.code_snippet > pre:hover {
     scrollbar-width: thin;
     overflow-y: hidden;
 }
@@ -142,7 +142,7 @@ Text related stuff
 /* Piece of code script in the instructions page for the database */
 .code_script {
     white-space: pre;
-    overflow-x: scroll;
+    overflow-x: auto;
     background-color: whitesmoke;
 }
 
@@ -168,12 +168,12 @@ Text related stuff
     height: 28px;
     border: 1px solid lightgray;
     padding: 4px;
-    overflow-x: scroll;
+    overflow-x: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-.grid_3wide > div :hover, .grid_2wide > div :hover {
+.grid_3wide > div:hover, .grid_2wide > div:hover {
     scrollbar-width: thin;
     overflow-y: hidden;
 }
