@@ -130,6 +130,13 @@ Text related stuff
     margin: 0px;
     overflow-x: scroll;
     white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.code_snippet > pre :hover {
+    scrollbar-width: thin;
+    overflow-y: hidden;
 }
 
 /* Piece of code script in the instructions page for the database */
@@ -162,6 +169,13 @@ Text related stuff
     border: 1px solid lightgray;
     padding: 4px;
     overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.grid_3wide > div :hover, .grid_2wide > div :hover {
+    scrollbar-width: thin;
+    overflow-y: hidden;
 }
 
 /* Sticky note box in the calendar page */
