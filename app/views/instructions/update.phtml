@@ -13,6 +13,14 @@
         
         <div class="desc">
 
+            <!-- Admin area -->
+            <?php if($params["user_params"]["is_admin"]): ?>
+            <div class="text admin_text" id="admin">
+                <div name="admin_instructions_text" class="text_with_whitespace"><?= $params["texts"]["admin_instructions"] ?></div>
+            </div>
+            <?php endif ?>
+            <!---->
+
             <form method="POST" action="<?= site_url("instructions-update_instructions") ?>">
                 <!-- Page text area -->
                 <div>

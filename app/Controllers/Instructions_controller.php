@@ -55,6 +55,7 @@ class Instructions_controller extends Controller {
         $this->auth->check_rights_to_access_page();
 
         $text_field = [
+            "admin"             =>  ["admin_instructions", "admin_instructions_text"],
             "desc"              =>  ["desc_instructions", "desc_instructions_text"],
             "desc2"             =>  ["desc_instructions2", "desc_instructions2_text"],
             "git"               =>  ["instructions_git", "instructions_git_text"],
@@ -72,9 +73,11 @@ class Instructions_controller extends Controller {
 
         if (isset($_POST["update_desc_instructions_button"])) {
             foreach ($text_field as $key => $value) {
+                if ($key == "admin") continue;
                 $text_name = $value[0];
                 $text = $_POST[$value[1]];
                 $this->text->update($text, $text_name);
+
             }
         } else {
             header("Location: " . site_url("instructions"));
